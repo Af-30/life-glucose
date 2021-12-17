@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>936725191363-p1rarh1f6r93pt3e5jdpfc35s95ics35.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.936725191363-p1rarh1f6r93pt3e5jdpfc35s95ics35</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDNAoYhLFCGOl-BTSADEw-iOl1N3Rw-bKw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>936725191363</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>grand.com.Life-Glucose</string>
+	<key>PROJECT_ID</key>
+	<string>lifeglucose</string>
+	<key>STORAGE_BUCKET</key>
+	<string>lifeglucose.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:936725191363:ios:a787d1eb0b2f112dd36076</string>
+</dict>
+</plist>
