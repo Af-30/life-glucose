@@ -1,0 +1,679 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED02D6EC27578C59009D891E /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02D6EB27578C59009D891E /* Home.swift */; };
+		ED29233C274518FA00B1D451 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29233B274518FA00B1D451 /* Item.swift */; };
+		ED29233E2745192B00B1D451 /* DetilsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29233D2745192B00B1D451 /* DetilsViewController.swift */; };
+		ED29234027451C8600B1D451 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29233F27451C8600B1D451 /* PickerView.swift */; };
+		ED3D471C273A743E00194384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D471B273A743E00194384 /* AppDelegate.swift */; };
+		ED3D471E273A743E00194384 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D471D273A743E00194384 /* SceneDelegate.swift */; };
+		ED3D4720273A743E00194384 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D471F273A743E00194384 /* ViewController.swift */; };
+		ED3D4723273A743E00194384 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED3D4721273A743E00194384 /* Main.storyboard */; };
+		ED3D4725273A744000194384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED3D4724273A744000194384 /* Assets.xcassets */; };
+		ED3D4728273A744000194384 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED3D4726273A744000194384 /* LaunchScreen.storyboard */; };
+		ED3D4733273A744000194384 /* Life_GlucoseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D4732273A744000194384 /* Life_GlucoseTests.swift */; };
+		ED3D473D273A744000194384 /* Life_GlucoseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D473C273A744000194384 /* Life_GlucoseUITests.swift */; };
+		ED3D473F273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D473E273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift */; };
+		ED6343A92757635900DC8D8F /* TableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6343A82757635900DC8D8F /* TableData.swift */; };
+		ED6343AB2757682A00DC8D8F /* TableViewDoctors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6343AA2757682A00DC8D8F /* TableViewDoctors.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ED3D472F273A744000194384 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED3D4710273A743E00194384 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED3D4717273A743E00194384;
+			remoteInfo = "Life Glucose";
+		};
+		ED3D4739273A744000194384 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED3D4710273A743E00194384 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED3D4717273A743E00194384;
+			remoteInfo = "Life Glucose";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ED02D6EB27578C59009D891E /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		ED29233B274518FA00B1D451 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		ED29233D2745192B00B1D451 /* DetilsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetilsViewController.swift; sourceTree = "<group>"; };
+		ED29233F27451C8600B1D451 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		ED3D4718273A743E00194384 /* Life Glucose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Life Glucose.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED3D471B273A743E00194384 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ED3D471D273A743E00194384 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		ED3D471F273A743E00194384 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED3D4722273A743E00194384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED3D4724273A744000194384 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED3D4727273A744000194384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED3D4729273A744000194384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED3D472E273A744000194384 /* Life GlucoseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Life GlucoseTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED3D4732273A744000194384 /* Life_GlucoseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_GlucoseTests.swift; sourceTree = "<group>"; };
+		ED3D4738273A744000194384 /* Life GlucoseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Life GlucoseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED3D473C273A744000194384 /* Life_GlucoseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_GlucoseUITests.swift; sourceTree = "<group>"; };
+		ED3D473E273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_GlucoseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ED6343A82757635900DC8D8F /* TableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableData.swift; sourceTree = "<group>"; };
+		ED6343AA2757682A00DC8D8F /* TableViewDoctors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDoctors.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED3D4715273A743E00194384 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED3D472B273A744000194384 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED3D4735273A744000194384 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED2923372745185C00B1D451 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED29233B274518FA00B1D451 /* Item.swift */,
+				ED2923382745186E00B1D451 /* View */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ED2923382745186E00B1D451 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED3D4721273A743E00194384 /* Main.storyboard */,
+				ED2923392745187B00B1D451 /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ED2923392745187B00B1D451 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ED3D471F273A743E00194384 /* ViewController.swift */,
+				ED29233D2745192B00B1D451 /* DetilsViewController.swift */,
+				ED6343AA2757682A00DC8D8F /* TableViewDoctors.swift */,
+				ED02D6EB27578C59009D891E /* Home.swift */,
+				ED6343A82757635900DC8D8F /* TableData.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		ED3D470F273A743E00194384 = {
+			isa = PBXGroup;
+			children = (
+				ED3D471A273A743E00194384 /* Life Glucose */,
+				ED3D4731273A744000194384 /* Life GlucoseTests */,
+				ED3D473B273A744000194384 /* Life GlucoseUITests */,
+				ED3D4719273A743E00194384 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ED3D4719273A743E00194384 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED3D4718273A743E00194384 /* Life Glucose.app */,
+				ED3D472E273A744000194384 /* Life GlucoseTests.xctest */,
+				ED3D4738273A744000194384 /* Life GlucoseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED3D471A273A743E00194384 /* Life Glucose */ = {
+			isa = PBXGroup;
+			children = (
+				ED4E48FD2760C4000046B78B /* Information Data Doctor */,
+				ED2923372745185C00B1D451 /* Model */,
+				ED3D471B273A743E00194384 /* AppDelegate.swift */,
+				ED3D471D273A743E00194384 /* SceneDelegate.swift */,
+				ED3D4724273A744000194384 /* Assets.xcassets */,
+				ED3D4726273A744000194384 /* LaunchScreen.storyboard */,
+				ED3D4729273A744000194384 /* Info.plist */,
+			);
+			path = "Life Glucose";
+			sourceTree = "<group>";
+		};
+		ED3D4731273A744000194384 /* Life GlucoseTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED3D4732273A744000194384 /* Life_GlucoseTests.swift */,
+			);
+			path = "Life GlucoseTests";
+			sourceTree = "<group>";
+		};
+		ED3D473B273A744000194384 /* Life GlucoseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ED3D473C273A744000194384 /* Life_GlucoseUITests.swift */,
+				ED3D473E273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift */,
+			);
+			path = "Life GlucoseUITests";
+			sourceTree = "<group>";
+		};
+		ED4E48FD2760C4000046B78B /* Information Data Doctor */ = {
+			isa = PBXGroup;
+			children = (
+				ED29233F27451C8600B1D451 /* PickerView.swift */,
+			);
+			path = "Information Data Doctor";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED3D4717273A743E00194384 /* Life Glucose */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED3D4742273A744000194384 /* Build configuration list for PBXNativeTarget "Life Glucose" */;
+			buildPhases = (
+				ED3D4714273A743E00194384 /* Sources */,
+				ED3D4715273A743E00194384 /* Frameworks */,
+				ED3D4716273A743E00194384 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Life Glucose";
+			productName = "Life Glucose";
+			productReference = ED3D4718273A743E00194384 /* Life Glucose.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ED3D472D273A744000194384 /* Life GlucoseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED3D4745273A744000194384 /* Build configuration list for PBXNativeTarget "Life GlucoseTests" */;
+			buildPhases = (
+				ED3D472A273A744000194384 /* Sources */,
+				ED3D472B273A744000194384 /* Frameworks */,
+				ED3D472C273A744000194384 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED3D4730273A744000194384 /* PBXTargetDependency */,
+			);
+			name = "Life GlucoseTests";
+			productName = "Life GlucoseTests";
+			productReference = ED3D472E273A744000194384 /* Life GlucoseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ED3D4737273A744000194384 /* Life GlucoseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED3D4748273A744000194384 /* Build configuration list for PBXNativeTarget "Life GlucoseUITests" */;
+			buildPhases = (
+				ED3D4734273A744000194384 /* Sources */,
+				ED3D4735273A744000194384 /* Frameworks */,
+				ED3D4736273A744000194384 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED3D473A273A744000194384 /* PBXTargetDependency */,
+			);
+			name = "Life GlucoseUITests";
+			productName = "Life GlucoseUITests";
+			productReference = ED3D4738273A744000194384 /* Life GlucoseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED3D4710273A743E00194384 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					ED3D4717273A743E00194384 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					ED3D472D273A744000194384 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = ED3D4717273A743E00194384;
+					};
+					ED3D4737273A744000194384 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = ED3D4717273A743E00194384;
+					};
+				};
+			};
+			buildConfigurationList = ED3D4713273A743E00194384 /* Build configuration list for PBXProject "Life Glucose" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ED3D470F273A743E00194384;
+			productRefGroup = ED3D4719273A743E00194384 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED3D4717273A743E00194384 /* Life Glucose */,
+				ED3D472D273A744000194384 /* Life GlucoseTests */,
+				ED3D4737273A744000194384 /* Life GlucoseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED3D4716273A743E00194384 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED3D4728273A744000194384 /* LaunchScreen.storyboard in Resources */,
+				ED3D4725273A744000194384 /* Assets.xcassets in Resources */,
+				ED3D4723273A743E00194384 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED3D472C273A744000194384 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED3D4736273A744000194384 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED3D4714273A743E00194384 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED29233C274518FA00B1D451 /* Item.swift in Sources */,
+				ED29233E2745192B00B1D451 /* DetilsViewController.swift in Sources */,
+				ED6343AB2757682A00DC8D8F /* TableViewDoctors.swift in Sources */,
+				ED29234027451C8600B1D451 /* PickerView.swift in Sources */,
+				ED6343A92757635900DC8D8F /* TableData.swift in Sources */,
+				ED02D6EC27578C59009D891E /* Home.swift in Sources */,
+				ED3D4720273A743E00194384 /* ViewController.swift in Sources */,
+				ED3D471C273A743E00194384 /* AppDelegate.swift in Sources */,
+				ED3D471E273A743E00194384 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED3D472A273A744000194384 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED3D4733273A744000194384 /* Life_GlucoseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED3D4734273A744000194384 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED3D473D273A744000194384 /* Life_GlucoseUITests.swift in Sources */,
+				ED3D473F273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ED3D4730273A744000194384 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED3D4717273A743E00194384 /* Life Glucose */;
+			targetProxy = ED3D472F273A744000194384 /* PBXContainerItemProxy */;
+		};
+		ED3D473A273A744000194384 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED3D4717273A743E00194384 /* Life Glucose */;
+			targetProxy = ED3D4739273A744000194384 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ED3D4721273A743E00194384 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED3D4722273A743E00194384 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ED3D4726273A744000194384 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED3D4727273A744000194384 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ED3D4740273A744000194384 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ED3D4741273A744000194384 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED3D4743273A744000194384 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Life Glucose/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "grand.com.Life-Glucose";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED3D4744273A744000194384 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Life Glucose/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "grand.com.Life-Glucose";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ED3D4746273A744000194384 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "grand.com.Life-GlucoseTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Life Glucose.app/Life Glucose";
+			};
+			name = Debug;
+		};
+		ED3D4747273A744000194384 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "grand.com.Life-GlucoseTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Life Glucose.app/Life Glucose";
+			};
+			name = Release;
+		};
+		ED3D4749273A744000194384 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "grand.com.Life-GlucoseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Life Glucose";
+			};
+			name = Debug;
+		};
+		ED3D474A273A744000194384 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "grand.com.Life-GlucoseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Life Glucose";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED3D4713273A743E00194384 /* Build configuration list for PBXProject "Life Glucose" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED3D4740273A744000194384 /* Debug */,
+				ED3D4741273A744000194384 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED3D4742273A744000194384 /* Build configuration list for PBXNativeTarget "Life Glucose" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED3D4743273A744000194384 /* Debug */,
+				ED3D4744273A744000194384 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED3D4745273A744000194384 /* Build configuration list for PBXNativeTarget "Life GlucoseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED3D4746273A744000194384 /* Debug */,
+				ED3D4747273A744000194384 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED3D4748273A744000194384 /* Build configuration list for PBXNativeTarget "Life GlucoseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED3D4749273A744000194384 /* Debug */,
+				ED3D474A273A744000194384 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ED3D4710273A743E00194384 /* Project object */;
+}
