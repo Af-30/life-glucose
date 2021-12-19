@@ -12,7 +12,7 @@ class PickerView: UIViewController{
     @IBOutlet weak var userPicker: UIPickerView!
     @IBOutlet weak var resultPicker: UILabel!
     var codeing = ["...","LAG345JAZ","LGG345RUD","LGG345JED","LFG345DMM","LFG345MED"]
-    var user = ["...","New","DR","PA"]
+    var user = ["...","New","Dr","PA"]
     override func viewDidLoad() {
         super.viewDidLoad()
         codingPicker.delegate = self
