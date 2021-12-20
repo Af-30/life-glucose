@@ -12,10 +12,11 @@ class LoginViewController: UIViewController {
     var activityIndicator = UIActivityIndicatorView()
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
+    var massige = ""
     @IBOutlet weak var errorLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
     }
     @IBAction func handleLogin(_ sender: Any) {
@@ -28,16 +29,20 @@ class LoginViewController: UIViewController {
                     if let errCode = AuthErrorCode(rawValue: error._code) {
                         switch errCode {
                         case .userNotFound:
-                            self.errorLabel.text =  "userNotFound"
+                            self.massige =  "userNotFound"
+                            self.emptyTexts()
                         case .wrongPassword:
-                            self.errorLabel.text = "Wrong Password"
+                            self.massige = "Wrong Password"
+                            self.emptyTexts()
                         case .invalidEmail:
-                            self.errorLabel.text = "invalid email"
+                            self.massige = "invalid email"
+                            self.emptyTexts()
                         case .emailAlreadyInUse:
-                            self.errorLabel.text = "in use"
+                            self.massige = "in use"
+                            self.emptyTexts()
                         default:
-                            self.errorLabel.text = "Create User Error: \(errCode.rawValue)"
-                            
+                            self.massige = "Create User Error: \(errCode.rawValue)"
+                            self.emptyTexts()
                         }
                     }
                     return
@@ -52,6 +57,10 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
-    
+    func emptyTexts() {
+        let alert = UIAlertController(title: "Error", message: massige, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in}))
+            .self; present(alert, animated: true)
+    }
+   
 }
