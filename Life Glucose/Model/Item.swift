@@ -9,7 +9,6 @@ import Foundation
 struct Item {
     var dataUserName:DataUserName
     var dataDoctor:DataDoctor
-    var logninCoding:LogninCoding
 }
 
 struct DataUserName {
@@ -34,8 +33,11 @@ struct DataDoctor{
     var numberDay:Int
 }
 
-
-struct LogninCoding {
-var nameDoctor: String
-    var coding: String
+struct Profile {
+    var name: String
+    var number: Int
+    var imageProfile: String
+    var email:String
 }
+
+
