@@ -23,7 +23,7 @@ class RegisterViewController: UIViewController {
             userImageView.addGestureRecognizer(tabGesture)
         }
     }
-    @IBOutlet weak var errorLabel: UILabel!
+   
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var iphoneNumberTextField: UITextField!

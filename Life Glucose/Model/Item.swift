@@ -14,16 +14,16 @@ struct Item {
 struct DataUserName {
     var name: String
     var userName:String
+    var numnberIphone:Int
     var email:String
     var password:String
     var age:Int
-    var numnberIphone:Int
 }
 
 struct DataDoctor{
     var name:String
     var age:Int
-    var number:Int
+    var numnberIphone:Int
     var city:String
     var yearEmplyment:String
     var house: String
@@ -31,6 +31,7 @@ struct DataDoctor{
     var workTime:Int
     var check:Int
     var numberDay:Int
+
 }
 
 struct Profile {

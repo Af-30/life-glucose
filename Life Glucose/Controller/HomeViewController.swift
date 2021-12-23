@@ -16,40 +16,23 @@ class HomeViewController: UIViewController {
         didSet {
             profileImage.layer.borderColor = UIColor.systemGreen.cgColor
             profileImage.layer.borderWidth = 3.0
-            profileImage.layer.cornerRadius = profileImage.bounds.height / 2
+//            profileImage.layer.cornerRadius = profileImage.bounds.height / 2
             profileImage.layer.masksToBounds = true
             profileImage.isUserInteractionEnabled = true
+            
+            profileImage.backgroundColor = .cyan
+            profileImage.layer.masksToBounds = true
+            profileImage.layer.cornerRadius = profileImage.frame.height / 2
+            
             let tabGesture = UITapGestureRecognizer(target: self, action: #selector(selectImage))
             profileImage.addGestureRecognizer(tabGesture)
         }
     }
-    //    @IBOutlet weak var leading: NSLayoutConstraint!
-    //    @IBOutlet weak var trailing: NSLayoutConstraint!
-
-//    @IBOutlet weak var menue: UIView!
-//    var menuOut = false
-//
-//    @IBAction func menuTabbed(_ sender: Any) {
-//        if menuOut == false {
-//            leading.constant = 150
-//            trailing.constant = -150
-//            menuOut = true
-//        }else{
-//            leading.constant = 0
-//            trailing.constant = 0
-//            menuOut = false
-//        }
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        profileImage.backgroundColor = .cyan
-        profileImage.layer.masksToBounds = true
-        profileImage.layer.cornerRadius = profileImage.frame.height / 2
         imagePickerController.delegate = self
     
     }
-    
     @IBAction func handleLogout(_ sender: Any) {
         do {
             try Auth.auth().signOut()
@@ -65,11 +48,9 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    
     @objc func selectImage() {
         showAlert()
     }
-    
     func showAlert() {
         let alert = UIAlertController(title: "choose Profile Picture", message: "where do you want to pick your image from?", preferredStyle: .actionSheet)
         let cameraAction = UIAlertAction(title: "Camera", style: .default) { Action in
@@ -102,3 +83,20 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
         picker.dismiss(animated: true, completion: nil)
     }
 }
+//    @IBOutlet weak var leading: NSLayoutConstraint!
+//    @IBOutlet weak var trailing: NSLayoutConstraint!
+
+//    @IBOutlet weak var menue: UIView!
+//    var menuOut = false
+//
+//    @IBAction func menuTabbed(_ sender: Any) {
+//        if menuOut == false {
+//            leading.constant = 150
+//            trailing.constant = -150
+//            menuOut = true
+//        }else{
+//            leading.constant = 0
+//            trailing.constant = 0
+//            menuOut = false
+//        }
+//    }

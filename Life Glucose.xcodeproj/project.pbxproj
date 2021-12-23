@@ -14,6 +14,8 @@
 		ED24C7D9276F644500583D41 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7D8276F644500583D41 /* ImageView.swift */; };
 		ED24C7DB276F647700583D41 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7DA276F647700583D41 /* Activity.swift */; };
 		ED29233C274518FA00B1D451 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29233B274518FA00B1D451 /* Item.swift */; };
+		ED2D5BCD2771FFA30027F8B2 /* DataDrTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2D5BCB2771FFA30027F8B2 /* DataDrTableViewCell.swift */; };
+		ED2D5BCE2771FFA30027F8B2 /* DataDrTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED2D5BCC2771FFA30027F8B2 /* DataDrTableViewCell.xib */; };
 		ED3D471C273A743E00194384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D471B273A743E00194384 /* AppDelegate.swift */; };
 		ED3D471E273A743E00194384 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D471D273A743E00194384 /* SceneDelegate.swift */; };
 		ED3D4723273A743E00194384 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED3D4721273A743E00194384 /* Main.storyboard */; };
@@ -55,6 +57,8 @@
 		ED24C7D8276F644500583D41 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		ED24C7DA276F647700583D41 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		ED29233B274518FA00B1D451 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		ED2D5BCB2771FFA30027F8B2 /* DataDrTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDrTableViewCell.swift; sourceTree = "<group>"; };
+		ED2D5BCC2771FFA30027F8B2 /* DataDrTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataDrTableViewCell.xib; sourceTree = "<group>"; };
 		ED3D4718273A743E00194384 /* Life Glucose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Life Glucose.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3D471B273A743E00194384 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED3D471D273A743E00194384 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				ED29233B274518FA00B1D451 /* Item.swift */,
+				ED2D5BCB2771FFA30027F8B2 /* DataDrTableViewCell.swift */,
+				ED2D5BCC2771FFA30027F8B2 /* DataDrTableViewCell.xib */,
 				ED2923382745186E00B1D451 /* View */,
 			);
 			path = Model;
@@ -308,6 +314,7 @@
 				EDEDA8B4276C4DA900CA1597 /* GoogleService-Info.plist in Resources */,
 				ED3D4725273A744000194384 /* Assets.xcassets in Resources */,
 				ED3D4723273A743E00194384 /* Main.storyboard in Resources */,
+				ED2D5BCE2771FFA30027F8B2 /* DataDrTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +344,7 @@
 				ED24C7D9276F644500583D41 /* ImageView.swift in Sources */,
 				ED24C7D2276F563800583D41 /* HomeViewController.swift in Sources */,
 				ED24C7DB276F647700583D41 /* Activity.swift in Sources */,
+				ED2D5BCD2771FFA30027F8B2 /* DataDrTableViewCell.swift in Sources */,
 				ED3D471C273A743E00194384 /* AppDelegate.swift in Sources */,
 				ED24C7D0276F55FA00583D41 /* LandingViewController.swift in Sources */,
 				ED24C7D6276F56CC00583D41 /* LoginViewController.swift in Sources */,
