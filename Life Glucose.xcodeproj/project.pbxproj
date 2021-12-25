@@ -113,6 +113,8 @@
 			children = (
 				ED24C7D8276F644500583D41 /* ImageView.swift */,
 				ED24C7DA276F647700583D41 /* Activity.swift */,
+				ED2923372745185C00B1D451 /* Model */,
+				ED2923382745186E00B1D451 /* View */,
 			);
 			path = Uitll;
 			sourceTree = "<group>";
@@ -122,7 +124,6 @@
 			children = (
 				EDD6ABCB277657320017D85A /* DataDr.swift */,
 				ED29233B274518FA00B1D451 /* User.swift */,
-				ED2923382745186E00B1D451 /* View */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,6 +134,7 @@
 				ED3D4721273A743E00194384 /* Main.storyboard */,
 				ED2D5BCB2771FFA30027F8B2 /* DataDrCell.swift */,
 				ED2D5BCC2771FFA30027F8B2 /* DataDrCell.xib */,
+				ED3D4724273A744000194384 /* Assets.xcassets */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,11 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				ED24C7D7276F63E400583D41 /* Uitll */,
-				ED2923372745185C00B1D451 /* Model */,
 				ED2923392745187B00B1D451 /* Controller */,
-				ED3D471B273A743E00194384 /* AppDelegate.swift */,
-				ED3D471D273A743E00194384 /* SceneDelegate.swift */,
-				ED3D4724273A744000194384 /* Assets.xcassets */,
+				EDAC9F2627778D3300745567 /* I don't teach */,
 				ED3D4726273A744000194384 /* LaunchScreen.storyboard */,
 				ED3D4729273A744000194384 /* Info.plist */,
 				EDEDA8B3276C4DA900CA1597 /* GoogleService-Info.plist */,
@@ -200,6 +199,15 @@
 				ED3D473E273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift */,
 			);
 			path = "Life GlucoseUITests";
+			sourceTree = "<group>";
+		};
+		EDAC9F2627778D3300745567 /* I don't teach */ = {
+			isa = PBXGroup;
+			children = (
+				ED3D471B273A743E00194384 /* AppDelegate.swift */,
+				ED3D471D273A743E00194384 /* SceneDelegate.swift */,
+			);
+			path = "I don't teach";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

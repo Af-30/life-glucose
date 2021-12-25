@@ -17,11 +17,6 @@ struct DataDr{
     var description = ""
     var user: User
     var createdAt:Timestamp?
-//    var yearEmplyment:String
-//    var house: String
-//    var workTime:Int
-//    var check:Int
-//    var numberDay:Int
     
     init(dict:[String:Any],age:Int,user:User) {
         if let name = dict["name"] as? String,

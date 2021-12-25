@@ -9,11 +9,11 @@ import UIKit
 
 class DataDrCell: UITableViewCell {
 
-    @IBOutlet weak var dataDrImage: UIImageView!{
+    @IBOutlet weak var dataCellImage: UIImageView!{
         didSet{
-            dataDrImage.backgroundColor = .cyan
-            dataDrImage.layer.masksToBounds = true
-            dataDrImage.layer.cornerRadius = dataDrImage.frame.height / 2
+            dataCellImage.backgroundColor = .cyan
+            dataCellImage.layer.masksToBounds = true
+            dataCellImage.layer.cornerRadius = dataCellImage.frame.height / 2
         }
     }
     @IBOutlet weak var nameCellDrLabel: UILabel!
@@ -35,12 +35,12 @@ class DataDrCell: UITableViewCell {
         nameCellDrLabel.text = dataDr.name
         cityDataDrLabel.text = dataDr.city
         descriptionDataDrLabel.text = dataDr.description
-        dataDrImage.loadImageUsingCache(with: dataDr.imageUrl)
+        dataCellImage.loadImageUsingCache(with: dataDr.imageUrl)
         return self
     }
     
     override func prepareForReuse() {
-        dataDrImage.image = nil
-        dataDrImage.image = nil
+        dataCellImage.image = nil
+        dataCellImage.image = nil
     }
 }

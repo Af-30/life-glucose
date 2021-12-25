@@ -10,16 +10,13 @@ import Firebase
 
 class HomeViewController: UIViewController {
     let imagePickerController = UIImagePickerController()
-    
     @IBOutlet weak var profileTableView: UITableView!
     @IBOutlet weak var profileImage: UIImageView!{
         didSet {
             profileImage.layer.borderColor = UIColor.systemGreen.cgColor
             profileImage.layer.borderWidth = 3.0
-//            profileImage.layer.cornerRadius = profileImage.bounds.height / 2
             profileImage.layer.masksToBounds = true
             profileImage.isUserInteractionEnabled = true
-            
             profileImage.backgroundColor = .cyan
             profileImage.layer.masksToBounds = true
             profileImage.layer.cornerRadius = profileImage.frame.height / 2

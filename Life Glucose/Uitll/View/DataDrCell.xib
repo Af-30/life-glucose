@@ -64,7 +64,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cityDataDrLabel" destination="kYW-r3-a5g" id="gJv-K6-mpb"/>
-                <outlet property="dataDrImage" destination="MxO-xf-9cI" id="S9V-Yc-2Xt"/>
+                <outlet property="dataCellImage" destination="MxO-xf-9cI" id="uAZ-Vo-j32"/>
                 <outlet property="descriptionDataDrLabel" destination="ljT-t2-Dhx" id="35D-jS-6uf"/>
                 <outlet property="nameCellDrLabel" destination="Vco-sL-MJh" id="Nd7-ej-tGe"/>
             </connections>
