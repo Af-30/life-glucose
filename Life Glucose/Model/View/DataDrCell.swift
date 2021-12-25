@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DataDrTableViewCell: UITableViewCell {
+class DataDrCell: UITableViewCell {
 
     @IBOutlet weak var dataDrImage: UIImageView!{
         didSet{
@@ -31,4 +31,16 @@ class DataDrTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configure(with dataDr:DataDr) -> UITableViewCell {
+        nameCellDrLabel.text = dataDr.name
+        cityDataDrLabel.text = dataDr.city
+        descriptionDataDrLabel.text = dataDr.description
+        dataDrImage.loadImageUsingCache(with: dataDr.imageUrl)
+        return self
+    }
+    
+    override func prepareForReuse() {
+        dataDrImage.image = nil
+        dataDrImage.image = nil
+    }
 }

@@ -1,53 +1,59 @@
 //
-//  HomeViewController.swift
+//  DataDrTableVC.swift
 //  Life Glucose
 //
-//  Created by grand ahmad on 15/05/1443 AH.
+//  Created by grand ahmad on 20/05/1443 AH.
 //
 
 import UIKit
-import Firebase
 
-class HomeViewController: UIViewController {
-    let imagePickerController = UIImagePickerController()
-    
-    @IBOutlet weak var profileTableView: UITableView!
-    @IBOutlet weak var profileImage: UIImageView!{
-        didSet {
-            profileImage.layer.borderColor = UIColor.systemGreen.cgColor
-            profileImage.layer.borderWidth = 3.0
-//            profileImage.layer.cornerRadius = profileImage.bounds.height / 2
-            profileImage.layer.masksToBounds = true
-            profileImage.isUserInteractionEnabled = true
-            
-            profileImage.backgroundColor = .cyan
-            profileImage.layer.masksToBounds = true
-            profileImage.layer.cornerRadius = profileImage.frame.height / 2
-            
-            let tabGesture = UITapGestureRecognizer(target: self, action: #selector(selectImage))
-            profileImage.addGestureRecognizer(tabGesture)
+class HomeDrVC: UIViewController {
+    @IBOutlet weak var outershellView: UIView!{
+        didSet{
+            outershellView.layer.cornerRadius = 25
         }
     }
+    let imagePickerController = UIImagePickerController()
+    var menuOut = true
+    @IBOutlet weak var addDrTableVC: UITableView!
+    
+    @IBOutlet weak var leading: NSLayoutConstraint!
+    @IBOutlet weak var tralling: NSLayoutConstraint!
+    @IBAction func menuTabbed(_ sender: Any) {
+          if menuOut == false {
+              leading.constant = 220
+              tralling.constant = -220
+              menuOut = true
+          }else{
+              leading.constant = 0
+              tralling.constant = 0
+              menuOut = false
+          }
+    }
+    @IBOutlet weak var profileDrImage: UIImageView!{
+        didSet{
+            profileDrImage.layer.borderColor = UIColor.systemGreen.cgColor
+            profileDrImage.layer.borderWidth = 3.0
+            profileDrImage.layer.masksToBounds = true
+            profileDrImage.isUserInteractionEnabled = true
+            
+            profileDrImage.backgroundColor = .cyan
+            profileDrImage.layer.masksToBounds = true
+            profileDrImage.layer.cornerRadius = profileDrImage.frame.height / 2
+            
+            let tabGesture = UITapGestureRecognizer(target: self, action: #selector(selectImage))
+            profileDrImage.addGestureRecognizer(tabGesture)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePickerController.delegate = self
-    
     }
-    @IBAction func handleLogout(_ sender: Any) {
-        do {
-            try Auth.auth().signOut()
-            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LandingViewController") as? LandingViewController {
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true, completion: nil)
-            }
-        } catch  {
-            print("ERROR in signout",error.localizedDescription)
-        }
-        
-    }
+
 }
 
-extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+extension HomeDrVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     @objc func selectImage() {
         showAlert()
     }
@@ -56,7 +62,7 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
         let cameraAction = UIAlertAction(title: "Camera", style: .default) { Action in
             self.getImage(from: .camera)
         }
-        let galaryAction = UIAlertAction(title: "photo Library", style: .default) { Action in
+        let galaryAction = UIAlertAction(title: "Photo Library", style: .default) { Action in
             self.getImage(from: .photoLibrary)
         }
         let dismissAction = UIAlertAction(title: "Cancle", style: .destructive) { Action in
@@ -76,11 +82,10 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let chosenImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return}
-        profileImage.image = chosenImage
+        profileDrImage.image = chosenImage
         dismiss(animated: true, completion: nil)
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
 }
-
