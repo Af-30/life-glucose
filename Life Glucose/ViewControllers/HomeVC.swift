@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class HomeViewController: UIViewController {
+class HomeVC: UIViewController {
     let imagePickerController = UIImagePickerController()
     @IBOutlet weak var profileTableView: UITableView!
     @IBOutlet weak var profileImage: UIImageView!{
@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
     @IBAction func handleLogout(_ sender: Any) {
         do {
             try Auth.auth().signOut()
-            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LandingViewController") as? LandingViewController {
+            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LandingViewController") as? LandingVC {
                 vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: true, completion: nil)
             }
@@ -44,7 +44,7 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+extension HomeVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     @objc func selectImage() {
         showAlert()
     }

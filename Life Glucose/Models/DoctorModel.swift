@@ -7,7 +7,7 @@
 
 import Foundation
 import Firebase
-struct DataDr{
+struct DoctorModel{
     var name = ""
     var imageUrl = ""
     var age = 0

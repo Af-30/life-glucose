@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class RegisterViewController: UIViewController {
+class RegisterVC: UIViewController {
     var massige = ""
     let imagePickerController = UIImagePickerController()
     var activityIndicator = UIActivityIndicatorView()
@@ -127,7 +127,7 @@ class RegisterViewController: UIViewController {
     }
 }
 
-extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+extension RegisterVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     @objc func selectImage() {
         showAlert()

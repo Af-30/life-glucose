@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-class LoginViewController: UIViewController {
+class LoginVC: UIViewController {
     var activityIndicator = UIActivityIndicatorView()
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!

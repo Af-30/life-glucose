@@ -31,7 +31,7 @@ class DataDrCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(with dataDr:DataDr) -> UITableViewCell {
+    func configure(with dataDr:DoctorModel) -> UITableViewCell {
         nameCellDrLabel.text = dataDr.name
         cityDataDrLabel.text = dataDr.city
         descriptionDataDrLabel.text = dataDr.description

@@ -7,10 +7,10 @@
 
 import UIKit
 import Firebase
-class HomeDrVC: UIViewController {
+class DoctorHomeVC: UIViewController {
     var menuOut = true
-    var informationDr = [DataDr]()
-    var selectedDataDr:DataDr?
+    var informationDr = [DoctorModel]()
+    var selectedDataDr:DoctorModel?
     var selectedDataImage:UIImage?
     let imagePickerController = UIImagePickerController()
 //    outershell profile image
@@ -62,7 +62,7 @@ class HomeDrVC: UIViewController {
     }
 }
 //extension image
-extension HomeDrVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+extension DoctorHomeVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     @objc func selectImage() {
         showAlert()
     }
@@ -100,7 +100,7 @@ extension HomeDrVC: UIImagePickerControllerDelegate, UINavigationControllerDeleg
 }
 
 //extension table view data dr type datasource and delegate
-extension HomeDrVC: UITableViewDataSource{
+extension DoctorHomeVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return informationDr.count
     }
@@ -109,7 +109,7 @@ extension HomeDrVC: UITableViewDataSource{
         return cell.configure(with: informationDr[indexPath.row])
     }
 }
-extension HomeDrVC : UITableViewDelegate {
+extension DoctorHomeVC : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }

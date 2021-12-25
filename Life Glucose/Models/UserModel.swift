@@ -12,7 +12,7 @@ import Firebase
 //    var dataDoctor:DataDoctor?
 //}
 
-struct DataUser {
+struct UserModel {
     var name = ""
     var userName =  ""
     var numberiphone = 0
