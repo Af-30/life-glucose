@@ -113,19 +113,18 @@
 			children = (
 				ED24C7D8276F644500583D41 /* ImageView.swift */,
 				ED24C7DA276F647700583D41 /* Activity.swift */,
-				ED2923372745185C00B1D451 /* Model */,
 				ED2923382745186E00B1D451 /* View */,
 			);
 			path = Uitll;
 			sourceTree = "<group>";
 		};
-		ED2923372745185C00B1D451 /* Model */ = {
+		ED2923372745185C00B1D451 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				EDD6ABCB277657320017D85A /* DataDr.swift */,
 				ED29233B274518FA00B1D451 /* User.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		ED2923382745186E00B1D451 /* View */ = {
@@ -137,18 +136,6 @@
 				ED3D4724273A744000194384 /* Assets.xcassets */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		ED2923392745187B00B1D451 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				ED24C7CF276F55FA00583D41 /* LandingViewController.swift */,
-				ED24C7D3276F569B00583D41 /* RegisterViewController.swift */,
-				ED24C7D5276F56CC00583D41 /* LoginViewController.swift */,
-				ED24C7D1276F563800583D41 /* HomeViewController.swift */,
-				EDD6ABCD27765E810017D85A /* HomeDrVC.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		ED3D470F273A743E00194384 = {
@@ -174,8 +161,9 @@
 		ED3D471A273A743E00194384 /* Life Glucose */ = {
 			isa = PBXGroup;
 			children = (
+				ED2923372745185C00B1D451 /* Models */,
+				EDAC9F272777AE6F00745567 /* ViewControllers */,
 				ED24C7D7276F63E400583D41 /* Uitll */,
-				ED2923392745187B00B1D451 /* Controller */,
 				EDAC9F2627778D3300745567 /* I don't teach */,
 				ED3D4726273A744000194384 /* LaunchScreen.storyboard */,
 				ED3D4729273A744000194384 /* Info.plist */,
@@ -208,6 +196,18 @@
 				ED3D471D273A743E00194384 /* SceneDelegate.swift */,
 			);
 			path = "I don't teach";
+			sourceTree = "<group>";
+		};
+		EDAC9F272777AE6F00745567 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				ED24C7CF276F55FA00583D41 /* LandingViewController.swift */,
+				ED24C7D3276F569B00583D41 /* RegisterViewController.swift */,
+				ED24C7D5276F56CC00583D41 /* LoginViewController.swift */,
+				ED24C7D1276F563800583D41 /* HomeViewController.swift */,
+				EDD6ABCD27765E810017D85A /* HomeDrVC.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
