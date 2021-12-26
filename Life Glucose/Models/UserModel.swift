@@ -13,17 +13,18 @@ import Firebase
 //}
 
 struct UserModel {
+    var id = ""
     var name = ""
     var userName =  ""
     var numberiphone = 0
     var email = ""
     var age = 0
     var imageUrl = ""
-    
+
 
     
     
-    init(dict:[String:Any]) {
+    init(dict:[String:Any],id:String) {
         if let age = dict["age"] as? Int,
            let name = dict["name"] as? String,
            let numberiphone = dict["number"] as? Int,
@@ -35,12 +36,7 @@ struct UserModel {
             self.email = email
             self.imageUrl = imageUrl
         }
-}
-}
-//struct Profile {
-//    var name: String
-//    var number: Int
-//    var imageProfile: String
-//    var email:String
-//}
+        self.id = id
 
+}
+}

@@ -118,8 +118,9 @@ extension DoctorHomeVC : UITableViewDelegate {
         selectedDataImage = cell.dataCellImage.image
         selectedDataDr = informationDr[indexPath.row]
         if let currentUser = Auth.auth().currentUser,
-           currentUser.uid == informationDr[indexPath.row].user.uid{
+           currentUser.uid == informationDr[indexPath.row].id{
             performSegue(withIdentifier: "toDataVC", sender: self)
           }
       }
 }
+
