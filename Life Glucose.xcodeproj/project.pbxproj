@@ -24,6 +24,7 @@
 		ED3D4733273A744000194384 /* Life_GlucoseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D4732273A744000194384 /* Life_GlucoseTests.swift */; };
 		ED3D473D273A744000194384 /* Life_GlucoseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D473C273A744000194384 /* Life_GlucoseUITests.swift */; };
 		ED3D473F273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D473E273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift */; };
+		EDB09EC0277A42A6007A6196 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = EDB09EBF277A42A6007A6196 /* Readme.md */; };
 		EDC3F038276F9D5C00848D1E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EDC3F037276F9D5C00848D1E /* FirebaseAuth */; };
 		EDC3F03A276F9D5C00848D1E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EDC3F039276F9D5C00848D1E /* FirebaseFirestore */; };
 		EDC3F03C276F9D5C00848D1E /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = EDC3F03B276F9D5C00848D1E /* FirebaseFirestoreSwift-Beta */; };
@@ -73,6 +74,7 @@
 		ED3D4738273A744000194384 /* Life GlucoseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Life GlucoseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3D473C273A744000194384 /* Life_GlucoseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_GlucoseUITests.swift; sourceTree = "<group>"; };
 		ED3D473E273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_GlucoseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EDB09EBF277A42A6007A6196 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		EDD6ABCB277657320017D85A /* DoctorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorModel.swift; sourceTree = "<group>"; };
 		EDD6ABCD27765E810017D85A /* DoctorHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorHomeVC.swift; sourceTree = "<group>"; };
 		EDEDA8B3276C4DA900CA1597 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		ED3D470F273A743E00194384 = {
 			isa = PBXGroup;
 			children = (
+				EDB09EBF277A42A6007A6196 /* Readme.md */,
 				ED3D471A273A743E00194384 /* Life Glucose */,
 				ED3D4731273A744000194384 /* Life GlucoseTests */,
 				ED3D473B273A744000194384 /* Life GlucoseUITests */,
@@ -326,6 +329,7 @@
 			files = (
 				ED3D4728273A744000194384 /* LaunchScreen.storyboard in Resources */,
 				EDEDA8B4276C4DA900CA1597 /* GoogleService-Info.plist in Resources */,
+				EDB09EC0277A42A6007A6196 /* Readme.md in Resources */,
 				ED3D4725273A744000194384 /* Assets.xcassets in Resources */,
 				ED3D4723273A743E00194384 /* Main.storyboard in Resources */,
 				ED2D5BCE2771FFA30027F8B2 /* DataDrCell.xib in Resources */,
