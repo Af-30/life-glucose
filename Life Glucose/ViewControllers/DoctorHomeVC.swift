@@ -9,37 +9,38 @@ import UIKit
 import Firebase
 class DoctorHomeVC: UIViewController {
     var menuOut = true
-    var informationDr = [DoctorModel]()
+    var doctors = [DoctorModel]()
     var selectedDataDr:DoctorModel?
     var selectedDataImage:UIImage?
     let imagePickerController = UIImagePickerController()
-//    outershell profile image
+    
+    //    outershell profile image
     @IBOutlet weak var outershellView: UIView!{
         didSet{
             outershellView.layer.cornerRadius = 25
         }
     }
-//    this table data dr vc
-    @IBOutlet weak var addDrTableVC: UITableView!{
+    //    this table data dr vc
+    @IBOutlet weak var drsTableView: UITableView!{
         didSet{
-            addDrTableVC.delegate = self
-            addDrTableVC.dataSource = self
-            addDrTableVC.register(UINib(nibName: "DataDrCell", bundle: nil), forCellReuseIdentifier: "DataDrCell")
+            drsTableView.delegate = self
+            drsTableView.dataSource = self
+            drsTableView.register(UINib(nibName: "DataDrCell", bundle: nil), forCellReuseIdentifier: "DataDrCell")
         }
     }
-//    relationshep menu and leading tralling view
+    //    relationshep menu and leading tralling view
     @IBOutlet weak var leading: NSLayoutConstraint!
     @IBOutlet weak var tralling: NSLayoutConstraint!
     @IBAction func menuTabbed(_ sender: Any) {
-          if menuOut == false {
-              leading.constant = 220
-              tralling.constant = -220
-              menuOut = true
-          }else{
-              leading.constant = 0
-              tralling.constant = 0
-              menuOut = false
-          }
+        if menuOut == false {
+            leading.constant = 220
+            tralling.constant = -220
+            menuOut = true
+        }else{
+            leading.constant = 0
+            tralling.constant = 0
+            menuOut = false
+        }
     }
     @IBOutlet weak var profileDrImage: UIImageView!{
         didSet{
@@ -59,14 +60,69 @@ class DoctorHomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePickerController.delegate = self
+//        getDoctors()
     }
 }
+
+//func getDoctors() {
+//    let ref = Firestore.firestore()
+//    ref.collection("posts").order(by: "createdAt",descending: true).addSnapshotListener { snapshot, error in
+//        if let error = error {
+//            print("DB ERROR Posts",error.localizedDescription)
+//        }
+//        if let snapshot = snapshot {
+//            snapshot.documentChanges.forEach { diff in
+//                let doc = diff.document.data()
+//                switch diff.type {
+//                case .added :
+//                    if let userId = doc["doctorId"] as? String {
+//                        ref.collection("users").document(userId).getDocument { userSnapshot, error in
+//                            if let error = error {
+//                                print("ERROR user Data",error.localizedDescription)
+//
+//                            }
+//                            if let userSnapshot = userSnapshot,
+//                               let userData = userSnapshot.data(){
+//                                let user = UserModel(dict:userData)
+//                                let doctor = DoctorModel(dict:doc,id:diff.document.documentID,user:user)
+//                                self.doctors.insert(doctor, at: 0)
+//                                DispatchQueue.main.async {
+//                                    self.drsTableView.reloadData()
+//                                }
+//
+//                            }
+//                        }
+//                    }
+//                case .modified:
+//                    let drId = diff.document.documentID
+//                    if let currentPost = self.doctors.first(where: {$0.id == drId}),
+//                       let updateIndex = self.doctors.firstIndex(where: {$0.id == drId}){
+//                        let newDr = DoctorModel(dict:doc, id: drId, user: currentPost.user)
+//                        self.doctors[updateIndex] = newDr
+//                        DispatchQueue.main.async {
+//                            self.drsTableView.reloadData()
+//                        }
+//                    }
+//                case .removed:
+//                    let doctorId = diff.document.documentID
+//                    if let deleteIndex = self.doctors.firstIndex(where: {$0.id == doctorId}){
+//                        self.doctors.remove(at: deleteIndex)
+//                        DispatchQueue.main.async {
+//                            self.drsTableView.reloadData()
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
+
 //extension image
 extension DoctorHomeVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     @objc func selectImage() {
         showAlert()
     }
-//    func alert image
+    //    func alert image
     func showAlert() {
         let alert = UIAlertController(title: "choose Profile Picture", message: "where do you want to pick your image from?", preferredStyle: .actionSheet)
         let cameraAction = UIAlertAction(title: "Camera", style: .default) { Action in
@@ -102,11 +158,11 @@ extension DoctorHomeVC: UIImagePickerControllerDelegate, UINavigationControllerD
 //extension table view data dr type datasource and delegate
 extension DoctorHomeVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return informationDr.count
+        return doctors.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DataDrCell") as! DataDrCell
-        return cell.configure(with: informationDr[indexPath.row])
+        return cell.configure(with: doctors[indexPath.row])
     }
 }
 extension DoctorHomeVC : UITableViewDelegate {
@@ -116,11 +172,11 @@ extension DoctorHomeVC : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! DataDrCell
         selectedDataImage = cell.dataCellImage.image
-        selectedDataDr = informationDr[indexPath.row]
+        selectedDataDr = doctors[indexPath.row]
         if let currentUser = Auth.auth().currentUser,
-           currentUser.uid == informationDr[indexPath.row].id{
+           currentUser.uid == doctors[indexPath.row].id{
             performSegue(withIdentifier: "toDataVC", sender: self)
-          }
-      }
+        }
+    }
 }
 

@@ -16,27 +16,30 @@ struct UserModel {
     var id = ""
     var name = ""
     var userName =  ""
-    var numberiphone = 0
+    var phoneNumber = 0
     var email = ""
     var age = 0
     var imageUrl = ""
+    var gender = ""
+    var city = ""
 
 
     
     
-    init(dict:[String:Any],id:String) {
-        if let age = dict["age"] as? Int,
+    init(dict:[String:Any]) {
+        if let id = dict["id"] as? String,
+            let age = dict["age"] as? Int,
            let name = dict["name"] as? String,
-           let numberiphone = dict["number"] as? Int,
+           let phoneNumber = dict["phoneNumber"] as? Int,
            let imageUrl = dict["imageUrl"] as? String,
            let email = dict["email"] as? String {
+            self.id = id
             self.age = age
             self.name = name
-            self.numberiphone = numberiphone
+            self.phoneNumber = phoneNumber
             self.email = email
             self.imageUrl = imageUrl
         }
-        self.id = id
 
 }
 }

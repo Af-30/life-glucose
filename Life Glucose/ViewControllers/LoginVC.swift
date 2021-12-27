@@ -13,8 +13,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     var massige = ""
-//    var button = UIButton()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
