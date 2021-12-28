@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED1B64F2277AE9C7003E934E /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B64F1277AE9C7003E934E /* HomeVC.swift */; };
 		ED24C7D0276F55FA00583D41 /* LandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7CF276F55FA00583D41 /* LandingVC.swift */; };
-		ED24C7D2276F563800583D41 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7D1276F563800583D41 /* HomeVC.swift */; };
+		ED24C7D2276F563800583D41 /* ProfileUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7D1276F563800583D41 /* ProfileUserVC.swift */; };
 		ED24C7D4276F569B00583D41 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7D3276F569B00583D41 /* RegisterVC.swift */; };
 		ED24C7D6276F56CC00583D41 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7D5276F56CC00583D41 /* LoginVC.swift */; };
 		ED24C7D9276F644500583D41 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7D8276F644500583D41 /* ImageView.swift */; };
@@ -53,8 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED1B64F1277AE9C7003E934E /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		ED24C7CF276F55FA00583D41 /* LandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingVC.swift; sourceTree = "<group>"; };
-		ED24C7D1276F563800583D41 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		ED24C7D1276F563800583D41 /* ProfileUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserVC.swift; sourceTree = "<group>"; };
 		ED24C7D3276F569B00583D41 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		ED24C7D5276F56CC00583D41 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		ED24C7D8276F644500583D41 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
@@ -207,7 +209,8 @@
 				ED24C7CF276F55FA00583D41 /* LandingVC.swift */,
 				ED24C7D3276F569B00583D41 /* RegisterVC.swift */,
 				ED24C7D5276F56CC00583D41 /* LoginVC.swift */,
-				ED24C7D1276F563800583D41 /* HomeVC.swift */,
+				ED24C7D1276F563800583D41 /* ProfileUserVC.swift */,
+				ED1B64F1277AE9C7003E934E /* HomeVC.swift */,
 				EDD6ABCD27765E810017D85A /* DoctorHomeVC.swift */,
 			);
 			path = ViewControllers;
@@ -360,7 +363,8 @@
 				ED24C7D4276F569B00583D41 /* RegisterVC.swift in Sources */,
 				ED29233C274518FA00B1D451 /* UserModel.swift in Sources */,
 				ED24C7D9276F644500583D41 /* ImageView.swift in Sources */,
-				ED24C7D2276F563800583D41 /* HomeVC.swift in Sources */,
+				ED24C7D2276F563800583D41 /* ProfileUserVC.swift in Sources */,
+				ED1B64F2277AE9C7003E934E /* HomeVC.swift in Sources */,
 				ED24C7DB276F647700583D41 /* Activity.swift in Sources */,
 				ED2D5BCD2771FFA30027F8B2 /* DataDrCell.swift in Sources */,
 				ED3D471C273A743E00194384 /* AppDelegate.swift in Sources */,
