@@ -11,8 +11,8 @@ struct DoctorModel{
     var id = ""
     var name = ""
     var imageUrl = ""
-    var age = 0
-    var phoneNumber = 0
+    var age = ""
+    var phoneNumber = ""
     var city = ""
     var email = ""
     var description = ""
@@ -23,11 +23,11 @@ struct DoctorModel{
     init(dict:[String:Any],id:String,user: UserModel) {
         if let name = dict["name"] as? String,
            let city = dict["city"] as? String,
-           let phoneNumber = dict["phoneNumber"] as? Int,
+           let phoneNumber = dict["phoneNumber"] as? String,
            let imageUrl = dict["imageUrl"] as? String,
            let email = dict["email"] as? String,
            let description = dict["description"] as? String,
-           let age = dict["age"] as? Int,
+           let age = dict["age"] as? String,
            let createdAt = dict["createdAt"] as? Timestamp{
             self.name = name
             self.city = city

@@ -18,7 +18,7 @@ class ProfileUserVC: UIViewController {
             NameLabel.layer.shadowOffset = CGSize(width: 0.0, height: 8.0)
             NameLabel.layer.shadowRadius = 10.0
             NameLabel.layer.shadowOpacity = 8.0
-            
+
         }
     }
     @IBOutlet weak var profileTableView: UITableView!
