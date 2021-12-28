@@ -8,9 +8,20 @@
 import UIKit
 import Firebase
 
+struct ProfileTableItem {
+    var title: String
+    var imageName: String
+}
+
 class ProfileUserVC: UIViewController {
     let imagePickerController = UIImagePickerController()
 //    var selectProfile :ProfileTV?
+    
+    let tableItems: [ProfileTableItem] = [
+        ProfileTableItem(title: "Account", imageName: "person"),
+        ProfileTableItem(title: "Acompany Patient", imageName: "person"),
+        ProfileTableItem(title: "Privacy", imageName: "person")
+    ]
     
     @IBOutlet weak var NameLabel: UILabel!{
         didSet{
@@ -21,14 +32,14 @@ class ProfileUserVC: UIViewController {
 
         }
     }
-    @IBOutlet weak var profileTableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profileImage: UIImageView!{
         didSet {
             profileImage.layer.borderColor = UIColor.systemGreen.cgColor
             profileImage.layer.borderWidth = 3.0
             profileImage.layer.masksToBounds = true
             profileImage.isUserInteractionEnabled = true
-            profileImage.backgroundColor = .cyan
+            profileImage.backgroundColor = .black
             profileImage.layer.masksToBounds = true
             profileImage.layer.cornerRadius = profileImage.frame.height / 2
             
@@ -39,11 +50,13 @@ class ProfileUserVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePickerController.delegate = self
-//        profileTableView.delegate = self
-//        profileTableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     
     }
     @IBAction func handleLogout(_ sender: Any) {
+        print("LOGOUT")
         do {
             try Auth.auth().signOut()
             if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LandingViewController") as? LandingVC {
@@ -94,19 +107,22 @@ extension ProfileUserVC: UIImagePickerControllerDelegate, UINavigationController
     }
 }
 
-//extension ProfileUserVC: UITableViewDelegate, UITableViewDataSource{
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 3
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        <#code#>
-//    }
+extension ProfileUserVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableItems.count
+    }
 
-//
-//}
-//override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    let sender = segue.destination as? DetailsViewController
-//    sender!.selectedData = selectedData
-//
-//}
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = tableItems[indexPath.row].title
+        cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
+        cell.accessoryType = .disclosureIndicator
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+
+}

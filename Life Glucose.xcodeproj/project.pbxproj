@@ -10,7 +10,7 @@
 		ED1B64F2277AE9C7003E934E /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B64F1277AE9C7003E934E /* HomeVC.swift */; };
 		ED24C7D0276F55FA00583D41 /* LandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7CF276F55FA00583D41 /* LandingVC.swift */; };
 		ED24C7D2276F563800583D41 /* ProfileUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7D1276F563800583D41 /* ProfileUserVC.swift */; };
-		ED24C7D4276F569B00583D41 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7D3276F569B00583D41 /* RegisterVC.swift */; };
+		ED24C7D4276F569B00583D41 /* PatientSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7D3276F569B00583D41 /* PatientSignUpVC.swift */; };
 		ED24C7D6276F56CC00583D41 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7D5276F56CC00583D41 /* LoginVC.swift */; };
 		ED24C7D9276F644500583D41 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7D8276F644500583D41 /* ImageView.swift */; };
 		ED24C7DB276F647700583D41 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7DA276F647700583D41 /* Activity.swift */; };
@@ -31,6 +31,8 @@
 		EDC3F03C276F9D5C00848D1E /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = EDC3F03B276F9D5C00848D1E /* FirebaseFirestoreSwift-Beta */; };
 		EDC3F03E276F9D5C00848D1E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = EDC3F03D276F9D5C00848D1E /* FirebaseStorage */; };
 		EDC3F040276F9D5C00848D1E /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = EDC3F03F276F9D5C00848D1E /* FirebaseStorageSwift-Beta */; };
+		EDCEA452277B7BBB00D15264 /* PatientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCEA451277B7BBB00D15264 /* PatientModel.swift */; };
+		EDCEA454277B883200D15264 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCEA453277B883200D15264 /* WelcomeVC.swift */; };
 		EDD6ABCC277657330017D85A /* DoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD6ABCB277657320017D85A /* DoctorModel.swift */; };
 		EDD6ABCE27765E810017D85A /* DoctorHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD6ABCD27765E810017D85A /* DoctorHomeVC.swift */; };
 		EDEDA8B4276C4DA900CA1597 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDEDA8B3276C4DA900CA1597 /* GoogleService-Info.plist */; };
@@ -57,7 +59,7 @@
 		ED1B64F1277AE9C7003E934E /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		ED24C7CF276F55FA00583D41 /* LandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingVC.swift; sourceTree = "<group>"; };
 		ED24C7D1276F563800583D41 /* ProfileUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserVC.swift; sourceTree = "<group>"; };
-		ED24C7D3276F569B00583D41 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		ED24C7D3276F569B00583D41 /* PatientSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientSignUpVC.swift; sourceTree = "<group>"; };
 		ED24C7D5276F56CC00583D41 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		ED24C7D8276F644500583D41 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		ED24C7DA276F647700583D41 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
@@ -77,6 +79,8 @@
 		ED3D473C273A744000194384 /* Life_GlucoseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_GlucoseUITests.swift; sourceTree = "<group>"; };
 		ED3D473E273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_GlucoseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EDB09EBF277A42A6007A6196 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		EDCEA451277B7BBB00D15264 /* PatientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientModel.swift; sourceTree = "<group>"; };
+		EDCEA453277B883200D15264 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		EDD6ABCB277657320017D85A /* DoctorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorModel.swift; sourceTree = "<group>"; };
 		EDD6ABCD27765E810017D85A /* DoctorHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorHomeVC.swift; sourceTree = "<group>"; };
 		EDEDA8B3276C4DA900CA1597 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 			children = (
 				EDD6ABCB277657320017D85A /* DoctorModel.swift */,
 				ED29233B274518FA00B1D451 /* UserModel.swift */,
+				EDCEA451277B7BBB00D15264 /* PatientModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,11 +212,12 @@
 			isa = PBXGroup;
 			children = (
 				ED24C7CF276F55FA00583D41 /* LandingVC.swift */,
-				ED24C7D3276F569B00583D41 /* RegisterVC.swift */,
+				ED24C7D3276F569B00583D41 /* PatientSignUpVC.swift */,
 				ED24C7D5276F56CC00583D41 /* LoginVC.swift */,
 				ED24C7D1276F563800583D41 /* ProfileUserVC.swift */,
 				ED1B64F1277AE9C7003E934E /* HomeVC.swift */,
 				EDD6ABCD27765E810017D85A /* DoctorHomeVC.swift */,
+				EDCEA453277B883200D15264 /* WelcomeVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -360,11 +366,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED24C7D4276F569B00583D41 /* RegisterVC.swift in Sources */,
+				ED24C7D4276F569B00583D41 /* PatientSignUpVC.swift in Sources */,
 				ED29233C274518FA00B1D451 /* UserModel.swift in Sources */,
 				ED24C7D9276F644500583D41 /* ImageView.swift in Sources */,
+				EDCEA452277B7BBB00D15264 /* PatientModel.swift in Sources */,
 				ED24C7D2276F563800583D41 /* ProfileUserVC.swift in Sources */,
 				ED1B64F2277AE9C7003E934E /* HomeVC.swift in Sources */,
+				EDCEA454277B883200D15264 /* WelcomeVC.swift in Sources */,
 				ED24C7DB276F647700583D41 /* Activity.swift in Sources */,
 				ED2D5BCD2771FFA30027F8B2 /* DataDrCell.swift in Sources */,
 				ED3D471C273A743E00194384 /* AppDelegate.swift in Sources */,
