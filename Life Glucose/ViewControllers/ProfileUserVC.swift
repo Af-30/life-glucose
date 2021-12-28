@@ -10,7 +10,17 @@ import Firebase
 
 class ProfileUserVC: UIViewController {
     let imagePickerController = UIImagePickerController()
+//    var selectProfile :ProfileTV?
     
+    @IBOutlet weak var NameLabel: UILabel!{
+        didSet{
+            NameLabel.layer.shadowColor = UIColor.darkGray.cgColor
+            NameLabel.layer.shadowOffset = CGSize(width: 0.0, height: 8.0)
+            NameLabel.layer.shadowRadius = 10.0
+            NameLabel.layer.shadowOpacity = 8.0
+            
+        }
+    }
     @IBOutlet weak var profileTableView: UITableView!
     @IBOutlet weak var profileImage: UIImageView!{
         didSet {
@@ -29,8 +39,8 @@ class ProfileUserVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePickerController.delegate = self
-        profileTableView.delegate = self
-        profileTableView.dataSource = self
+//        profileTableView.delegate = self
+//        profileTableView.dataSource = self
     
     }
     @IBAction func handleLogout(_ sender: Any) {
@@ -93,5 +103,10 @@ extension ProfileUserVC: UIImagePickerControllerDelegate, UINavigationController
 //        <#code#>
 //    }
 
-
-}
+//
+//}
+//override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    let sender = segue.destination as? DetailsViewController
+//    sender!.selectedData = selectedData
+//
+//}

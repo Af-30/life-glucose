@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zYE-Du-PL2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yxO-tW-Ern">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -85,27 +85,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wmf-lK-xLg">
-                                <rect key="frame" x="10" y="352" width="394" height="215"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wmf-lK-xLg">
+                                <rect key="frame" x="20" y="352" width="374" height="215"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YoO-42-QOG">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="53"/>
-                                        <color key="backgroundColor" red="0.65539572625915954" green="0.90908363656966951" blue="0.96611279249191284" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="YoO-42-QOG">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="53"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Logn in">
+                                        <buttonConfiguration key="configuration" style="gray" title="Logn in" cornerStyle="large">
+                                            <backgroundConfiguration key="background" strokeWidth="2" strokeOutset="3">
+                                                <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
                                             <fontDescription key="titleFontDescription" name="Papyrus" family="Papyrus" pointSize="25"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <segue destination="pi2-X5-9Wr" kind="show" id="qeh-gh-tZY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ab-Lf-lfB">
-                                        <rect key="frame" x="0.0" y="81" width="394" height="53"/>
-                                        <color key="backgroundColor" red="0.65539572629999998" green="0.90908363660000002" blue="0.96611279250000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <rect key="frame" x="0.0" y="81" width="374" height="53"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="register">
+                                        <buttonConfiguration key="configuration" style="plain" title="register" cornerStyle="large">
+                                            <backgroundConfiguration key="background" strokeWidth="2" strokeOutset="3">
+                                                <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
                                             <fontDescription key="titleFontDescription" name="Papyrus" family="Papyrus" pointSize="25"/>
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
@@ -114,24 +120,19 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qF6-tV-yW7">
-                                        <rect key="frame" x="0.0" y="162" width="394" height="53"/>
-                                        <color key="backgroundColor" red="0.65539572629999998" green="0.90908363660000002" blue="0.96611279250000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <rect key="frame" x="0.0" y="162" width="374" height="53"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Doctor">
+                                        <buttonConfiguration key="configuration" style="plain" title="Doctor" cornerStyle="large">
+                                            <backgroundConfiguration key="background" strokeWidth="2" strokeOutset="3">
+                                                <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
                                             <fontDescription key="titleFontDescription" name="Papyrus" family="Papyrus" pointSize="25"/>
                                         </buttonConfiguration>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images-19" translatesAutoresizingMaskIntoConstraints="NO" id="oSe-lz-HBm">
-                                <rect key="frame" x="132" y="682" width="150" height="150"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="tn5-ao-ipG"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact us or support" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvj-bq-f0U">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Contact us or support" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvj-bq-f0U">
                                 <rect key="frame" x="192" y="583" width="222" height="37"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="23"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
@@ -154,13 +155,9 @@
                         <constraints>
                             <constraint firstItem="wvj-bq-f0U" firstAttribute="leading" secondItem="57i-VI-NdW" secondAttribute="leading" constant="192" id="3On-mn-ETP"/>
                             <constraint firstItem="wvj-bq-f0U" firstAttribute="top" secondItem="Wmf-lK-xLg" secondAttribute="bottom" constant="16" id="Nr3-EL-pkV"/>
-                            <constraint firstItem="oSe-lz-HBm" firstAttribute="top" secondItem="wvj-bq-f0U" secondAttribute="bottom" constant="62" id="O4r-X9-NsO"/>
                             <constraint firstItem="wvj-bq-f0U" firstAttribute="trailing" secondItem="57i-VI-NdW" secondAttribute="trailing" id="PAR-a1-o4d"/>
-                            <constraint firstItem="oSe-lz-HBm" firstAttribute="leading" secondItem="57i-VI-NdW" secondAttribute="leading" constant="132" id="SBY-vC-jXa"/>
-                            <constraint firstItem="57i-VI-NdW" firstAttribute="trailing" secondItem="oSe-lz-HBm" secondAttribute="trailing" constant="132" id="aGK-XQ-vym"/>
-                            <constraint firstItem="Wmf-lK-xLg" firstAttribute="leading" secondItem="57i-VI-NdW" secondAttribute="leading" constant="10" id="gu1-dS-Iox"/>
-                            <constraint firstItem="57i-VI-NdW" firstAttribute="bottom" secondItem="oSe-lz-HBm" secondAttribute="bottom" constant="30" id="nCy-R0-0Fr"/>
-                            <constraint firstItem="57i-VI-NdW" firstAttribute="trailing" secondItem="Wmf-lK-xLg" secondAttribute="trailing" constant="10" id="ofh-p3-K60"/>
+                            <constraint firstItem="Wmf-lK-xLg" firstAttribute="leading" secondItem="57i-VI-NdW" secondAttribute="leading" constant="20" id="gu1-dS-Iox"/>
+                            <constraint firstItem="57i-VI-NdW" firstAttribute="trailing" secondItem="Wmf-lK-xLg" secondAttribute="trailing" constant="20" id="ofh-p3-K60"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="W3A-rg-TfL"/>
@@ -762,7 +759,7 @@
         <!--Settings-->
         <scene sceneID="J7j-CU-lFq">
             <objects>
-                <viewController id="jVB-pj-yD5" customClass="HomeVC" customModule="Life_Glucose" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jVB-pj-yD5" customClass="ProfileUserVC" customModule="Life_Glucose" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lpt-tZ-jbI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -878,6 +875,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="NameLabel" destination="H6N-GD-tvf" id="DsQ-a8-uxP"/>
                         <outlet property="profileImage" destination="nIC-uT-EKa" id="EL8-f5-EJk"/>
                         <outlet property="profileTableView" destination="jNG-oZ-xGT" id="G3Q-hx-hSW"/>
                     </connections>
@@ -1111,7 +1109,6 @@
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="image outshell" width="360" height="640"/>
-        <image name="images-19" width="112.5" height="112.5"/>
         <image name="line.3.horizontal.decrease" catalog="system" width="128" height="73"/>
         <image name="menucard.fill" catalog="system" width="106" height="128"/>
         <image name="pencil" catalog="system" width="128" height="113"/>

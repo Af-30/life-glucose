@@ -42,3 +42,10 @@ struct DoctorModel{
             self.user = user
         }
    }
+
+
+struct ProfileTV {
+    var Account: String
+    var accompnyingPatient:String
+    var privacyAndNotifications: String
+}
