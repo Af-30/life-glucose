@@ -19,8 +19,8 @@ class ProfileUserVC: UIViewController {
     
     let tableItems: [ProfileTableItem] = [
         ProfileTableItem(title: "Account", imageName: "person"),
-        ProfileTableItem(title: "Acompany Patient", imageName: "person"),
-        ProfileTableItem(title: "Privacy", imageName: "person")
+        ProfileTableItem(title: "Acompany Patient", imageName: "person.fill.badge.plus"),
+        ProfileTableItem(title: "Privacy and noficitions", imageName: "bell.slash")
     ]
     
     @IBOutlet weak var NameLabel: UILabel!{
@@ -79,7 +79,7 @@ extension ProfileUserVC: UIImagePickerControllerDelegate, UINavigationController
         let cameraAction = UIAlertAction(title: "Camera", style: .default) { Action in
             self.getImage(from: .camera)
         }
-        let galaryAction = UIAlertAction(title: "photo Library", style: .default) { Action in
+        let galaryAction = UIAlertAction(title: "Photo Library", style: .default) { Action in
             self.getImage(from: .photoLibrary)
         }
         let dismissAction = UIAlertAction(title: "Cancle", style: .destructive) { Action in
@@ -122,7 +122,8 @@ extension ProfileUserVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 100
     }
 
 }
+//
