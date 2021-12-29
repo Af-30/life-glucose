@@ -11,27 +11,22 @@ import Firebase
 struct ProfileTableItem {
     var title: String
     var imageName: String
+    var color: UIColor
 }
 
 class ProfileUserVC: UIViewController {
+    
+    @IBOutlet weak var nameUser: UILabel!
+    @IBOutlet weak var phoneUser: UILabel!
     let imagePickerController = UIImagePickerController()
-//    var selectProfile :ProfileTV?
     
     let tableItems: [ProfileTableItem] = [
-        ProfileTableItem(title: "Account", imageName: "person"),
-        ProfileTableItem(title: "Acompany Patient", imageName: "person.fill.badge.plus"),
-        ProfileTableItem(title: "Privacy and noficitions", imageName: "bell.slash")
+        ProfileTableItem(title: "Account", imageName: "person", color: .black),
+        ProfileTableItem(title: "Acompany Patient", imageName: "person.fill.badge.plus", color: .black),
+        ProfileTableItem(title: "Privacy and noficitions", imageName: "bell.slash", color: .black),
+        ProfileTableItem(title: "Log Out", imageName: "trash", color: .red)
     ]
     
-    @IBOutlet weak var NameLabel: UILabel!{
-        didSet{
-            NameLabel.layer.shadowColor = UIColor.darkGray.cgColor
-            NameLabel.layer.shadowOffset = CGSize(width: 0.0, height: 8.0)
-            NameLabel.layer.shadowRadius = 10.0
-            NameLabel.layer.shadowOpacity = 8.0
-
-        }
-    }
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profileImage: UIImageView!{
         didSet {
@@ -53,9 +48,9 @@ class ProfileUserVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-    
     }
-    @IBAction func handleLogout(_ sender: Any) {
+    
+    func logout() {
         print("LOGOUT")
         do {
             try Auth.auth().signOut()
@@ -68,8 +63,22 @@ class ProfileUserVC: UIViewController {
         }
 
     }
+    
+//    @IBAction func handleLogout(_ sender: Any) {
+//        print("LOGOUT")
+//        do {
+//            try Auth.auth().signOut()
+//            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LandingViewController") as? LandingVC {
+//                vc.modalPresentationStyle = .fullScreen
+//                self.present(vc, animated: true, completion: nil)
+//            }
+//        } catch  {
+//            print("ERROR in signout",error.localizedDescription)
+//        }
+//
+//    }
 }
-
+//extension UIImagePickerController
 extension ProfileUserVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     @objc func selectImage() {
         showAlert()
@@ -106,7 +115,7 @@ extension ProfileUserVC: UIImagePickerControllerDelegate, UINavigationController
         picker.dismiss(animated: true, completion: nil)
     }
 }
-
+// extension tableview
 extension ProfileUserVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -123,6 +132,22 @@ extension ProfileUserVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch tableItems[indexPath.row].title {
+        case "Account":
+            performSegue(withIdentifier: "profiletoAccount", sender: nil)
+        case "Acompany Patient":
+            performSegue(withIdentifier: "profileToAcompany", sender: nil)
+        case "Privacy and noficitions":
+            performSegue(withIdentifier: "profileToPrivacy", sender: nil)
+        case "Log Out":
+            logout()
+        default: fatalError()
+            
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 }

@@ -68,15 +68,15 @@ class PatientSignUpVC: UIViewController {
                     }
                     return
                 }
-                if let authResult = authResult {
-                    let db = Firestore.firestore()
-                    let user = UserModel(uid: authResult.user.uid,
-                                         email: authResult.user.email!,
-                                         isDoctor: self.userTypePicker.selectedSegmentIndex == 1
-                    )
-                    do {
-                        _ = try db.collection("users").addDocument(from: user) { error in
-                            if let error = error {
+    if let authResult = authResult {
+       let db = Firestore.firestore()
+        let user = UserModel(uid: authResult.user.uid, email: authResult.user.email!,
+   isDoctor: self.userTypePicker.selectedSegmentIndex == 1)
+//        let user = UserModel(phoneNumber: authResult.user.phoneNumber!, uid: authResult.user.uid, email: authResult.user.email!,
+//   isDoctor: self.userTypePicker.selectedSegmentIndex == 1)
+                  do {
+                     _ = try db.collection("users").addDocument(from: user) { error in
+                                if let error = error {
                                 print("Registration error",error.localizedDescription)
                                 return
                             }
@@ -93,7 +93,7 @@ class PatientSignUpVC: UIViewController {
                 }
                 
                 
-                
+//
 //                if let authResult = authResult {
 //                    let storageRef = Storage.storage().reference(withPath: "users/\(authResult.user.uid)")
 //                    let uploadMeta = StorageMetadata.init()
@@ -133,6 +133,8 @@ class PatientSignUpVC: UIViewController {
 //                        }
 //                    }
 //                }
+                
+                
             }
         }
         

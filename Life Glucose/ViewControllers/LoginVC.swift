@@ -14,9 +14,20 @@ class LoginVC: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     var massige = ""
+    //var user: UserModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBAction func patient(_ sender: Any) {
+        emailTextField.text = "patient@patient.com"
+        passwordTextField.text = "123456"
+    }
+    
+    @IBAction func doctor(_ sender: Any) {
+        emailTextField.text = "doctor@doctor.com"
+        passwordTextField.text = "123456"
     }
     
     @IBAction func handleLogin(_ sender: Any) {
@@ -47,12 +58,37 @@ class LoginVC: UIViewController {
                     }
                     return
                 }
-                if let _ = authResult {
-                    if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UINavigationController {
-                        vc.modalPresentationStyle = .fullScreen
-                        Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
-                        self.present(vc, animated: true, completion: nil)
+                if let result = authResult {
+                    let db = Firestore.firestore()
+                    db.collection("users").whereField("uid", isEqualTo: result.user.uid).getDocuments { snapshot, error in
+                        if let error = error {
+                            print(error.localizedDescription)
+                            return
+                        }
+                        if let doc = snapshot?.documents.first {
+                            do {
+                                try currentUser = doc.data(as: UserModel.self)
+                                if currentUser.isDoctor {
+                                    if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DoctorHomeNavigationController") as? UINavigationController {
+                                        vc.modalPresentationStyle = .fullScreen
+                                        self.present(vc, animated: true, completion: nil)
+                                        Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+                                        
+                                    }
+                                } else {
+                                    if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UINavigationController {
+                                        vc.modalPresentationStyle = .fullScreen
+                                        self.present(vc, animated: true, completion: nil)
+                                        Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+                                    }
+                                }
+                            } catch {
+                                fatalError(error.localizedDescription)
+                            }
+                            
+                        }
                     }
+                    
                 }
             }
         }

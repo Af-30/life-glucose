@@ -25,7 +25,6 @@
 		ED3D4733273A744000194384 /* Life_GlucoseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D4732273A744000194384 /* Life_GlucoseTests.swift */; };
 		ED3D473D273A744000194384 /* Life_GlucoseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D473C273A744000194384 /* Life_GlucoseUITests.swift */; };
 		ED3D473F273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D473E273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift */; };
-		ED67595F277C3F540012845A /* SettingProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67595E277C3F540012845A /* SettingProfileVC.swift */; };
 		EDB09EC0277A42A6007A6196 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = EDB09EBF277A42A6007A6196 /* Readme.md */; };
 		EDC3F038276F9D5C00848D1E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EDC3F037276F9D5C00848D1E /* FirebaseAuth */; };
 		EDC3F03A276F9D5C00848D1E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EDC3F039276F9D5C00848D1E /* FirebaseFirestore */; };
@@ -37,6 +36,8 @@
 		EDD6ABCC277657330017D85A /* DoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD6ABCB277657320017D85A /* DoctorModel.swift */; };
 		EDD6ABCE27765E810017D85A /* DoctorHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD6ABCD27765E810017D85A /* DoctorHomeVC.swift */; };
 		EDEDA8B4276C4DA900CA1597 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDEDA8B3276C4DA900CA1597 /* GoogleService-Info.plist */; };
+		EDFD796C277C5B590078675C /* PrivacyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD796B277C5B590078675C /* PrivacyUser.swift */; };
+		EDFD796E277C715A0078675C /* CalculatorGlucoseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD796D277C715A0078675C /* CalculatorGlucoseVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,13 +80,14 @@
 		ED3D4738273A744000194384 /* Life GlucoseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Life GlucoseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3D473C273A744000194384 /* Life_GlucoseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_GlucoseUITests.swift; sourceTree = "<group>"; };
 		ED3D473E273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_GlucoseUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		ED67595E277C3F540012845A /* SettingProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProfileVC.swift; sourceTree = "<group>"; };
 		EDB09EBF277A42A6007A6196 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		EDCEA451277B7BBB00D15264 /* PatientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientModel.swift; sourceTree = "<group>"; };
 		EDCEA453277B883200D15264 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		EDD6ABCB277657320017D85A /* DoctorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorModel.swift; sourceTree = "<group>"; };
 		EDD6ABCD27765E810017D85A /* DoctorHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorHomeVC.swift; sourceTree = "<group>"; };
 		EDEDA8B3276C4DA900CA1597 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EDFD796B277C5B590078675C /* PrivacyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyUser.swift; sourceTree = "<group>"; };
+		EDFD796D277C715A0078675C /* CalculatorGlucoseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorGlucoseVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,15 +172,15 @@
 		ED3D471A273A743E00194384 /* Life Glucose */ = {
 			isa = PBXGroup;
 			children = (
+				ED24C7D7276F63E400583D41 /* Uitll */,
 				ED2923372745185C00B1D451 /* Models */,
 				EDAC9F272777AE6F00745567 /* ViewControllers */,
-				ED24C7D7276F63E400583D41 /* Uitll */,
 				ED2923382745186E00B1D451 /* Views */,
 				EDAC9F2627778D3300745567 /* I don't use */,
 				ED3D4721273A743E00194384 /* Main.storyboard */,
+				ED3D4724273A744000194384 /* Assets.xcassets */,
 				ED3D4726273A744000194384 /* LaunchScreen.storyboard */,
 				ED3D4729273A744000194384 /* Info.plist */,
-				ED3D4724273A744000194384 /* Assets.xcassets */,
 				EDEDA8B3276C4DA900CA1597 /* GoogleService-Info.plist */,
 			);
 			path = "Life Glucose";
@@ -216,13 +218,30 @@
 				ED24C7CF276F55FA00583D41 /* LandingVC.swift */,
 				ED24C7D3276F569B00583D41 /* PatientSignUpVC.swift */,
 				ED24C7D5276F56CC00583D41 /* LoginVC.swift */,
-				ED24C7D1276F563800583D41 /* ProfileUserVC.swift */,
 				ED1B64F1277AE9C7003E934E /* HomeVC.swift */,
 				EDD6ABCD27765E810017D85A /* DoctorHomeVC.swift */,
 				EDCEA453277B883200D15264 /* WelcomeVC.swift */,
-				ED67595E277C3F540012845A /* SettingProfileVC.swift */,
+				EDFD796F277C83ED0078675C /* ProfileViewControllers */,
+				EDFD7970277C84650078675C /* CalculatorGlucose */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EDFD796F277C83ED0078675C /* ProfileViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EDFD796B277C5B590078675C /* PrivacyUser.swift */,
+				ED24C7D1276F563800583D41 /* ProfileUserVC.swift */,
+			);
+			path = ProfileViewControllers;
+			sourceTree = "<group>";
+		};
+		EDFD7970277C84650078675C /* CalculatorGlucose */ = {
+			isa = PBXGroup;
+			children = (
+				EDFD796D277C715A0078675C /* CalculatorGlucoseVC.swift */,
+			);
+			path = CalculatorGlucose;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED24C7D4276F569B00583D41 /* PatientSignUpVC.swift in Sources */,
+				EDFD796E277C715A0078675C /* CalculatorGlucoseVC.swift in Sources */,
 				ED29233C274518FA00B1D451 /* UserModel.swift in Sources */,
 				ED24C7D9276F644500583D41 /* ImageView.swift in Sources */,
 				EDCEA452277B7BBB00D15264 /* PatientModel.swift in Sources */,
@@ -378,7 +398,7 @@
 				EDCEA454277B883200D15264 /* WelcomeVC.swift in Sources */,
 				ED24C7DB276F647700583D41 /* Activity.swift in Sources */,
 				ED2D5BCD2771FFA30027F8B2 /* DataDrCell.swift in Sources */,
-				ED67595F277C3F540012845A /* SettingProfileVC.swift in Sources */,
+				EDFD796C277C5B590078675C /* PrivacyUser.swift in Sources */,
 				ED3D471C273A743E00194384 /* AppDelegate.swift in Sources */,
 				EDD6ABCE27765E810017D85A /* DoctorHomeVC.swift in Sources */,
 				EDD6ABCC277657330017D85A /* DoctorModel.swift in Sources */,

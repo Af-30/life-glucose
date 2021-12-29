@@ -7,6 +7,9 @@
 
 import UIKit
 import Firebase
+
+var currentUser: UserModel!
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?

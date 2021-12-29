@@ -15,11 +15,4 @@ class HomeVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let sender = segue.destination as? DetailsViewController
-//        sender!.selectedData = selectedData
-//
-//    }
-    
 }

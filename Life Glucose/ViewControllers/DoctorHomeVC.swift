@@ -7,7 +7,9 @@
 
 import UIKit
 import Firebase
+
 class DoctorHomeVC: UIViewController {
+    
     var menuOut = true
     var doctors = [DoctorModel]()
     var selectedDataDr:DoctorModel?
@@ -60,62 +62,22 @@ class DoctorHomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePickerController.delegate = self
-//        getDoctors()
+    }
+    @IBAction func logOut(_ sender: Any) {
+        print("LOGOUT")
+        do {
+            try Auth.auth().signOut()
+            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LandingViewController") as? LandingVC {
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
+            }
+        } catch  {
+            print("ERROR in signout",error.localizedDescription)
+        }
+
     }
 }
 
-//func getDoctors() {
-//    let ref = Firestore.firestore()
-//    ref.collection("posts").order(by: "createdAt",descending: true).addSnapshotListener { snapshot, error in
-//        if let error = error {
-//            print("DB ERROR Posts",error.localizedDescription)
-//        }
-//        if let snapshot = snapshot {
-//            snapshot.documentChanges.forEach { diff in
-//                let doc = diff.document.data()
-//                switch diff.type {
-//                case .added :
-//                    if let userId = doc["doctorId"] as? String {
-//                        ref.collection("users").document(userId).getDocument { userSnapshot, error in
-//                            if let error = error {
-//                                print("ERROR user Data",error.localizedDescription)
-//
-//                            }
-//                            if let userSnapshot = userSnapshot,
-//                               let userData = userSnapshot.data(){
-//                                let user = UserModel(dict:userData)
-//                                let doctor = DoctorModel(dict:doc,id:diff.document.documentID,user:user)
-//                                self.doctors.insert(doctor, at: 0)
-//                                DispatchQueue.main.async {
-//                                    self.drsTableView.reloadData()
-//                                }
-//
-//                            }
-//                        }
-//                    }
-//                case .modified:
-//                    let drId = diff.document.documentID
-//                    if let currentPost = self.doctors.first(where: {$0.id == drId}),
-//                       let updateIndex = self.doctors.firstIndex(where: {$0.id == drId}){
-//                        let newDr = DoctorModel(dict:doc, id: drId, user: currentPost.user)
-//                        self.doctors[updateIndex] = newDr
-//                        DispatchQueue.main.async {
-//                            self.drsTableView.reloadData()
-//                        }
-//                    }
-//                case .removed:
-//                    let doctorId = diff.document.documentID
-//                    if let deleteIndex = self.doctors.firstIndex(where: {$0.id == doctorId}){
-//                        self.doctors.remove(at: deleteIndex)
-//                        DispatchQueue.main.async {
-//                            self.drsTableView.reloadData()
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}
 
 //extension image
 extension DoctorHomeVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{

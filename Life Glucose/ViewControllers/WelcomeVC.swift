@@ -8,13 +8,11 @@
 import UIKit
 
 class WelcomeVC: UIViewController {
-    
+
     let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,10 +23,7 @@ class WelcomeVC: UIViewController {
         } else {
             self.performSegue(withIdentifier: "landingToHome", sender: nil)
         }
-        
+    
     }
     
-
-  
-
 }
