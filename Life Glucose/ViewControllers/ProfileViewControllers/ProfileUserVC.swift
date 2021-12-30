@@ -137,7 +137,7 @@ extension ProfileUserVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch tableItems[indexPath.row].title {
         case "Account":
-            performSegue(withIdentifier: "profiletoAccount", sender: nil)
+            performSegue(withIdentifier: "profileToAccount", sender: nil)
         case "Acompany Patient":
             performSegue(withIdentifier: "profileToAcompany", sender: nil)
         case "Privacy and noficitions":
@@ -145,6 +145,7 @@ extension ProfileUserVC: UITableViewDelegate, UITableViewDataSource {
         case "Log Out":
             logout()
         default: fatalError()
+            
             
         }
         tableView.deselectRow(at: indexPath, animated: true)

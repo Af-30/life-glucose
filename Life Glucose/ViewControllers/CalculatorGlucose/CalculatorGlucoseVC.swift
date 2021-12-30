@@ -24,8 +24,8 @@ class CalculatorGlucoseVC: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var numberGlucoseTextField: UITextField!
     @IBOutlet weak var calculatorGlucoseButton: UIButton!
+    @IBOutlet weak var resultLabel: UILabel!
     
-    @IBOutlet weak var resultTextfield: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class CalculatorGlucoseVC: UIViewController {
     @IBAction func calculatorGlucoseAction(_ sender: Any) {
         guard let strValue = numberGlucoseTextField.text else { return }
         guard let intValue = Int(strValue) else { return }
-        resultTextfield.text = getResult(intValue)
+        resultLabel.text = getResult(intValue)
     }
     
     @IBAction func saveAction(_ sender: Any) {
@@ -69,28 +69,34 @@ class CalculatorGlucoseVC: UIViewController {
         if fastingPicker.selectedSegmentIndex == 0 {
             switch glucose {
             case 0...50:
-                return "low"
-            case 50...90:
+                return "very dangerous low"
+            case 50...80:
                 return "very low"
-            case 90...120:
+            case 80...130:
                 return "normal rate"
-            case 120...160:
+            case 130...160:
                 return "high"
             case 160...240:
                 return "very high"
             case 240...300:
                 return "dangerous high"
             case 300...500:
-                return "veryn dangerous high"
+                return "very dangerous high"
             default:
                 return "ERROR"
             }
         } else {
             switch glucose {
+            case 0...50:
+             return "very dangerous low"
+               case 50...80:
+                return "low"
+            case 80...130:
+                return "normal rate"
             case 130...180:
-                return "very"
+                return "normal"
             case 180...200:
-                return "high"
+                return "very very high"
             case 200...240:
                 return "very high"
             case 240...300:

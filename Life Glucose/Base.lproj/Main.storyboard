@@ -661,19 +661,19 @@
                         <outlet property="phoneUser" destination="Eh8-Nm-zkc" id="0f5-qv-0j9"/>
                         <outlet property="profileImage" destination="nIC-uT-EKa" id="EL8-f5-EJk"/>
                         <outlet property="tableView" destination="jNG-oZ-xGT" id="7PM-fU-Kd3"/>
-                        <segue destination="voA-2b-t5Y" kind="show" id="JMX-Zl-UoF"/>
+                        <segue destination="voA-2b-t5Y" kind="show" identifier="profileToAccount" id="JMX-Zl-UoF"/>
                         <segue destination="E9K-EW-Jgp" kind="show" identifier="profileToAcompany" id="RJC-Xs-fTz"/>
-                        <segue destination="hV6-Kt-zIE" kind="show" id="XTE-vF-GID"/>
+                        <segue destination="hV6-Kt-zIE" kind="show" identifier="profileToPrivacy" id="XTE-vF-GID"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TtH-aT-9u6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3600" y="1092"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile To Account-->
         <scene sceneID="kpW-m6-fcO">
             <objects>
-                <viewController id="voA-2b-t5Y" sceneMemberID="viewController">
+                <viewController id="voA-2b-t5Y" customClass="profileToAccount" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ULm-Mg-mrt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -778,12 +778,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lfx-nH-YKA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4299" y="992"/>
+            <point key="canvasLocation" x="4438" y="990"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile To Acompany-->
         <scene sceneID="M3V-vC-PIT">
             <objects>
-                <viewController id="E9K-EW-Jgp" sceneMemberID="viewController">
+                <viewController id="E9K-EW-Jgp" customClass="profileToAcompany" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a8m-NO-esu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -875,7 +875,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2dS-Pc-GjN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4999" y="1432"/>
+            <point key="canvasLocation" x="5113" y="1432"/>
         </scene>
         <!--Privacy User-->
         <scene sceneID="Yi0-6B-e9v">
@@ -936,7 +936,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You can restore your privacy in the way that suits you." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWA-dP-fc1">
-                                <rect key="frame" x="20" y="44" width="374" height="70"/>
+                                <rect key="frame" x="29" y="88" width="374" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1000,13 +1000,7 @@
                                 <rect key="frame" x="25" y="355" width="330" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="wait for the result" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7PQ-CG-Bsj">
-                                <rect key="frame" x="15" y="542" width="330" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Input number Glucose:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eM-R2-9W2">
                                 <rect key="frame" x="20" y="290" width="268" height="57"/>
@@ -1068,6 +1062,13 @@
                                     <segment title="Eat the Food"/>
                                 </segments>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wait for the result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsY-WA-1Nh">
+                                <rect key="frame" x="39" y="542" width="336" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nRk-Y5-A31"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1078,7 +1079,7 @@
                         <outlet property="datePicker" destination="mf1-Na-VzD" id="MSf-1e-iaM"/>
                         <outlet property="fastingPicker" destination="v5N-Vc-dfe" id="gru-CX-UtK"/>
                         <outlet property="numberGlucoseTextField" destination="2ah-Rh-0K3" id="Zmp-z5-agT"/>
-                        <outlet property="resultTextfield" destination="7PQ-CG-Bsj" id="vbQ-0d-Gle"/>
+                        <outlet property="resultLabel" destination="wsY-WA-1Nh" id="pTg-Jd-wsv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5v1-hZ-44n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1147,10 +1148,10 @@
             </objects>
             <point key="canvasLocation" x="2847.826086956522" y="1810.7142857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Datiles CalculatorVC-->
         <scene sceneID="15n-p6-b0I">
             <objects>
-                <viewController id="314-wP-sNI" sceneMemberID="viewController">
+                <viewController id="314-wP-sNI" customClass="DatilesCalculatorVC" customModule="Life_Glucose" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xak-sc-hmV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1163,12 +1164,6 @@
                                 <rect key="frame" x="20" y="348" width="330" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="wait for the result" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8kO-mE-rz6">
-                                <rect key="frame" x="26" y="541" width="330" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Input number Glucose:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NtO-C2-k9f">
@@ -1233,6 +1228,13 @@
                                     <segment title="Eat the Food"/>
                                 </segments>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wait for the result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQR-4t-Z2q">
+                                <rect key="frame" x="39" y="541" width="336" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YYu-5T-v8u"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

@@ -32,6 +32,7 @@ class PrivacyUser: UIViewController {
     }
     
     @IBAction func switchAction(_ sender: Any) {
+        
     }
     
 

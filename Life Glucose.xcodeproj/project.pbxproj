@@ -38,6 +38,7 @@
 		EDEDA8B4276C4DA900CA1597 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDEDA8B3276C4DA900CA1597 /* GoogleService-Info.plist */; };
 		EDFD796C277C5B590078675C /* PrivacyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD796B277C5B590078675C /* PrivacyUser.swift */; };
 		EDFD796E277C715A0078675C /* CalculatorGlucoseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD796D277C715A0078675C /* CalculatorGlucoseVC.swift */; };
+		EDFD7974277D9A5E0078675C /* DatilesCalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD7973277D9A5E0078675C /* DatilesCalculatorVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		EDEDA8B3276C4DA900CA1597 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EDFD796B277C5B590078675C /* PrivacyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyUser.swift; sourceTree = "<group>"; };
 		EDFD796D277C715A0078675C /* CalculatorGlucoseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorGlucoseVC.swift; sourceTree = "<group>"; };
+		EDFD7973277D9A5E0078675C /* DatilesCalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatilesCalculatorVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				EDFD796D277C715A0078675C /* CalculatorGlucoseVC.swift */,
+				EDFD7973277D9A5E0078675C /* DatilesCalculatorVC.swift */,
 			);
 			path = CalculatorGlucose;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				ED24C7D0276F55FA00583D41 /* LandingVC.swift in Sources */,
 				ED24C7D6276F56CC00583D41 /* LoginVC.swift in Sources */,
 				ED3D471E273A743E00194384 /* SceneDelegate.swift in Sources */,
+				EDFD7974277D9A5E0078675C /* DatilesCalculatorVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
