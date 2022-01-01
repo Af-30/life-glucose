@@ -52,3 +52,4 @@ extension PrivacyUser: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
+

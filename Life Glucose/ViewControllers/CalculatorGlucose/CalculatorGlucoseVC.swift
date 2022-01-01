@@ -19,6 +19,8 @@ struct EntryModel: Codable {
 
 class CalculatorGlucoseVC: UIViewController {
     
+    var entry: EntryModel?
+    
     @IBOutlet weak var fastingPicker: UISegmentedControl!
     
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -43,14 +45,14 @@ class CalculatorGlucoseVC: UIViewController {
         guard let strValue = numberGlucoseTextField.text else { return }
         guard let intValue = Int(strValue) else { return }
         
-        let entry = EntryModel(uid: currentUser.uid,
+        let entry = EntryModel(uid: user.uid,
                                fasting: fastingPicker.selectedSegmentIndex == 0,
                                date: datePicker.date,
                                value: intValue)
         
         let db = Firestore.firestore()
         do {
-            try db.collection("users/\(currentUser.docID!)/entries").addDocument(from: entry) { error in
+            try db.collection("patients/\(patient.docID!)/entries").addDocument(from: entry) { error in
                 if let error = error {
                     print(error.localizedDescription)
                     return

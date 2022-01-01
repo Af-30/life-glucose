@@ -20,12 +20,12 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func patient(_ sender: Any) {
+    @IBAction func patientLogin(_ sender: Any) {
         emailTextField.text = "patient@patient.com"
         passwordTextField.text = "123456"
     }
     
-    @IBAction func doctor(_ sender: Any) {
+    @IBAction func doctorLogin(_ sender: Any) {
         emailTextField.text = "doctor@doctor.com"
         passwordTextField.text = "123456"
     }
@@ -67,19 +67,45 @@ class LoginVC: UIViewController {
                         }
                         if let doc = snapshot?.documents.first {
                             do {
-                                try currentUser = doc.data(as: UserModel.self)
-                                if currentUser.isDoctor {
-                                    if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DoctorHomeNavigationController") as? UINavigationController {
-                                        vc.modalPresentationStyle = .fullScreen
-                                        self.present(vc, animated: true, completion: nil)
-                                        Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
-                                        
+                                try user = doc.data(as: UserModel.self)
+                                if user.isDoctor {
+                                    db.collection("doctors").whereField("uid", isEqualTo: result.user.uid).getDocuments { snapshot, error in
+                                        if let error = error {
+                                            print(error.localizedDescription)
+                                            return
+                                        }
+                                        if let doc = snapshot?.documents.first {
+                                            do {
+                                                try doctor = doc.data(as: DoctorModel.self)
+                                                if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DoctorHomeNavigationController") as? UINavigationController {
+                                                    vc.modalPresentationStyle = .fullScreen
+                                                    self.present(vc, animated: true, completion: nil)
+                                                    Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+                                                    
+                                                }
+                                            } catch {
+                                                print(error.localizedDescription)
+                                            }
+                                        }
                                     }
                                 } else {
-                                    if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UINavigationController {
-                                        vc.modalPresentationStyle = .fullScreen
-                                        self.present(vc, animated: true, completion: nil)
-                                        Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+                                    db.collection("patients").whereField("uid", isEqualTo: result.user.uid).getDocuments { snapshot, error in
+                                        if let error = error {
+                                            print(error.localizedDescription)
+                                            return
+                                        }
+                                        if let doc = snapshot?.documents.first {
+                                            do {
+                                                try patient = doc.data(as: PatientModel.self)
+                                                if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UINavigationController {
+                                                    vc.modalPresentationStyle = .fullScreen
+                                                    self.present(vc, animated: true, completion: nil)
+                                                    Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+                                                }
+                                            } catch {
+                                                print(error.localizedDescription)
+                                            }
+                                        }
                                     }
                                 }
                             } catch {

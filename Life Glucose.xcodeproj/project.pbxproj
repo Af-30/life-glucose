@@ -10,13 +10,13 @@
 		ED1B64F2277AE9C7003E934E /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B64F1277AE9C7003E934E /* HomeVC.swift */; };
 		ED24C7D0276F55FA00583D41 /* LandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7CF276F55FA00583D41 /* LandingVC.swift */; };
 		ED24C7D2276F563800583D41 /* ProfileUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7D1276F563800583D41 /* ProfileUserVC.swift */; };
-		ED24C7D4276F569B00583D41 /* PatientSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7D3276F569B00583D41 /* PatientSignUpVC.swift */; };
+		ED24C7D4276F569B00583D41 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7D3276F569B00583D41 /* SignUpVC.swift */; };
 		ED24C7D6276F56CC00583D41 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7D5276F56CC00583D41 /* LoginVC.swift */; };
 		ED24C7D9276F644500583D41 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7D8276F644500583D41 /* ImageView.swift */; };
 		ED24C7DB276F647700583D41 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7DA276F647700583D41 /* Activity.swift */; };
 		ED29233C274518FA00B1D451 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED29233B274518FA00B1D451 /* UserModel.swift */; };
-		ED2D5BCD2771FFA30027F8B2 /* DataDrCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2D5BCB2771FFA30027F8B2 /* DataDrCell.swift */; };
-		ED2D5BCE2771FFA30027F8B2 /* DataDrCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED2D5BCC2771FFA30027F8B2 /* DataDrCell.xib */; };
+		ED318EDD2780F0E20066284C /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED318EDC2780F0E10066284C /* GlobalVariables.swift */; };
+		ED318EDF2780F7500066284C /* EntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED318EDE2780F7500066284C /* EntriesViewController.swift */; };
 		ED3D471C273A743E00194384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D471B273A743E00194384 /* AppDelegate.swift */; };
 		ED3D471E273A743E00194384 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D471D273A743E00194384 /* SceneDelegate.swift */; };
 		ED3D4723273A743E00194384 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED3D4721273A743E00194384 /* Main.storyboard */; };
@@ -34,11 +34,10 @@
 		EDCEA452277B7BBB00D15264 /* PatientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCEA451277B7BBB00D15264 /* PatientModel.swift */; };
 		EDCEA454277B883200D15264 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCEA453277B883200D15264 /* WelcomeVC.swift */; };
 		EDD6ABCC277657330017D85A /* DoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD6ABCB277657320017D85A /* DoctorModel.swift */; };
-		EDD6ABCE27765E810017D85A /* DoctorHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD6ABCD27765E810017D85A /* DoctorHomeVC.swift */; };
+		EDD6ABCE27765E810017D85A /* ProfileDoctorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD6ABCD27765E810017D85A /* ProfileDoctorVC.swift */; };
 		EDEDA8B4276C4DA900CA1597 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDEDA8B3276C4DA900CA1597 /* GoogleService-Info.plist */; };
 		EDFD796C277C5B590078675C /* PrivacyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD796B277C5B590078675C /* PrivacyUser.swift */; };
 		EDFD796E277C715A0078675C /* CalculatorGlucoseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD796D277C715A0078675C /* CalculatorGlucoseVC.swift */; };
-		EDFD7974277D9A5E0078675C /* DatilesCalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD7973277D9A5E0078675C /* DatilesCalculatorVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,13 +61,13 @@
 		ED1B64F1277AE9C7003E934E /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		ED24C7CF276F55FA00583D41 /* LandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingVC.swift; sourceTree = "<group>"; };
 		ED24C7D1276F563800583D41 /* ProfileUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserVC.swift; sourceTree = "<group>"; };
-		ED24C7D3276F569B00583D41 /* PatientSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientSignUpVC.swift; sourceTree = "<group>"; };
+		ED24C7D3276F569B00583D41 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		ED24C7D5276F56CC00583D41 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		ED24C7D8276F644500583D41 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		ED24C7DA276F647700583D41 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		ED29233B274518FA00B1D451 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		ED2D5BCB2771FFA30027F8B2 /* DataDrCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDrCell.swift; sourceTree = "<group>"; };
-		ED2D5BCC2771FFA30027F8B2 /* DataDrCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataDrCell.xib; sourceTree = "<group>"; };
+		ED318EDC2780F0E10066284C /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		ED318EDE2780F7500066284C /* EntriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesViewController.swift; sourceTree = "<group>"; };
 		ED3D4718273A743E00194384 /* Life Glucose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Life Glucose.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3D471B273A743E00194384 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED3D471D273A743E00194384 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,11 +84,10 @@
 		EDCEA451277B7BBB00D15264 /* PatientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientModel.swift; sourceTree = "<group>"; };
 		EDCEA453277B883200D15264 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		EDD6ABCB277657320017D85A /* DoctorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorModel.swift; sourceTree = "<group>"; };
-		EDD6ABCD27765E810017D85A /* DoctorHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorHomeVC.swift; sourceTree = "<group>"; };
+		EDD6ABCD27765E810017D85A /* ProfileDoctorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDoctorVC.swift; sourceTree = "<group>"; };
 		EDEDA8B3276C4DA900CA1597 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EDFD796B277C5B590078675C /* PrivacyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyUser.swift; sourceTree = "<group>"; };
 		EDFD796D277C715A0078675C /* CalculatorGlucoseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorGlucoseVC.swift; sourceTree = "<group>"; };
-		EDFD7973277D9A5E0078675C /* DatilesCalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatilesCalculatorVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,8 +142,6 @@
 		ED2923382745186E00B1D451 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				ED2D5BCB2771FFA30027F8B2 /* DataDrCell.swift */,
-				ED2D5BCC2771FFA30027F8B2 /* DataDrCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,6 +176,7 @@
 				ED2923382745186E00B1D451 /* Views */,
 				EDAC9F2627778D3300745567 /* I don't use */,
 				ED3D4721273A743E00194384 /* Main.storyboard */,
+				ED318EDC2780F0E10066284C /* GlobalVariables.swift */,
 				ED3D4724273A744000194384 /* Assets.xcassets */,
 				ED3D4726273A744000194384 /* LaunchScreen.storyboard */,
 				ED3D4729273A744000194384 /* Info.plist */,
@@ -218,10 +215,10 @@
 			isa = PBXGroup;
 			children = (
 				ED24C7CF276F55FA00583D41 /* LandingVC.swift */,
-				ED24C7D3276F569B00583D41 /* PatientSignUpVC.swift */,
+				ED24C7D3276F569B00583D41 /* SignUpVC.swift */,
 				ED24C7D5276F56CC00583D41 /* LoginVC.swift */,
 				ED1B64F1277AE9C7003E934E /* HomeVC.swift */,
-				EDD6ABCD27765E810017D85A /* DoctorHomeVC.swift */,
+				EDD6ABCD27765E810017D85A /* ProfileDoctorVC.swift */,
 				EDCEA453277B883200D15264 /* WelcomeVC.swift */,
 				EDFD796F277C83ED0078675C /* ProfileViewControllers */,
 				EDFD7970277C84650078675C /* CalculatorGlucose */,
@@ -242,7 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				EDFD796D277C715A0078675C /* CalculatorGlucoseVC.swift */,
-				EDFD7973277D9A5E0078675C /* DatilesCalculatorVC.swift */,
+				ED318EDE2780F7500066284C /* EntriesViewController.swift */,
 			);
 			path = CalculatorGlucose;
 			sourceTree = "<group>";
@@ -366,7 +363,6 @@
 				EDB09EC0277A42A6007A6196 /* Readme.md in Resources */,
 				ED3D4725273A744000194384 /* Assets.xcassets in Resources */,
 				ED3D4723273A743E00194384 /* Main.storyboard in Resources */,
-				ED2D5BCE2771FFA30027F8B2 /* DataDrCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED24C7D4276F569B00583D41 /* PatientSignUpVC.swift in Sources */,
+				ED24C7D4276F569B00583D41 /* SignUpVC.swift in Sources */,
 				EDFD796E277C715A0078675C /* CalculatorGlucoseVC.swift in Sources */,
 				ED29233C274518FA00B1D451 /* UserModel.swift in Sources */,
 				ED24C7D9276F644500583D41 /* ImageView.swift in Sources */,
@@ -400,15 +396,15 @@
 				ED1B64F2277AE9C7003E934E /* HomeVC.swift in Sources */,
 				EDCEA454277B883200D15264 /* WelcomeVC.swift in Sources */,
 				ED24C7DB276F647700583D41 /* Activity.swift in Sources */,
-				ED2D5BCD2771FFA30027F8B2 /* DataDrCell.swift in Sources */,
+				ED318EDD2780F0E20066284C /* GlobalVariables.swift in Sources */,
 				EDFD796C277C5B590078675C /* PrivacyUser.swift in Sources */,
 				ED3D471C273A743E00194384 /* AppDelegate.swift in Sources */,
-				EDD6ABCE27765E810017D85A /* DoctorHomeVC.swift in Sources */,
+				EDD6ABCE27765E810017D85A /* ProfileDoctorVC.swift in Sources */,
 				EDD6ABCC277657330017D85A /* DoctorModel.swift in Sources */,
 				ED24C7D0276F55FA00583D41 /* LandingVC.swift in Sources */,
 				ED24C7D6276F56CC00583D41 /* LoginVC.swift in Sources */,
 				ED3D471E273A743E00194384 /* SceneDelegate.swift in Sources */,
-				EDFD7974277D9A5E0078675C /* DatilesCalculatorVC.swift in Sources */,
+				ED318EDF2780F7500066284C /* EntriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

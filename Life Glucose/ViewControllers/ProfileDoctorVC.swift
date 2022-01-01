@@ -8,62 +8,48 @@
 import UIKit
 import Firebase
 
-class DoctorHomeVC: UIViewController {
+class ProfileDoctorVC: UIViewController {
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
     
-    var menuOut = true
-    var doctors = [DoctorModel]()
+    let tableItems: [ProfileTableItem] = [
+        ProfileTableItem(title: "Account", imageName: "person"),
+        ProfileTableItem(title: "Patients", imageName: "person.fill.badge.plus"),
+        ProfileTableItem(title: "Privacy and noficitions", imageName: "bell.slash"),
+        ProfileTableItem(title: "Log Out", imageName: "trash")
+    ]
+
     var selectedDataDr:DoctorModel?
     var selectedDataImage:UIImage?
     let imagePickerController = UIImagePickerController()
     
-    //    outershell profile image
-    @IBOutlet weak var outershellView: UIView!{
-        didSet{
-            outershellView.layer.cornerRadius = 25
-        }
-    }
     //    this table data dr vc
-    @IBOutlet weak var drsTableView: UITableView!{
+    @IBOutlet weak var tableView: UITableView!
+    
+
+    @IBOutlet weak var profileImage: UIImageView!{
         didSet{
-            drsTableView.delegate = self
-            drsTableView.dataSource = self
-            drsTableView.register(UINib(nibName: "DataDrCell", bundle: nil), forCellReuseIdentifier: "DataDrCell")
-        }
-    }
-    //    relationshep menu and leading tralling view
-    @IBOutlet weak var leading: NSLayoutConstraint!
-    @IBOutlet weak var tralling: NSLayoutConstraint!
-    @IBAction func menuTabbed(_ sender: Any) {
-        if menuOut == false {
-            leading.constant = 220
-            tralling.constant = -220
-            menuOut = true
-        }else{
-            leading.constant = 0
-            tralling.constant = 0
-            menuOut = false
-        }
-    }
-    @IBOutlet weak var profileDrImage: UIImageView!{
-        didSet{
-            profileDrImage.layer.borderColor = UIColor.systemGreen.cgColor
-            profileDrImage.layer.borderWidth = 3.0
-            profileDrImage.layer.masksToBounds = true
-            profileDrImage.isUserInteractionEnabled = true
-            profileDrImage.backgroundColor = .cyan
-            profileDrImage.layer.masksToBounds = true
-            profileDrImage.layer.cornerRadius = profileDrImage.frame.height / 2
+            profileImage.layer.borderColor = UIColor.systemGreen.cgColor
+            profileImage.layer.borderWidth = 3.0
+            profileImage.layer.masksToBounds = true
+            profileImage.isUserInteractionEnabled = true
+            profileImage.backgroundColor = .cyan
+            profileImage.layer.masksToBounds = true
+            profileImage.layer.cornerRadius = profileImage.frame.height / 2
             
             let tabGesture = UITapGestureRecognizer(target: self, action: #selector(selectImage))
-            profileDrImage.addGestureRecognizer(tabGesture)
+            profileImage.addGestureRecognizer(tabGesture)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePickerController.delegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
-    @IBAction func logOut(_ sender: Any) {
+    func logout() {
         print("LOGOUT")
         do {
             try Auth.auth().signOut()
@@ -80,7 +66,7 @@ class DoctorHomeVC: UIViewController {
 
 
 //extension image
-extension DoctorHomeVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+extension ProfileDoctorVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     @objc func selectImage() {
         showAlert()
     }
@@ -109,7 +95,7 @@ extension DoctorHomeVC: UIImagePickerControllerDelegate, UINavigationControllerD
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let chosenImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return}
-        profileDrImage.image = chosenImage
+        profileImage.image = chosenImage
         dismiss(animated: true, completion: nil)
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -118,27 +104,53 @@ extension DoctorHomeVC: UIImagePickerControllerDelegate, UINavigationControllerD
 }
 
 //extension table view data dr type datasource and delegate
-extension DoctorHomeVC: UITableViewDataSource{
+extension ProfileDoctorVC: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return doctors.count
+        return tableItems.count
     }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DataDrCell") as! DataDrCell
-        return cell.configure(with: doctors[indexPath.row])
-    }
-}
-extension DoctorHomeVC : UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! DataDrCell
-        selectedDataImage = cell.dataCellImage.image
-        selectedDataDr = doctors[indexPath.row]
-        if let currentUser = Auth.auth().currentUser,
-           currentUser.uid == doctors[indexPath.row].id{
-            performSegue(withIdentifier: "toDataVC", sender: self)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        if tableItems[indexPath.row].title == "Log Out" {
+            cell.textLabel?.textColor = .systemRed
+            cell.textLabel?.text = tableItems[indexPath.row].title
+        }else{
+            cell.textLabel?.text = tableItems[indexPath.row].title
         }
+        
+        if tableItems[indexPath.row].imageName == "trash" {
+            cell.imageView?.tintColor = .systemRed
+            cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
+        }else{
+            cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
+        }
+//        cell.textLabel?.text = tableItems[indexPath.row].title
+//        cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
+        cell.accessoryType = .disclosureIndicator
+        return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch tableItems[indexPath.row].title {
+        case "Account":
+            performSegue(withIdentifier: "profileToAccount", sender: nil)
+        case "Acompany Patient":
+            performSegue(withIdentifier: "profileToAcompany", sender: nil)
+        case "Privacy and noficitions":
+            performSegue(withIdentifier: "profileToPrivacy", sender: nil)
+        case "Log Out":
+            logout()
+        default: fatalError()
+            
+            
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+
 }
 

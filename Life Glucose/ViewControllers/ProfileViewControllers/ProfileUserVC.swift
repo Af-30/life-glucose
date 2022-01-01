@@ -11,7 +11,7 @@ import Firebase
 struct ProfileTableItem {
     var title: String
     var imageName: String
-    var color: UIColor
+//    var color: UIColor
 }
 
 class ProfileUserVC: UIViewController {
@@ -21,10 +21,10 @@ class ProfileUserVC: UIViewController {
     let imagePickerController = UIImagePickerController()
     
     let tableItems: [ProfileTableItem] = [
-        ProfileTableItem(title: "Account", imageName: "person", color: .black),
-        ProfileTableItem(title: "Acompany Patient", imageName: "person.fill.badge.plus", color: .black),
-        ProfileTableItem(title: "Privacy and noficitions", imageName: "bell.slash", color: .black),
-        ProfileTableItem(title: "Log Out", imageName: "trash", color: .red)
+        ProfileTableItem(title: "Account", imageName: "person"),
+        ProfileTableItem(title: "Acompany Patient", imageName: "person.fill.badge.plus"),
+        ProfileTableItem(title: "Privacy and noficitions", imageName: "bell.slash"),
+        ProfileTableItem(title: "Log Out", imageName: "trash")
     ]
     
     @IBOutlet weak var tableView: UITableView!
@@ -124,8 +124,21 @@ extension ProfileUserVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = tableItems[indexPath.row].title
-        cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
+        if tableItems[indexPath.row].title == "Log Out" {
+            cell.textLabel?.textColor = .systemRed
+            cell.textLabel?.text = tableItems[indexPath.row].title
+        }else{
+            cell.textLabel?.text = tableItems[indexPath.row].title
+        }
+        
+        if tableItems[indexPath.row].imageName == "trash" {
+            cell.imageView?.tintColor = .systemRed
+            cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
+        }else{
+            cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
+        }
+//        cell.textLabel?.text = tableItems[indexPath.row].title
+//        cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
         cell.accessoryType = .disclosureIndicator
         return cell
     }
