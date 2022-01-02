@@ -11,6 +11,7 @@ import FirebaseFirestoreSwift
 import FirebaseAuth
 
 struct EntryModel: Codable {
+    @DocumentID var docID: String?
     var uid: String
     var fasting: Bool
     var date: Date
@@ -19,6 +20,7 @@ struct EntryModel: Codable {
 
 class CalculatorGlucoseVC: UIViewController {
     
+    var editEntry: Bool = false
     var entry: EntryModel?
     
     @IBOutlet weak var fastingPicker: UISegmentedControl!
@@ -35,6 +37,14 @@ class CalculatorGlucoseVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let entry = entry else { return }
+        self.fastingPicker.selectedSegmentIndex = entry.fasting ? 0 : 1
+        self.numberGlucoseTextField.text = "\(entry.value)"
+        self.datePicker.date = entry.date
+    }
+    
     @IBAction func calculatorGlucoseAction(_ sender: Any) {
         guard let strValue = numberGlucoseTextField.text else { return }
         guard let intValue = Int(strValue) else { return }
@@ -45,24 +55,45 @@ class CalculatorGlucoseVC: UIViewController {
         guard let strValue = numberGlucoseTextField.text else { return }
         guard let intValue = Int(strValue) else { return }
         
-        let entry = EntryModel(uid: user.uid,
+        let updatedEntry = EntryModel(uid: user.uid,
                                fasting: fastingPicker.selectedSegmentIndex == 0,
                                date: datePicker.date,
                                value: intValue)
         
         let db = Firestore.firestore()
-        do {
-            try db.collection("patients/\(patient.docID!)/entries").addDocument(from: entry) { error in
-                if let error = error {
-                    print(error.localizedDescription)
-                    return
-                }
-                print("ADDED")
-                // clear fields
+        
+        if editEntry {
+            print(entry)
+            do {
+                try db.collection("patients/\(patient.docID!)/entries/").document(entry.docID!).setData(from: entry, merge: true, completion: { error in
+                    if let error = error {
+                        print(error.localizedDescription)
+                        return
+                    }
+                    print("updated")
+                    self.navigationController?.popViewController(animated: true)
+                })
+                    
+                    // clear fields
+                } catch {
+                fatalError(error.localizedDescription)
             }
-        } catch {
-            fatalError(error.localizedDescription)
+        } else {
+            do {
+                try db.collection("patients/\(patient.docID!)/entries").addDocument(from: entry) { error in
+                    if let error = error {
+                        print(error.localizedDescription)
+                        return
+                    }
+                    print("ADDED")
+                    self.navigationController?.popViewController(animated: true)
+                    // clear fields
+                }
+            } catch {
+                fatalError(error.localizedDescription)
+            }
         }
+        
         
         
     }
