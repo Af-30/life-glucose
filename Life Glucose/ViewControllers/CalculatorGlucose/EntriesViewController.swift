@@ -30,6 +30,9 @@ class EntriesViewController: UIViewController {
         fetchData()
     }
     
+    @IBAction func addAction(_ sender: Any) {
+        performSegue(withIdentifier: "newEntry", sender: nil)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             if identifier == "editEntry" {
@@ -38,6 +41,7 @@ class EntriesViewController: UIViewController {
                 vc.editEntry = true
             }else {
                 let vc = segue.destination as! CalculatorGlucoseVC
+                vc.entry = nil
                 vc.editEntry = false
             }
         }
@@ -62,10 +66,24 @@ class EntriesViewController: UIViewController {
                         fatalError()
                     }
                 }
+                self.entries.sort(by: { $0.created < $1.created })
                 self.tableView.reloadData()
                 Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
             }
         }
+    }
+    
+    private func deleteItem(index: Int) {
+        Activity.showIndicator(parentView: view, childView: activityIndicator)
+        let db = Firestore.firestore()
+        db.collection("patients/\(patient.docID!)/entries").document(entries[index].docID!).delete(completion: { error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+            self.fetchData()
+        })
     }
     
 
@@ -88,6 +106,16 @@ extension EntriesViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedEntry = entries[indexPath.row]
         performSegue(withIdentifier: "editEntry", sender: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            deleteItem(index: indexPath.row)
+        }
     }
     
     

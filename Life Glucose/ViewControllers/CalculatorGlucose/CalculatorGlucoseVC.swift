@@ -15,6 +15,7 @@ struct EntryModel: Codable {
     var uid: String
     var fasting: Bool
     var date: Date
+    var created: Date
     var value: Int
 }
 
@@ -30,6 +31,7 @@ class CalculatorGlucoseVC: UIViewController {
     @IBOutlet weak var calculatorGlucoseButton: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
     
+    @IBOutlet weak var saveButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,12 @@ class CalculatorGlucoseVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if editEntry {
+            saveButton.setTitle("Update", for: .normal)
+        } else {
+            saveButton.setTitle("Save", for: .normal)
+        }
         guard let entry = entry else { return }
         self.fastingPicker.selectedSegmentIndex = entry.fasting ? 0 : 1
         self.numberGlucoseTextField.text = "\(entry.value)"
@@ -58,14 +66,17 @@ class CalculatorGlucoseVC: UIViewController {
         let updatedEntry = EntryModel(uid: user.uid,
                                fasting: fastingPicker.selectedSegmentIndex == 0,
                                date: datePicker.date,
-                               value: intValue)
+                                      created: editEntry ? entry!.created : Date(), value: intValue)
         
         let db = Firestore.firestore()
         
         if editEntry {
-            print(entry)
+            guard let entry = entry else {
+                return
+            }
+
             do {
-                try db.collection("patients/\(patient.docID!)/entries/").document(entry.docID!).setData(from: entry, merge: true, completion: { error in
+                try db.collection("patients/\(patient.docID!)/entries/").document(entry.docID!).setData(from: updatedEntry, merge: true, completion: { error in
                     if let error = error {
                         print(error.localizedDescription)
                         return
@@ -80,7 +91,7 @@ class CalculatorGlucoseVC: UIViewController {
             }
         } else {
             do {
-                try db.collection("patients/\(patient.docID!)/entries").addDocument(from: entry) { error in
+                try db.collection("patients/\(patient.docID!)/entries").addDocument(from: updatedEntry) { error in
                     if let error = error {
                         print(error.localizedDescription)
                         return
