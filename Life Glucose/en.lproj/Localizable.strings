@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  Life Glucose
+
+  Created by grand ahmad on 30/05/1443 AH.
+  
+*/
+//"Welcome To App Life Glucose" = "Welcome To App Life Glucose";
+//"Login" = "Login";
+//"register" = "register";
+//
+//"Email" = "Email";
+//"Patient" = "Patient";
+//"Doctor" = "Doctor";
+//
+//"Name" = "Name";
+//"Phone NUmber" = "Phone NUmber";
+//"Age" = "Age";
+//"City" = "City";
+//"Gander" = "Gander";
+//"Password" = "Password";
+//"Comfirm Password" = "Comfirm Password";
+//
+//"Input number Glucose" = "Input number Glucose";
+//"Result" = "Result";
+//"Fasting" = "Fasting";
+//"Eat the Food" = "Eat the Food";
+//"Day" = "Day";
+//
+//"very dangerous low" = "very dangerous low";
+//"very low" = "very low";
+//"normal rate" = "normal rate";
+//"normal" = "normal";
+//"high" = "high";
+//"very high" = "very high;"
+//"dangerous high" = "dangerous high";
+//"very dangerous high" = "very dangerous high";
+//"very very high" = "very very high";
+//"low" = "low";

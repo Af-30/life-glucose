@@ -27,6 +27,7 @@
 		ED3D473F273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D473E273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift */; };
 		EDB09EC0277A42A6007A6196 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = EDB09EBF277A42A6007A6196 /* Readme.md */; };
 		EDB1A6C82782338C00ACDDDC /* InformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB1A6C72782338B00ACDDDC /* InformationVC.swift */; };
+		EDB1A6CB2783169C00ACDDDC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDB1A6CD2783169C00ACDDDC /* Localizable.strings */; };
 		EDC3F038276F9D5C00848D1E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EDC3F037276F9D5C00848D1E /* FirebaseAuth */; };
 		EDC3F03A276F9D5C00848D1E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EDC3F039276F9D5C00848D1E /* FirebaseFirestore */; };
 		EDC3F03C276F9D5C00848D1E /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = EDC3F03B276F9D5C00848D1E /* FirebaseFirestoreSwift-Beta */; };
@@ -83,6 +84,10 @@
 		ED3D473E273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_GlucoseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EDB09EBF277A42A6007A6196 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		EDB1A6C72782338B00ACDDDC /* InformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationVC.swift; sourceTree = "<group>"; };
+		EDB1A6CC2783169C00ACDDDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EDB1A6CE278316C100ACDDDC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		EDB1A6CF278316C100ACDDDC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		EDB1A6D0278316C100ACDDDC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EDCEA451277B7BBB00D15264 /* PatientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientModel.swift; sourceTree = "<group>"; };
 		EDCEA453277B883200D15264 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		EDD6ABCB277657320017D85A /* DoctorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorModel.swift; sourceTree = "<group>"; };
@@ -137,6 +142,7 @@
 				EDD6ABCB277657320017D85A /* DoctorModel.swift */,
 				ED29233B274518FA00B1D451 /* UserModel.swift */,
 				EDCEA451277B7BBB00D15264 /* PatientModel.swift */,
+				ED318EDC2780F0E10066284C /* GlobalVariables.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -144,6 +150,8 @@
 		ED2923382745186E00B1D451 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EDFD796F277C83ED0078675C /* ProfileViewControllers */,
+				EDFD7970277C84650078675C /* CalculatorGlucose */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,7 +186,7 @@
 				ED2923382745186E00B1D451 /* Views */,
 				EDAC9F2627778D3300745567 /* I don't use */,
 				ED3D4721273A743E00194384 /* Main.storyboard */,
-				ED318EDC2780F0E10066284C /* GlobalVariables.swift */,
+				EDB1A6CD2783169C00ACDDDC /* Localizable.strings */,
 				ED3D4724273A744000194384 /* Assets.xcassets */,
 				ED3D4726273A744000194384 /* LaunchScreen.storyboard */,
 				ED3D4729273A744000194384 /* Info.plist */,
@@ -222,8 +230,6 @@
 				ED1B64F1277AE9C7003E934E /* HomeVC.swift */,
 				EDD6ABCD27765E810017D85A /* ProfileDoctorVC.swift */,
 				EDCEA453277B883200D15264 /* WelcomeVC.swift */,
-				EDFD796F277C83ED0078675C /* ProfileViewControllers */,
-				EDFD7970277C84650078675C /* CalculatorGlucose */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -340,6 +346,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = ED3D470F273A743E00194384;
 			packageReferences = (
@@ -362,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED3D4728273A744000194384 /* LaunchScreen.storyboard in Resources */,
+				EDB1A6CB2783169C00ACDDDC /* Localizable.strings in Resources */,
 				EDEDA8B4276C4DA900CA1597 /* GoogleService-Info.plist in Resources */,
 				EDB09EC0277A42A6007A6196 /* Readme.md in Resources */,
 				ED3D4725273A744000194384 /* Assets.xcassets in Resources */,
@@ -449,6 +457,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				ED3D4722273A743E00194384 /* Base */,
+				EDB1A6CE278316C100ACDDDC /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -457,8 +466,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				ED3D4727273A744000194384 /* Base */,
+				EDB1A6CF278316C100ACDDDC /* ar */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EDB1A6CD2783169C00ACDDDC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDB1A6CC2783169C00ACDDDC /* en */,
+				EDB1A6D0278316C100ACDDDC /* ar */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -468,6 +487,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -529,6 +549,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

@@ -7,7 +7,10 @@
 
 import UIKit
 
-class InformationVC: UIViewController {
+class InformationVC: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var tableView: UITableView!
+//    @IBOutlet weak var dataLabel: UIStackView!
+//    @IBOutlet weak var textField: UITextField!
     struct Information {
         var name: String
     }
@@ -18,12 +21,11 @@ class InformationVC: UIViewController {
         Information(name: "Phone Number:"),
         Information(name: "Email:")
     ]
-    @IBOutlet weak var writeTextFeild: UIView!
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var tableView: UITableView!
-    
+
+  
     override func viewDidLoad() {
         super.viewDidLoad()
+//       textField.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")

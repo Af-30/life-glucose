@@ -11,7 +11,6 @@ import Firebase
 import FirebaseFirestoreSwift
 
 class LandingVC: UIViewController {
-    
     //var user: UserModel!
 
     override func viewDidLoad() {

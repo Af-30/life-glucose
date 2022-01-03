@@ -115,7 +115,7 @@ class CalculatorGlucoseVC: UIViewController {
             case 50...80:
                 return "very low"
             case 80...130:
-                return "normal rate"
+                return "normal"
             case 130...160:
                 return "high"
             case 160...240:
