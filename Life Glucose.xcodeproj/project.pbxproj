@@ -25,6 +25,7 @@
 		ED3D4733273A744000194384 /* Life_GlucoseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D4732273A744000194384 /* Life_GlucoseTests.swift */; };
 		ED3D473D273A744000194384 /* Life_GlucoseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D473C273A744000194384 /* Life_GlucoseUITests.swift */; };
 		ED3D473F273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D473E273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift */; };
+		EDAF3197278362350057C1AC /* InformationOldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF3196278362340057C1AC /* InformationOldVC.swift */; };
 		EDB09EC0277A42A6007A6196 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = EDB09EBF277A42A6007A6196 /* Readme.md */; };
 		EDB1A6C82782338C00ACDDDC /* InformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB1A6C72782338B00ACDDDC /* InformationVC.swift */; };
 		EDB1A6CB2783169C00ACDDDC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDB1A6CD2783169C00ACDDDC /* Localizable.strings */; };
@@ -82,6 +83,7 @@
 		ED3D4738273A744000194384 /* Life GlucoseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Life GlucoseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3D473C273A744000194384 /* Life_GlucoseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_GlucoseUITests.swift; sourceTree = "<group>"; };
 		ED3D473E273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_GlucoseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EDAF3196278362340057C1AC /* InformationOldVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationOldVC.swift; sourceTree = "<group>"; };
 		EDB09EBF277A42A6007A6196 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		EDB1A6C72782338B00ACDDDC /* InformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationVC.swift; sourceTree = "<group>"; };
 		EDB1A6CC2783169C00ACDDDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				EDFD796B277C5B590078675C /* PrivacyUser.swift */,
 				ED24C7D1276F563800583D41 /* ProfileUserVC.swift */,
 				EDB1A6C72782338B00ACDDDC /* InformationVC.swift */,
+				EDAF3196278362340057C1AC /* InformationOldVC.swift */,
 			);
 			path = ProfileViewControllers;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				EDCEA452277B7BBB00D15264 /* PatientModel.swift in Sources */,
 				ED24C7D2276F563800583D41 /* ProfileUserVC.swift in Sources */,
 				EDB1A6C82782338C00ACDDDC /* InformationVC.swift in Sources */,
+				EDAF3197278362350057C1AC /* InformationOldVC.swift in Sources */,
 				ED1B64F2277AE9C7003E934E /* HomeVC.swift in Sources */,
 				EDCEA454277B883200D15264 /* WelcomeVC.swift in Sources */,
 				ED24C7DB276F647700583D41 /* Activity.swift in Sources */,

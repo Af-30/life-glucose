@@ -15,6 +15,7 @@ class LandingVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //try! Auth.auth().signOut()
     }
     
     override func viewWillAppear(_ animated: Bool) {

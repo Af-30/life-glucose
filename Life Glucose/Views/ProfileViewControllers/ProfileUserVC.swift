@@ -50,6 +50,12 @@ class ProfileUserVC: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        nameUser.text = patient.firstName + " " + patient.lastName
+        phoneUser.text = patient.phoneNumber
+    }
+    
     func logout() {
         print("LOGOUT")
         do {

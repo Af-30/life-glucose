@@ -100,14 +100,23 @@ class SignUpVC: UIViewController {
                                     print(error.localizedDescription)
                                 }
                             } else {
-                                let profile = PatientModel(uid: user.uid, firstName: "", lastName: "", phoneNumber: "")
+                                let profile = PatientModel(uid: user.uid,
+                                                           firstName: "",
+                                                           lastName: "",
+                                                           imageUrl: "",
+                                                           phoneNumber: "",
+                                                           city: "",
+                                                           gender: "")
+                                
                                 do {
-                                    _ = try db.collection("patients").addDocument(from: profile) { error in
+                                    var ref: DocumentReference!
+                                ref = try db.collection("patients").addDocument(from: profile) { error in
                                         if let error = error {
                                             print("Registration error",error.localizedDescription)
                                             return
                                         }
                                         patient = profile
+                                    patient.docID = ref.documentID
                                         if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UINavigationController {
                                             vc.modalPresentationStyle = .fullScreen
                                             self.present(vc, animated: true, completion: nil)

@@ -17,6 +17,7 @@ struct EntryModel: Codable {
     var date: Date
     var created: Date
     var value: Int
+//    var result: String
 }
 
 class CalculatorGlucoseVC: UIViewController {
@@ -35,7 +36,6 @@ class CalculatorGlucoseVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
     

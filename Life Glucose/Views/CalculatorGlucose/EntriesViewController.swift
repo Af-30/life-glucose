@@ -66,7 +66,7 @@ class EntriesViewController: UIViewController {
                         fatalError()
                     }
                 }
-                self.entries.sort(by: { $0.created < $1.created })
+                self.entries.sort(by: { $0.created > $1.created })
                 self.tableView.reloadData()
                 Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
             }
@@ -99,6 +99,7 @@ extension EntriesViewController : UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 //        cell.textLabel?.text = "\(resultLabel[indexPath.row])"
         cell.textLabel?.text = "Glucose:  \(entries[indexPath.row].value)"
+//        cell.textLabel?.text = "Result:  \(entries[indexPath.row].result)"
         cell.imageView?.image = UIImage(systemName: "checkmark")
         return cell
     }
