@@ -178,7 +178,6 @@
 				ED2923382745186E00B1D451 /* Views */,
 				EDAC9F2627778D3300745567 /* I don't use */,
 				ED3D4721273A743E00194384 /* Main.storyboard */,
-				EDB1A6C72782338B00ACDDDC /* InformationVC.swift */,
 				ED318EDC2780F0E10066284C /* GlobalVariables.swift */,
 				ED3D4724273A744000194384 /* Assets.xcassets */,
 				ED3D4726273A744000194384 /* LaunchScreen.storyboard */,
@@ -234,6 +233,7 @@
 			children = (
 				EDFD796B277C5B590078675C /* PrivacyUser.swift */,
 				ED24C7D1276F563800583D41 /* ProfileUserVC.swift */,
+				EDB1A6C72782338B00ACDDDC /* InformationVC.swift */,
 			);
 			path = ProfileViewControllers;
 			sourceTree = "<group>";

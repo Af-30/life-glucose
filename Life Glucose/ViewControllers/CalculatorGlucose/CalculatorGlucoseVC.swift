@@ -104,9 +104,7 @@ class CalculatorGlucoseVC: UIViewController {
                 fatalError(error.localizedDescription)
             }
         }
-        
-        
-        
+
     }
     
     func getResult(_ glucose:Int) -> String {

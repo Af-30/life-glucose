@@ -125,49 +125,6 @@ class SignUpVC: UIViewController {
                     
                 }
                 
-                
-                //
-                //                if let authResult = authResult {
-                //                    let storageRef = Storage.storage().reference(withPath: "users/\(authResult.user.uid)")
-                //                    let uploadMeta = StorageMetadata.init()
-                //                    uploadMeta.contentType = "image/jpeg"
-                //                    storageRef.putData(imageData, metadata: uploadMeta) { storageMeta, error in
-                //                        if let error = error {
-                //                            print("Image Upload to Storage Error",error.localizedDescription)
-                //                            return
-                //                        }
-                //                        storageRef.downloadURL { url, error in
-                //                            if let error = error {
-                //                                print("Registration Storage Download Url Error",error.localizedDescription)
-                //                                return
-                //                            }
-                //                            if let url = url {
-                //                                print("URL",url.absoluteString)
-                //                                let db = Firestore.firestore()
-                //                                let userData: [String:String] = [
-                //                                    "id":authResult.user.uid,
-                //                                    "name":name,
-                //                                    "email":email,
-                //                                    "imageUrl":url.absoluteString
-                //                                ]
-                //                                db.collection("users").document(authResult.user.uid).setData(userData) { error in
-                //                                    if let error = error {
-                //                                        print("Registration Database error",error.localizedDescription)
-                //                                        return
-                //                                    } else {
-                //                                        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UINavigationController {
-                //                                            vc.modalPresentationStyle = .fullScreen
-                //                                            Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
-                //                                            self.present(vc, animated: true, completion: nil)
-                //                                        }
-                //                                    }
-                //                                }
-                //                            }
-                //                        }
-                //                    }
-                //                }
-                
-                
             }
         }
         
