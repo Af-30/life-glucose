@@ -28,16 +28,22 @@ class InformationOldVC: UIViewController {
     
     @IBAction func saveAction(_ sender: Any) {
         guard let firstName = firstNameField.text else { return }
+        guard let lastName = lastNameField.text else { return }
+        guard let phoneNumber = phoneNumberField.text else { return }
+        guard let city = cityField.text else { return }
+        guard let gender = genderField.text else { return }
+        
+        
         Activity.showIndicator(parentView: self.view, childView: self.activityIndicator)
         let db = Firestore.firestore()
         
         let updatedProfile = PatientModel(uid: patient.uid,
                                           firstName: firstName,
-                                          lastName: lastNameField.text!,
+                                          lastName: lastName,
                                           imageUrl: patient.imageUrl,
-                                          phoneNumber: phoneNumberField.text!,
-                                          city: cityField.text!,
-                                          gender: genderField.text!)
+                                          phoneNumber: phoneNumber,
+                                          city: city,
+                                          gender: gender)
         do {
             try db.collection("patients").document(patient.docID!).setData(from: updatedProfile, merge: true) { error in
                 if let error = error {

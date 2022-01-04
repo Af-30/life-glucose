@@ -89,7 +89,7 @@ class SignUpVC: UIViewController {
                                             return
                                         }
                                         doctor = profile
-                                        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DoctorHomeNavigationController") as? UINavigationController {
+                                        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DoctorHomeNavigationController") as? UITabBarController {
                                             vc.modalPresentationStyle = .fullScreen
                                             self.present(vc, animated: true, completion: nil)
                                             Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
@@ -117,7 +117,7 @@ class SignUpVC: UIViewController {
                                         }
                                         patient = profile
                                     patient.docID = ref.documentID
-                                        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UINavigationController {
+                                        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UITabBarController {
                                             vc.modalPresentationStyle = .fullScreen
                                             self.present(vc, animated: true, completion: nil)
                                             Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)

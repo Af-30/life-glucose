@@ -77,7 +77,7 @@ class LoginVC: UIViewController {
                                         if let doc = snapshot?.documents.first {
                                             do {
                                                 try doctor = doc.data(as: DoctorModel.self)
-                                                if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DoctorHomeNavigationController") as? UINavigationController {
+                                                if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DoctorHomeNavigationController") as? UITabBarController {
                                                     vc.modalPresentationStyle = .fullScreen
                                                     self.present(vc, animated: true, completion: nil)
                                                     Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
@@ -97,7 +97,7 @@ class LoginVC: UIViewController {
                                         if let doc = snapshot?.documents.first {
                                             do {
                                                 try patient = doc.data(as: PatientModel.self)
-                                                if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UINavigationController {
+                                                if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UITabBarController {
                                                     vc.modalPresentationStyle = .fullScreen
                                                     self.present(vc, animated: true, completion: nil)
                                                     Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
