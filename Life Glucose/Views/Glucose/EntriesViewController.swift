@@ -15,7 +15,7 @@ class EntriesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var entries: [EntryModel] = []
     var selectedEntry: EntryModel?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -28,6 +28,7 @@ class EntriesViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         fetchData()
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     @IBAction func addAction(_ sender: Any) {

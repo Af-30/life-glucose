@@ -60,7 +60,7 @@ class LandingVC: UIViewController {
                                 if let doc = snapshot?.documents.first {
                                     do {
                                         try patient = doc.data(as: PatientModel.self)
-                                        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UITabBarController {
+                                        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UINavigationController {
                                             vc.modalPresentationStyle = .fullScreen
                                             self.present(vc, animated: true, completion: nil)
                                         }

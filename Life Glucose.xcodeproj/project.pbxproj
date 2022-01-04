@@ -152,8 +152,9 @@
 		ED2923382745186E00B1D451 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EDFD796F277C83ED0078675C /* ProfileViewControllers */,
-				EDFD7970277C84650078675C /* CalculatorGlucose */,
+				ED3D6B6E27842F23003C8F18 /* ProfileDoctor */,
+				EDFD796F277C83ED0078675C /* ProfilePatient */,
+				EDFD7970277C84650078675C /* Glucose */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,6 +215,14 @@
 			path = "Life GlucoseUITests";
 			sourceTree = "<group>";
 		};
+		ED3D6B6E27842F23003C8F18 /* ProfileDoctor */ = {
+			isa = PBXGroup;
+			children = (
+				EDD6ABCD27765E810017D85A /* ProfileDoctorVC.swift */,
+			);
+			path = ProfileDoctor;
+			sourceTree = "<group>";
+		};
 		EDAC9F2627778D3300745567 /* I don't use */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,30 +239,29 @@
 				ED24C7D3276F569B00583D41 /* SignUpVC.swift */,
 				ED24C7D5276F56CC00583D41 /* LoginVC.swift */,
 				ED1B64F1277AE9C7003E934E /* HomeVC.swift */,
-				EDD6ABCD27765E810017D85A /* ProfileDoctorVC.swift */,
 				EDCEA453277B883200D15264 /* WelcomeVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		EDFD796F277C83ED0078675C /* ProfileViewControllers */ = {
+		EDFD796F277C83ED0078675C /* ProfilePatient */ = {
 			isa = PBXGroup;
 			children = (
-				EDFD796B277C5B590078675C /* PrivacyUser.swift */,
 				ED24C7D1276F563800583D41 /* ProfileUserVC.swift */,
+				EDFD796B277C5B590078675C /* PrivacyUser.swift */,
 				EDB1A6C72782338B00ACDDDC /* InformationVC.swift */,
 				EDAF3196278362340057C1AC /* InformationOldVC.swift */,
 			);
-			path = ProfileViewControllers;
+			path = ProfilePatient;
 			sourceTree = "<group>";
 		};
-		EDFD7970277C84650078675C /* CalculatorGlucose */ = {
+		EDFD7970277C84650078675C /* Glucose */ = {
 			isa = PBXGroup;
 			children = (
 				EDFD796D277C715A0078675C /* CalculatorGlucoseVC.swift */,
 				ED318EDE2780F7500066284C /* EntriesViewController.swift */,
 			);
-			path = CalculatorGlucose;
+			path = Glucose;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

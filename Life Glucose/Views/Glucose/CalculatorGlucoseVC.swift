@@ -98,6 +98,7 @@ class CalculatorGlucoseVC: UIViewController {
                     }
                     print("ADDED")
                     self.navigationController?.popViewController(animated: true)
+//                    self.dismiss(animated: true, completion: nil)
                     // clear fields
                 }
             } catch {

@@ -125,11 +125,27 @@ extension ProfileDoctorVC: UITableViewDelegate, UITableViewDataSource {
         }else{
             cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
         }
-//        cell.textLabel?.text = tableItems[indexPath.row].title
-//        cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
         cell.accessoryType = .disclosureIndicator
         return cell
     }
+
+//        if tableItems[indexPath.row].title == "Log Out" {
+//            cell.textLabel?.textColor = .systemRed
+//            cell.textLabel?.text = tableItems[indexPath.row].title
+//        }else{
+//            cell.textLabel?.text = tableItems[indexPath.row].title
+//        }
+//        if tableItems[indexPath.row].imageName == "trash" {
+//            cell.imageView?.tintColor = .systemRed
+//            cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
+//        }else{
+//            cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
+//        }
+//        cell.textLabel?.text = tableItems[indexPath.row].title
+//        cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
+//        cell.accessoryType = .disclosureIndicator
+//        return cell
+//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
@@ -146,8 +162,6 @@ extension ProfileDoctorVC: UITableViewDelegate, UITableViewDataSource {
         case "Log Out":
             logout()
         default: fatalError()
-            
-            
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
