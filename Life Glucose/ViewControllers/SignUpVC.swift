@@ -13,6 +13,28 @@ class SignUpVC: UIViewController {
     var message = ""
     let imagePickerController = UIImagePickerController()
     var activityIndicator = UIActivityIndicatorView()
+//    local
+    @IBOutlet weak var emailLabel: UILabel!{
+        didSet {
+            emailLabel.text = "Email".localized
+        }
+    }
+    @IBOutlet weak var phoneLabel: UILabel!{
+        didSet {
+            phoneLabel.text = "Phone Number".localized
+        }
+    }
+    @IBOutlet weak var passwordLabel: UILabel!{
+        didSet {
+            passwordLabel.text = "Password".localized
+        }
+    }
+    @IBOutlet weak var comifirmPasswordLabel: UILabel!{
+        didSet {
+            comifirmPasswordLabel.text = "Comfirm Password".localized
+        }
+    }
+    
     
     @IBOutlet weak var userImageView: UIImageView! {
         didSet {

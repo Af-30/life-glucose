@@ -5,35 +5,35 @@
   Created by grand ahmad on 30/05/1443 AH.
   
 */
-//"Welcome To App Life Glucose" = "مرحباً بكم في تطبيق لايف جلوكوز";
-//"Login" = "تسجيل الدخول";
-//"register" = "تسجيل";
-//
-//"Email" = "البريد الإلكتروني";
-//"Patient" = "المريض";
-//"Doctor" = "الدكتور";
-//
-//"Name" = "الإسم";
-//"Phone NUmber" = "رقم الجوال";
-//"Age" = "العمر";
-//"City" = "المدينة";
-//"Gander" = "الجنس";
-//"Password" = "كلمة السر";
-//"Comfirm Password" = "اعادة كلمة السر";
-//
-//"Input number Glucose" = "ادخال رقم الجلوكوز";
-//"Result" = "النتيجة";
-//"Fasting" = "صائم";
-//"Eat the Food" = "تناول الطعام";
-//"Day" = "اليوم";
-//
-//"very dangerous low" = "منخفض خطير جداً";
-//"very low" = "منخفض جداً";
-//"low" = "منخفض";
-//"normal rate" = "معدل طبيعي";
-//"normal" = "طبيعي";
-//"high" = "مرتفع";
-//"very high" = "مرتفع جداً";
-//"very very high" = "مرتفع جداً جداً";
-//"dangerous high" = "مرتفع خطير";
-//"very dangerous high" = "مرتفع خطير جداً";
+"Welcome To App Life Glucose" = "مرحباً بكم في تطبيق لايف جلوكوز";
+"Login" = "تسجيل الدخول";
+"register" = "تسجيل";
+
+"Email" = "البريد الإلكتروني";
+"Patient" = "المريض";
+"Doctor" = "الدكتور";
+
+"Name" = "الإسم";
+"Phone NUmber" = "رقم الجوال";
+"Age" = "العمر";
+"City" = "المدينة";
+"Gander" = "الجنس";
+"Password" = "كلمة السر";
+"Comfirm Password" = "اعادة كلمة السر";
+
+"Input number Glucose" = "ادخال رقم الجلوكوز";
+"Result" = "النتيجة";
+"Fasting" = "صائم";
+"Eat the Food" = "تناول الطعام";
+"Day" = "اليوم";
+
+"very dangerous low" = "منخفض خطير جداً";
+"very low" = "منخفض جداً";
+"low" = "منخفض";
+"normal rate" = "معدل طبيعي";
+"normal" = "طبيعي";
+"high" = "مرتفع";
+"very high" = "مرتفع جداً";
+"very very high" = "مرتفع جداً جداً";
+"dangerous high" = "مرتفع خطير";
+"very dangerous high" = "مرتفع خطير جداً";

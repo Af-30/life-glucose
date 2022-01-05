@@ -21,7 +21,18 @@ struct EntryModel: Codable {
 }
 
 class CalculatorGlucoseVC: UIViewController {
-    
+//    local
+    @IBOutlet weak var dayLabel: UILabel!{
+        didSet {
+            dayLabel.text = "Day".localized
+        }
+    }
+    @IBOutlet weak var glucoseLabel: UILabel!{
+        didSet{
+            glucoseLabel.text = "Input number Glucose".localized
+        }
+    }
+
     var editEntry: Bool = false
     var entry: EntryModel?
     
@@ -30,6 +41,7 @@ class CalculatorGlucoseVC: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var numberGlucoseTextField: UITextField!
     @IBOutlet weak var calculatorGlucoseButton: UIButton!
+//    local
     @IBOutlet weak var resultLabel: UILabel!
     
     @IBOutlet weak var saveButton: UIButton!
