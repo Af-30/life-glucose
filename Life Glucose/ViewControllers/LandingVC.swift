@@ -102,10 +102,25 @@ class LandingVC: UIViewController {
                                 if let doc = snapshot?.documents.first {
                                     do {
                                         try doctor = doc.data(as: DoctorModel.self)
-                                        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DoctorHomeNavigationController") as? UITabBarController {
-                                            vc.modalPresentationStyle = .fullScreen
-                                            self.present(vc, animated: true, completion: nil)
+                                        
+                                        if let url = URL(string: doctor.imageUrl) {
+                                            DispatchQueue.global().async {
+                                                if let data = try? Data(contentsOf: url) {
+                                                    DispatchQueue.main.async {
+                                                        if let downloadedImage = UIImage(data: data) {
+                                                            profileImage = downloadedImage
+                                                            
+                                                            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DoctorHomeNavigationController") as? UITabBarController {
+                                                                vc.modalPresentationStyle = .fullScreen
+                                                                self.present(vc, animated: true, completion: nil)
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
                                         }
+                                        
+                                        
                                     } catch {
                                         print(error.localizedDescription)
                                     }
@@ -130,16 +145,17 @@ class LandingVC: UIViewController {
                                                         if let downloadedImage = UIImage(data: data) {
                                                             profileImage = downloadedImage
                                                             
+                                                            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UITabBarController {
+                                                                vc.modalPresentationStyle = .fullScreen
+                                                                self.present(vc, animated: true, completion: nil)
+                                                            }
                                                         }
                                                     }
                                                 }
                                             }
                                         }
                                         
-                                        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UITabBarController {
-                                            vc.modalPresentationStyle = .fullScreen
-                                            self.present(vc, animated: true, completion: nil)
-                                        }
+                                        
                                     } catch {
                                         print(error.localizedDescription)
                                     }

@@ -33,6 +33,10 @@
 		EDB09EC0277A42A6007A6196 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = EDB09EBF277A42A6007A6196 /* Readme.md */; };
 		EDB1A6CB2783169C00ACDDDC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDB1A6CD2783169C00ACDDDC /* Localizable.strings */; };
 		EDC0973A2785B7D6009755F8 /* BundleExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC097392785B7D6009755F8 /* BundleExtention.swift */; };
+		EDC0973D2786065B009755F8 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0973C2786065B009755F8 /* ChatTableViewController.swift */; };
+		EDC0973F2786066E009755F8 /* NewChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0973E2786066E009755F8 /* NewChatViewController.swift */; };
+		EDC097412786073D009755F8 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC097402786073D009755F8 /* ChatCell.swift */; };
+		EDC0974327860966009755F8 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0974227860966009755F8 /* ChatViewController.swift */; };
 		EDC3F038276F9D5C00848D1E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EDC3F037276F9D5C00848D1E /* FirebaseAuth */; };
 		EDC3F03A276F9D5C00848D1E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EDC3F039276F9D5C00848D1E /* FirebaseFirestore */; };
 		EDC3F03C276F9D5C00848D1E /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = EDC3F03B276F9D5C00848D1E /* FirebaseFirestoreSwift-Beta */; };
@@ -97,6 +101,10 @@
 		EDB1A6CF278316C100ACDDDC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		EDB1A6D0278316C100ACDDDC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EDC097392785B7D6009755F8 /* BundleExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtention.swift; sourceTree = "<group>"; };
+		EDC0973C2786065B009755F8 /* ChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
+		EDC0973E2786066E009755F8 /* NewChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChatViewController.swift; sourceTree = "<group>"; };
+		EDC097402786073D009755F8 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		EDC0974227860966009755F8 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		EDCEA451277B7BBB00D15264 /* PatientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientModel.swift; sourceTree = "<group>"; };
 		EDCEA453277B883200D15264 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		EDD6ABCB277657320017D85A /* DoctorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorModel.swift; sourceTree = "<group>"; };
@@ -249,6 +257,7 @@
 		EDAC9F272777AE6F00745567 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				EDC0973B27860631009755F8 /* Chat */,
 				EDC097392785B7D6009755F8 /* BundleExtention.swift */,
 				ED24C7CF276F55FA00583D41 /* LandingVC.swift */,
 				ED24C7D3276F569B00583D41 /* SignUpVC.swift */,
@@ -259,6 +268,17 @@
 				ED3D6B6E27842F23003C8F18 /* ProfileDoctor */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EDC0973B27860631009755F8 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				EDC0973C2786065B009755F8 /* ChatTableViewController.swift */,
+				EDC0973E2786066E009755F8 /* NewChatViewController.swift */,
+				EDC097402786073D009755F8 /* ChatCell.swift */,
+				EDC0974227860966009755F8 /* ChatViewController.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		EDFD796F277C83ED0078675C /* ProfilePatient */ = {
@@ -435,7 +455,9 @@
 				ED52E0472784D00700040F89 /* PatientCompanyVC.swift in Sources */,
 				ED24C7D2276F563800583D41 /* ProfileUserVC.swift in Sources */,
 				EDAF3197278362350057C1AC /* InformationVC.swift in Sources */,
+				EDC0973F2786066E009755F8 /* NewChatViewController.swift in Sources */,
 				ED52E0432784B3C800040F89 /* DoctorInformationVC.swift in Sources */,
+				EDC0973D2786065B009755F8 /* ChatTableViewController.swift in Sources */,
 				EDC0973A2785B7D6009755F8 /* BundleExtention.swift in Sources */,
 				EDCEA454277B883200D15264 /* WelcomeVC.swift in Sources */,
 				ED24C7DB276F647700583D41 /* Activity.swift in Sources */,
@@ -447,7 +469,9 @@
 				ED24C7D0276F55FA00583D41 /* LandingVC.swift in Sources */,
 				ED24C7D6276F56CC00583D41 /* LoginVC.swift in Sources */,
 				ED52E0412784A98F00040F89 /* MessageModel.swift in Sources */,
+				EDC097412786073D009755F8 /* ChatCell.swift in Sources */,
 				ED3D471E273A743E00194384 /* SceneDelegate.swift in Sources */,
+				EDC0974327860966009755F8 /* ChatViewController.swift in Sources */,
 				ED318EDF2780F7500066284C /* EntriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

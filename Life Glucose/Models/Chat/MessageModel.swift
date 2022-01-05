@@ -11,4 +11,5 @@ struct MessageModel: Codable {
     var id: UUID = UUID()
     var content: String
     var sender: String
+    var seen: Bool
 }

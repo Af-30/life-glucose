@@ -54,10 +54,10 @@ class PatientCompanyVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        firstNameField.text = patient.firstName
-        lastNameField.text = patient.lastName
-        phoneNumberField.text = patient.phoneNumber
-        cityField.text = patient.city
+        firstNameField.text = patient.company.firstName
+        lastNameField.text = patient.company.lastName
+        phoneNumberField.text = patient.company.phoneNumber
+        cityField.text = patient.company.city
     }
     
     

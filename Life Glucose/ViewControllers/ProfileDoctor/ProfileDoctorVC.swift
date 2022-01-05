@@ -26,18 +26,18 @@ class ProfileDoctorVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
 
-    @IBOutlet weak var profileImage: UIImageView!{
+    @IBOutlet weak var profileImageView: UIImageView!{
         didSet{
-            profileImage.layer.borderColor = UIColor.systemGreen.cgColor
-            profileImage.layer.borderWidth = 3.0
-            profileImage.layer.masksToBounds = true
-            profileImage.isUserInteractionEnabled = true
-            profileImage.backgroundColor = .cyan
-            profileImage.layer.masksToBounds = true
-            profileImage.layer.cornerRadius = profileImage.frame.height / 2
+            profileImageView.layer.borderColor = UIColor.systemGreen.cgColor
+            profileImageView.layer.borderWidth = 3.0
+            profileImageView.layer.masksToBounds = true
+            profileImageView.isUserInteractionEnabled = true
+            profileImageView.backgroundColor = .cyan
+            profileImageView.layer.masksToBounds = true
+            profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
             
             let tabGesture = UITapGestureRecognizer(target: self, action: #selector(selectImage))
-            profileImage.addGestureRecognizer(tabGesture)
+            profileImageView.addGestureRecognizer(tabGesture)
         }
     }
     
@@ -47,6 +47,12 @@ class ProfileDoctorVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        profileImageView.image = profileImage
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        nameLabel.text = doctor.firstName + " " + doctor.lastName
+        phoneNumberLabel.text = doctor.phoneNumber
     }
     func logout() {
         print("LOGOUT")
@@ -61,7 +67,45 @@ class ProfileDoctorVC: UIViewController {
         }
 
     }
-}
+    
+    func uploadImage() {
+        if let image = profileImageView.image,
+           let imageData = image.jpegData(compressionQuality: 0.75) {
+            
+            //Activity.showIndicator(parentView: self.view, childView: activityIndicator)
+            
+            
+            let storageRef = Storage.storage().reference(withPath: "users/\(user.uid)")
+            let updloadMeta = StorageMetadata.init()
+            updloadMeta.contentType = "image/jpeg"
+            storageRef.putData(imageData, metadata: updloadMeta) { storageMeta, error in
+                if let error = error {
+                    print("Upload error",error.localizedDescription)
+                }
+                storageRef.downloadURL { url, error in
+                    if let url = url {
+                        let db = Firestore.firestore()
+                        
+                        doctor.imageUrl = url.absoluteString
+                        profileImage = image
+                        do {
+                            try db.collection("doctors").document(doctor.docID!).setData(from: doctor, merge: true) { error in
+                                if let error = error {
+                                    print("FireStore Error",error.localizedDescription)
+                                } else {
+                                    //                                    Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+                                }
+                            }
+                        } catch {
+                            fatalError()
+                        }
+                        
+                    }
+                }
+            }
+        }
+        
+    }}
 
 
 //extension image
@@ -94,8 +138,9 @@ extension ProfileDoctorVC: UIImagePickerControllerDelegate, UINavigationControll
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let chosenImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return}
-        profileImage.image = chosenImage
+        profileImageView.image = chosenImage
         dismiss(animated: true, completion: nil)
+        uploadImage()
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)

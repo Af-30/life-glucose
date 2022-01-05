@@ -24,9 +24,25 @@ class LoginVC: UIViewController {
         emailTextField.text = "patient@patient.com"
         passwordTextField.text = "123456"
     }
+    @IBAction func patient1Login(_ sender: Any) {
+        emailTextField.text = "patient1@patient.com"
+        passwordTextField.text = "123456"
+    }
+    @IBAction func patient2Login(_ sender: Any) {
+        emailTextField.text = "patient2@patient.com"
+        passwordTextField.text = "123456"
+    }
     
     @IBAction func doctorLogin(_ sender: Any) {
         emailTextField.text = "doctor@doctor.com"
+        passwordTextField.text = "123456"
+    }
+    @IBAction func doctor1Login(_ sender: Any) {
+        emailTextField.text = "doctor1@doctor.com"
+        passwordTextField.text = "123456"
+    }
+    @IBAction func doctor2Login(_ sender: Any) {
+        emailTextField.text = "doctor2@doctor.com"
         passwordTextField.text = "123456"
     }
     
@@ -68,41 +84,70 @@ class LoginVC: UIViewController {
                         if let doc = snapshot?.documents.first {
                             do {
                                 try user = doc.data(as: UserModel.self)
+                                
                                 if user.isDoctor {
-                                    db.collection("doctors").whereField("uid", isEqualTo: result.user.uid).getDocuments { snapshot, error in
+                                    db.collection("doctors").whereField("uid", isEqualTo: user.uid).getDocuments { snapshot, error in
                                         if let error = error {
                                             print(error.localizedDescription)
                                             return
                                         }
                                         if let doc = snapshot?.documents.first {
-                                            print("DOCTOR PROFILE LOADED")
                                             do {
                                                 try doctor = doc.data(as: DoctorModel.self)
-                                                if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DoctorHomeNavigationController") as? UITabBarController {
-                                                    vc.modalPresentationStyle = .fullScreen
-                                                    self.present(vc, animated: true, completion: nil)
-                                                    Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
-                                                    
+                                                
+                                                if let url = URL(string: doctor.imageUrl) {
+                                                    DispatchQueue.global().async {
+                                                        if let data = try? Data(contentsOf: url) {
+                                                            DispatchQueue.main.async {
+                                                                if let downloadedImage = UIImage(data: data) {
+                                                                    profileImage = downloadedImage
+                                                                    
+                                                                    if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DoctorHomeNavigationController") as? UITabBarController {
+                                                                        vc.modalPresentationStyle = .fullScreen
+                                                                        self.present(vc, animated: true, completion: nil)
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
                                                 }
+                                                
+                                                
                                             } catch {
                                                 print(error.localizedDescription)
                                             }
                                         }
                                     }
                                 } else {
-                                    db.collection("patients").whereField("uid", isEqualTo: result.user.uid).getDocuments { snapshot, error in
+                                    print("NOTT DCOOTOOR")
+                                    db.collection("patients").whereField("uid", isEqualTo: user.uid).getDocuments { snapshot, error in
                                         if let error = error {
-                                            print(error.localizedDescription)
-                                            return
+                                            fatalError(error.localizedDescription)
+                                            
                                         }
+                                        
                                         if let doc = snapshot?.documents.first {
                                             do {
                                                 try patient = doc.data(as: PatientModel.self)
-                                                if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UITabBarController {
-                                                    vc.modalPresentationStyle = .fullScreen
-                                                    self.present(vc, animated: true, completion: nil)
-                                                    Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+                                                
+                                                if let url = URL(string: patient.imageUrl) {
+                                                    DispatchQueue.global().async {
+                                                        if let data = try? Data(contentsOf: url) {
+                                                            DispatchQueue.main.async {
+                                                                if let downloadedImage = UIImage(data: data) {
+                                                                    profileImage = downloadedImage
+                                                                    
+                                                                    if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UITabBarController {
+                                                                        vc.modalPresentationStyle = .fullScreen
+                                                                        self.present(vc, animated: true, completion: nil)
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
                                                 }
+                                                
+                                                
                                             } catch {
                                                 print(error.localizedDescription)
                                             }

@@ -56,8 +56,8 @@ class DoctorInformationVC: UIViewController {
                 print("updated profile")
                 doctor = updatedProfile
                 Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
-                self.navigationController?.dismiss(animated: true, completion: nil)
-                //self.navigationController?.popViewController(animated: true)
+                //self.navigationController?.dismiss(animated: true, completion: nil)
+                self.navigationController?.popViewController(animated: true)
             }
         } catch {
             fatalError()

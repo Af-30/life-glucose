@@ -8,8 +8,14 @@
 import Foundation
 import FirebaseFirestoreSwift
 
+struct ConversationUserModel: Codable {
+    var uid: String
+    var name: String
+}
+
 struct ConversationModel: Codable {
     @DocumentID var docID: String?
     var usersIDs: [String]
-    var users: [String]
+    var users: [ConversationUserModel]
+    var messages: [MessageModel]
 }

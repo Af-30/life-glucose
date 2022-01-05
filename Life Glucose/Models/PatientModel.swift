@@ -29,6 +29,9 @@ struct PatientModel: Codable {
     var company: PatientCompany
     var description: String
     //var createdAt:Timestamp?
+    var fullName: String {
+        return firstName + " " + lastName
+    }
     
     
 }

@@ -90,6 +90,7 @@ class ProfileUserVC: UIViewController {
                         let db = Firestore.firestore()
                         
                         patient.imageUrl = url.absoluteString
+                        profileImage = image
                         do {
                             try db.collection("patients").document(patient.docID!).setData(from: patient, merge: true) { error in
                                 if let error = error {

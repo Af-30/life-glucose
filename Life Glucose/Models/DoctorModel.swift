@@ -20,6 +20,8 @@ struct DoctorModel: Codable {
     var gender: String
     var description: String
     //var createdAt:Timestamp?
-    
+    var fullName: String {
+        return firstName + " " + lastName
+    }
     
 }
