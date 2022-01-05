@@ -15,7 +15,7 @@ class ProfileDoctorVC: UIViewController {
     let tableItems: [ProfileTableItem] = [
         ProfileTableItem(title: "Account", imageName: "person"),
         ProfileTableItem(title: "Patients", imageName: "person.fill.badge.plus"),
-        ProfileTableItem(title: "Log Out", imageName: "trash")
+        ProfileTableItem(title: "Log Out", imageName: "rectangle.portrait.and.arrow.right")
     ]
 
     var selectedDataDr:DoctorModel?
@@ -118,7 +118,7 @@ extension ProfileDoctorVC: UITableViewDelegate, UITableViewDataSource {
             cell.textLabel?.text = tableItems[indexPath.row].title
         }
         
-        if tableItems[indexPath.row].imageName == "trash" {
+        if tableItems[indexPath.row].imageName == "rectangle.portrait.and.arrow.right" {
             cell.imageView?.tintColor = .systemRed
             cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
         }else{
