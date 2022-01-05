@@ -56,7 +56,7 @@ class CalculatorGlucoseVC: UIViewController {
     @IBAction func calculatorGlucoseAction(_ sender: Any) {
         guard let strValue = numberGlucoseTextField.text else { return }
         guard let intValue = Int(strValue) else { return }
-        resultLabel.text = getResult(intValue)
+        resultLabel.text = getResult(intValue, fasting: fastingPicker.selectedSegmentIndex == 0)
     }
     
     @IBAction func saveAction(_ sender: Any) {
@@ -108,49 +108,51 @@ class CalculatorGlucoseVC: UIViewController {
 
     }
     
-    func getResult(_ glucose:Int) -> String {
-        if fastingPicker.selectedSegmentIndex == 0 {
-            switch glucose {
-            case 0...50:
-                return "very dangerous low"
-            case 50...80:
-                return "very low"
-            case 80...130:
-                return "normal"
-            case 130...160:
-                return "high"
-            case 160...240:
-                return "very high"
-            case 240...300:
-                return "dangerous high"
-            case 300...500:
-                return "very dangerous high"
-            default:
-                return "ERROR"
-            }
-        } else {
-            switch glucose {
-            case 0...50:
-             return "very dangerous low"
-               case 50...80:
-                return "low"
-            case 80...130:
-                return "normal rate"
-            case 130...180:
-                return "normal"
-            case 180...200:
-                return "very very high"
-            case 200...240:
-                return "very high"
-            case 240...300:
-                return "dangerous high"
-            case 300...500:
-                return "veryn dangerous high"
-            default:
-                return "ERROR"
-            }
-        }
-        return "Az"
-    }
+    
 }
 
+
+func getResult(_ glucose:Int, fasting: Bool) -> String {
+    if fasting {
+        switch glucose {
+        case 0...50:
+            return "very dangerous low"
+        case 50...80:
+            return "very low"
+        case 80...130:
+            return "normal"
+        case 130...160:
+            return "high"
+        case 160...240:
+            return "very high"
+        case 240...300:
+            return "dangerous high"
+        case 300...500:
+            return "very dangerous high"
+        default:
+            return "ERROR"
+        }
+    } else {
+        switch glucose {
+        case 0...50:
+         return "very dangerous low"
+           case 50...80:
+            return "low"
+        case 80...130:
+            return "normal rate"
+        case 130...180:
+            return "normal"
+        case 180...200:
+            return "very very high"
+        case 200...240:
+            return "very high"
+        case 240...300:
+            return "dangerous high"
+        case 300...500:
+            return "veryn dangerous high"
+        default:
+            return "ERROR"
+        }
+    }
+    return "Az"
+}

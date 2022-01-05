@@ -11,16 +11,22 @@ import SwiftUI
 
 class EntriesViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UITableView!
     var activityIndicator = UIActivityIndicatorView()
     @IBOutlet weak var tableView: UITableView!
     var entries: [EntryModel] = []
     var selectedEntry: EntryModel?
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var glucoseLabel: UILabel!
+    
+    @IBOutlet weak var resultLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         // Do any additional setup after loading the view.
         
         //fetchData()
@@ -97,11 +103,13 @@ extension EntriesViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! EntriesTableViewCell
 //        cell.textLabel?.text = "\(resultLabel[indexPath.row])"
-        cell.textLabel?.text = "Glucose:  \(entries[indexPath.row].value)"
-//        cell.textLabel?.text = "Result:  \(entries[indexPath.row].result)"
-        cell.imageView?.image = UIImage(systemName: "checkmark")
+        cell.nameLabel.text = patient.firstName
+        cell.glucose.text = "Glu:\(entries[indexPath.row].value)"
+        cell.resultLabel.text = getResult(entries[indexPath.row].value, fasting: entries[indexPath.row].fasting)
+        cell.imageViewCell.image = profileImage
+        
         return cell
     }
     
@@ -119,6 +127,8 @@ extension EntriesViewController : UITableViewDelegate, UITableViewDataSource {
             deleteItem(index: indexPath.row)
         }
     }
+    
+    
     
     
 }

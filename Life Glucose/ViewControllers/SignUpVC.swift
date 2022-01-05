@@ -71,7 +71,7 @@ class SignUpVC: UIViewController {
                 if let authResult = authResult {
                     let db = Firestore.firestore()
                     user = UserModel(uid: authResult.user.uid, email: authResult.user.email!,
-                                         isDoctor: self.userTypePicker.selectedSegmentIndex == 1)
+                                     isDoctor: self.userTypePicker.selectedSegmentIndex == 1)
                     //        let user = UserModel(phoneNumber: authResult.user.phoneNumber!, uid: authResult.user.uid, email: authResult.user.email!,
                     //   isDoctor: self.userTypePicker.selectedSegmentIndex == 1)
                     do {
@@ -81,7 +81,15 @@ class SignUpVC: UIViewController {
                                 return
                             }
                             if user.isDoctor {
-                                let profile = DoctorModel(uid: user.uid, firstName: "", lastName: "", phoneNumber: "")
+                                let profile = DoctorModel(uid: user.uid,
+                                                          firstName: "",
+                                                          lastName: "",
+                                                          imageUrl: "",
+                                                          phoneNumber: "",
+                                                          city: "",
+                                                          gender: "",
+                                                          description: "")
+                                
                                 do {
                                     _ = try db.collection("doctors").addDocument(from: profile) { error in
                                         if let error = error {
@@ -106,17 +114,18 @@ class SignUpVC: UIViewController {
                                                            imageUrl: "",
                                                            phoneNumber: "",
                                                            city: "",
-                                                           gender: "")
+                                                           gender: "",
+                                                           company: PatientCompany(firstName: "", lastName: "", phoneNumber: "", city: ""), description: "")
                                 
                                 do {
                                     var ref: DocumentReference!
-                                ref = try db.collection("patients").addDocument(from: profile) { error in
+                                    ref = try db.collection("patients").addDocument(from: profile) { error in
                                         if let error = error {
                                             print("Registration error",error.localizedDescription)
                                             return
                                         }
                                         patient = profile
-                                    patient.docID = ref.documentID
+                                        patient.docID = ref.documentID
                                         if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController") as? UITabBarController {
                                             vc.modalPresentationStyle = .fullScreen
                                             self.present(vc, animated: true, completion: nil)

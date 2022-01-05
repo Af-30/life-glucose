@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ED1B64F2277AE9C7003E934E /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B64F1277AE9C7003E934E /* HomeVC.swift */; };
 		ED24C7D0276F55FA00583D41 /* LandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7CF276F55FA00583D41 /* LandingVC.swift */; };
 		ED24C7D2276F563800583D41 /* ProfileUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7D1276F563800583D41 /* ProfileUserVC.swift */; };
 		ED24C7D4276F569B00583D41 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24C7D3276F569B00583D41 /* SignUpVC.swift */; };
@@ -25,9 +24,13 @@
 		ED3D4733273A744000194384 /* Life_GlucoseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D4732273A744000194384 /* Life_GlucoseTests.swift */; };
 		ED3D473D273A744000194384 /* Life_GlucoseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D473C273A744000194384 /* Life_GlucoseUITests.swift */; };
 		ED3D473F273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D473E273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift */; };
-		EDAF3197278362350057C1AC /* InformationOldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF3196278362340057C1AC /* InformationOldVC.swift */; };
+		ED52E03F2784A97600040F89 /* ConversationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52E03E2784A97600040F89 /* ConversationModel.swift */; };
+		ED52E0412784A98F00040F89 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52E0402784A98F00040F89 /* MessageModel.swift */; };
+		ED52E0432784B3C800040F89 /* DoctorInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52E0422784B3C800040F89 /* DoctorInformationVC.swift */; };
+		ED52E0452784BF0D00040F89 /* EntriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52E0442784BF0D00040F89 /* EntriesTableViewCell.swift */; };
+		ED52E0472784D00700040F89 /* PatientCompanyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52E0462784D00600040F89 /* PatientCompanyVC.swift */; };
+		EDAF3197278362350057C1AC /* InformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF3196278362340057C1AC /* InformationVC.swift */; };
 		EDB09EC0277A42A6007A6196 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = EDB09EBF277A42A6007A6196 /* Readme.md */; };
-		EDB1A6C82782338C00ACDDDC /* InformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB1A6C72782338B00ACDDDC /* InformationVC.swift */; };
 		EDB1A6CB2783169C00ACDDDC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDB1A6CD2783169C00ACDDDC /* Localizable.strings */; };
 		EDC3F038276F9D5C00848D1E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EDC3F037276F9D5C00848D1E /* FirebaseAuth */; };
 		EDC3F03A276F9D5C00848D1E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EDC3F039276F9D5C00848D1E /* FirebaseFirestore */; };
@@ -39,7 +42,6 @@
 		EDD6ABCC277657330017D85A /* DoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD6ABCB277657320017D85A /* DoctorModel.swift */; };
 		EDD6ABCE27765E810017D85A /* ProfileDoctorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD6ABCD27765E810017D85A /* ProfileDoctorVC.swift */; };
 		EDEDA8B4276C4DA900CA1597 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDEDA8B3276C4DA900CA1597 /* GoogleService-Info.plist */; };
-		EDFD796C277C5B590078675C /* PrivacyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD796B277C5B590078675C /* PrivacyUser.swift */; };
 		EDFD796E277C715A0078675C /* CalculatorGlucoseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD796D277C715A0078675C /* CalculatorGlucoseVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +63,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		ED1B64F1277AE9C7003E934E /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		ED24C7CF276F55FA00583D41 /* LandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingVC.swift; sourceTree = "<group>"; };
 		ED24C7D1276F563800583D41 /* ProfileUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserVC.swift; sourceTree = "<group>"; };
 		ED24C7D3276F569B00583D41 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
@@ -83,9 +84,13 @@
 		ED3D4738273A744000194384 /* Life GlucoseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Life GlucoseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3D473C273A744000194384 /* Life_GlucoseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_GlucoseUITests.swift; sourceTree = "<group>"; };
 		ED3D473E273A744000194384 /* Life_GlucoseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_GlucoseUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		EDAF3196278362340057C1AC /* InformationOldVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationOldVC.swift; sourceTree = "<group>"; };
+		ED52E03E2784A97600040F89 /* ConversationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationModel.swift; sourceTree = "<group>"; };
+		ED52E0402784A98F00040F89 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		ED52E0422784B3C800040F89 /* DoctorInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorInformationVC.swift; sourceTree = "<group>"; };
+		ED52E0442784BF0D00040F89 /* EntriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewCell.swift; sourceTree = "<group>"; };
+		ED52E0462784D00600040F89 /* PatientCompanyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientCompanyVC.swift; sourceTree = "<group>"; };
+		EDAF3196278362340057C1AC /* InformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationVC.swift; sourceTree = "<group>"; };
 		EDB09EBF277A42A6007A6196 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
-		EDB1A6C72782338B00ACDDDC /* InformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationVC.swift; sourceTree = "<group>"; };
 		EDB1A6CC2783169C00ACDDDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EDB1A6CE278316C100ACDDDC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		EDB1A6CF278316C100ACDDDC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -95,7 +100,6 @@
 		EDD6ABCB277657320017D85A /* DoctorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorModel.swift; sourceTree = "<group>"; };
 		EDD6ABCD27765E810017D85A /* ProfileDoctorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDoctorVC.swift; sourceTree = "<group>"; };
 		EDEDA8B3276C4DA900CA1597 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		EDFD796B277C5B590078675C /* PrivacyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyUser.swift; sourceTree = "<group>"; };
 		EDFD796D277C715A0078675C /* CalculatorGlucoseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorGlucoseVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +145,7 @@
 		ED2923372745185C00B1D451 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ED52E03D2784A95300040F89 /* Chat */,
 				EDD6ABCB277657320017D85A /* DoctorModel.swift */,
 				ED29233B274518FA00B1D451 /* UserModel.swift */,
 				EDCEA451277B7BBB00D15264 /* PatientModel.swift */,
@@ -152,9 +157,6 @@
 		ED2923382745186E00B1D451 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				ED3D6B6E27842F23003C8F18 /* ProfileDoctor */,
-				EDFD796F277C83ED0078675C /* ProfilePatient */,
-				EDFD7970277C84650078675C /* Glucose */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -219,8 +221,18 @@
 			isa = PBXGroup;
 			children = (
 				EDD6ABCD27765E810017D85A /* ProfileDoctorVC.swift */,
+				ED52E0422784B3C800040F89 /* DoctorInformationVC.swift */,
 			);
 			path = ProfileDoctor;
+			sourceTree = "<group>";
+		};
+		ED52E03D2784A95300040F89 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				ED52E03E2784A97600040F89 /* ConversationModel.swift */,
+				ED52E0402784A98F00040F89 /* MessageModel.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		EDAC9F2627778D3300745567 /* I don't use */ = {
@@ -238,8 +250,10 @@
 				ED24C7CF276F55FA00583D41 /* LandingVC.swift */,
 				ED24C7D3276F569B00583D41 /* SignUpVC.swift */,
 				ED24C7D5276F56CC00583D41 /* LoginVC.swift */,
-				ED1B64F1277AE9C7003E934E /* HomeVC.swift */,
 				EDCEA453277B883200D15264 /* WelcomeVC.swift */,
+				EDFD7970277C84650078675C /* Glucose */,
+				EDFD796F277C83ED0078675C /* ProfilePatient */,
+				ED3D6B6E27842F23003C8F18 /* ProfileDoctor */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -248,9 +262,8 @@
 			isa = PBXGroup;
 			children = (
 				ED24C7D1276F563800583D41 /* ProfileUserVC.swift */,
-				EDFD796B277C5B590078675C /* PrivacyUser.swift */,
-				EDB1A6C72782338B00ACDDDC /* InformationVC.swift */,
-				EDAF3196278362340057C1AC /* InformationOldVC.swift */,
+				EDAF3196278362340057C1AC /* InformationVC.swift */,
+				ED52E0462784D00600040F89 /* PatientCompanyVC.swift */,
 			);
 			path = ProfilePatient;
 			sourceTree = "<group>";
@@ -259,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				EDFD796D277C715A0078675C /* CalculatorGlucoseVC.swift */,
+				ED52E0442784BF0D00040F89 /* EntriesTableViewCell.swift */,
 				ED318EDE2780F7500066284C /* EntriesViewController.swift */,
 			);
 			path = Glucose;
@@ -410,23 +424,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED24C7D4276F569B00583D41 /* SignUpVC.swift in Sources */,
+				ED52E03F2784A97600040F89 /* ConversationModel.swift in Sources */,
 				EDFD796E277C715A0078675C /* CalculatorGlucoseVC.swift in Sources */,
 				ED29233C274518FA00B1D451 /* UserModel.swift in Sources */,
 				ED24C7D9276F644500583D41 /* ImageView.swift in Sources */,
 				EDCEA452277B7BBB00D15264 /* PatientModel.swift in Sources */,
+				ED52E0472784D00700040F89 /* PatientCompanyVC.swift in Sources */,
 				ED24C7D2276F563800583D41 /* ProfileUserVC.swift in Sources */,
-				EDB1A6C82782338C00ACDDDC /* InformationVC.swift in Sources */,
-				EDAF3197278362350057C1AC /* InformationOldVC.swift in Sources */,
-				ED1B64F2277AE9C7003E934E /* HomeVC.swift in Sources */,
+				EDAF3197278362350057C1AC /* InformationVC.swift in Sources */,
+				ED52E0432784B3C800040F89 /* DoctorInformationVC.swift in Sources */,
 				EDCEA454277B883200D15264 /* WelcomeVC.swift in Sources */,
 				ED24C7DB276F647700583D41 /* Activity.swift in Sources */,
 				ED318EDD2780F0E20066284C /* GlobalVariables.swift in Sources */,
-				EDFD796C277C5B590078675C /* PrivacyUser.swift in Sources */,
 				ED3D471C273A743E00194384 /* AppDelegate.swift in Sources */,
 				EDD6ABCE27765E810017D85A /* ProfileDoctorVC.swift in Sources */,
 				EDD6ABCC277657330017D85A /* DoctorModel.swift in Sources */,
+				ED52E0452784BF0D00040F89 /* EntriesTableViewCell.swift in Sources */,
 				ED24C7D0276F55FA00583D41 /* LandingVC.swift in Sources */,
 				ED24C7D6276F56CC00583D41 /* LoginVC.swift in Sources */,
+				ED52E0412784A98F00040F89 /* MessageModel.swift in Sources */,
 				ED3D471E273A743E00194384 /* SceneDelegate.swift in Sources */,
 				ED318EDF2780F7500066284C /* EntriesViewController.swift in Sources */,
 			);

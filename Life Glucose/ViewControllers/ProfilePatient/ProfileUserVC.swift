@@ -11,7 +11,7 @@ import Firebase
 struct ProfileTableItem {
     var title: String
     var imageName: String
-//    var color: UIColor
+    //    var color: UIColor
 }
 
 class ProfileUserVC: UIViewController {
@@ -23,23 +23,22 @@ class ProfileUserVC: UIViewController {
     let tableItems: [ProfileTableItem] = [
         ProfileTableItem(title: "Account", imageName: "person"),
         ProfileTableItem(title: "Acompany Patient", imageName: "person.fill.badge.plus"),
-        ProfileTableItem(title: "Privacy and noficitions", imageName: "bell.slash"),
-        ProfileTableItem(title: "Log Out", imageName: "trash")
+        ProfileTableItem(title: "Log Out", imageName: "rectangle.portrait.and.arrow.right")
     ]
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var profileImage: UIImageView!{
+    @IBOutlet weak var profileImageView: UIImageView!{
         didSet {
-            profileImage.layer.borderColor = UIColor.systemGreen.cgColor
-            profileImage.layer.borderWidth = 3.0
-            profileImage.layer.masksToBounds = true
-            profileImage.isUserInteractionEnabled = true
-            profileImage.backgroundColor = .black
-            profileImage.layer.masksToBounds = true
-            profileImage.layer.cornerRadius = profileImage.frame.height / 2
+            profileImageView.layer.borderColor = UIColor.systemGreen.cgColor
+            profileImageView.layer.borderWidth = 3.0
+            profileImageView.layer.masksToBounds = true
+            profileImageView.isUserInteractionEnabled = true
+            profileImageView.backgroundColor = .black
+            profileImageView.layer.masksToBounds = true
+            profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
             
             let tabGesture = UITapGestureRecognizer(target: self, action: #selector(selectImage))
-            profileImage.addGestureRecognizer(tabGesture)
+            profileImageView.addGestureRecognizer(tabGesture)
         }
     }
     override func viewDidLoad() {
@@ -48,6 +47,7 @@ class ProfileUserVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        profileImageView.image = profileImage
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,22 +67,62 @@ class ProfileUserVC: UIViewController {
         } catch  {
             print("ERROR in signout",error.localizedDescription)
         }
+        
+    }
 
+    
+    func uploadImage() {
+        if let image = profileImageView.image,
+           let imageData = image.jpegData(compressionQuality: 0.75) {
+            
+            //Activity.showIndicator(parentView: self.view, childView: activityIndicator)
+            
+            
+            let storageRef = Storage.storage().reference(withPath: "users/\(user.uid)")
+            let updloadMeta = StorageMetadata.init()
+            updloadMeta.contentType = "image/jpeg"
+            storageRef.putData(imageData, metadata: updloadMeta) { storageMeta, error in
+                if let error = error {
+                    print("Upload error",error.localizedDescription)
+                }
+                storageRef.downloadURL { url, error in
+                    if let url = url {
+                        let db = Firestore.firestore()
+                        
+                        patient.imageUrl = url.absoluteString
+                        do {
+                            try db.collection("patients").document(patient.docID!).setData(from: patient, merge: true) { error in
+                                if let error = error {
+                                    print("FireStore Error",error.localizedDescription)
+                                } else {
+                                    //                                    Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+                                }
+                            }
+                        } catch {
+                            fatalError()
+                        }
+                        
+                    }
+                }
+            }
+        }
+        
     }
     
-//    @IBAction func handleLogout(_ sender: Any) {
-//        print("LOGOUT")
-//        do {
-//            try Auth.auth().signOut()
-//            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LandingViewController") as? LandingVC {
-//                vc.modalPresentationStyle = .fullScreen
-//                self.present(vc, animated: true, completion: nil)
-//            }
-//        } catch  {
-//            print("ERROR in signout",error.localizedDescription)
-//        }
-//
-//    }
+    
+    //    @IBAction func handleLogout(_ sender: Any) {
+    //        print("LOGOUT")
+    //        do {
+    //            try Auth.auth().signOut()
+    //            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LandingViewController") as? LandingVC {
+    //                vc.modalPresentationStyle = .fullScreen
+    //                self.present(vc, animated: true, completion: nil)
+    //            }
+    //        } catch  {
+    //            print("ERROR in signout",error.localizedDescription)
+    //        }
+    //
+    //    }
 }
 //extension UIImagePickerController
 extension ProfileUserVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
@@ -106,7 +146,7 @@ extension ProfileUserVC: UIImagePickerControllerDelegate, UINavigationController
         self.present(alert, animated: true, completion: nil)
     }
     func getImage( from sourceType: UIImagePickerController.SourceType) {
-
+        
         if UIImagePickerController.isSourceTypeAvailable(sourceType) {
             imagePickerController.sourceType = sourceType
             self.present(imagePickerController, animated: true, completion: nil)
@@ -114,8 +154,10 @@ extension ProfileUserVC: UIImagePickerControllerDelegate, UINavigationController
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let chosenImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return}
-        profileImage.image = chosenImage
+        profileImageView.image = chosenImage
         dismiss(animated: true, completion: nil)
+        // upload
+        uploadImage()
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
@@ -127,7 +169,7 @@ extension ProfileUserVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableItems.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         if tableItems[indexPath.row].title == "Log Out" {
@@ -137,14 +179,14 @@ extension ProfileUserVC: UITableViewDelegate, UITableViewDataSource {
             cell.textLabel?.text = tableItems[indexPath.row].title
         }
         
-        if tableItems[indexPath.row].imageName == "trash" {
+        if tableItems[indexPath.row].imageName == "rectangle.portrait.and.arrow.right" {
             cell.imageView?.tintColor = .systemRed
             cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
         }else{
             cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
         }
-//        cell.textLabel?.text = tableItems[indexPath.row].title
-//        cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
+        //        cell.textLabel?.text = tableItems[indexPath.row].title
+        //        cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
         cell.accessoryType = .disclosureIndicator
         return cell
     }
@@ -159,8 +201,6 @@ extension ProfileUserVC: UITableViewDelegate, UITableViewDataSource {
             performSegue(withIdentifier: "profileToAccount", sender: nil)
         case "Acompany Patient":
             performSegue(withIdentifier: "profileToAcompany", sender: nil)
-        case "Privacy and noficitions":
-            performSegue(withIdentifier: "profileToPrivacy", sender: nil)
         case "Log Out":
             logout()
         default: fatalError()
@@ -169,6 +209,6 @@ extension ProfileUserVC: UITableViewDelegate, UITableViewDataSource {
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
+    
 }
 

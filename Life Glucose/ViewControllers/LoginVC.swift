@@ -75,6 +75,7 @@ class LoginVC: UIViewController {
                                             return
                                         }
                                         if let doc = snapshot?.documents.first {
+                                            print("DOCTOR PROFILE LOADED")
                                             do {
                                                 try doctor = doc.data(as: DoctorModel.self)
                                                 if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DoctorHomeNavigationController") as? UITabBarController {

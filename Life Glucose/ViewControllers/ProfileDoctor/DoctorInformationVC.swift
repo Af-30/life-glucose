@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import FirebaseFirestoreSwift
 
-class InformationOldVC: UIViewController {
+class DoctorInformationVC: UIViewController {
     
     var activityIndicator = UIActivityIndicatorView()
 
@@ -25,6 +25,7 @@ class InformationOldVC: UIViewController {
     
     @IBOutlet weak var AgeField: UITextField!
     
+    @IBOutlet weak var desciriptionaField: UITextView!
     
     @IBAction func saveAction(_ sender: Any) {
         guard let firstName = firstNameField.text else { return }
@@ -32,27 +33,31 @@ class InformationOldVC: UIViewController {
         guard let phoneNumber = phoneNumberField.text else { return }
         guard let city = cityField.text else { return }
         guard let gender = genderField.text else { return }
+        guard let description = desciriptionaField.text else { return }
         
         
         Activity.showIndicator(parentView: self.view, childView: self.activityIndicator)
         let db = Firestore.firestore()
         
-        let updatedProfile = PatientModel(uid: patient.uid,
-                                          firstName: firstName,
-                                          lastName: lastName,
-                                          imageUrl: patient.imageUrl,
-                                          phoneNumber: phoneNumber,
-                                          city: city,
-                                          gender: gender)
+        let updatedProfile = DoctorModel(uid: doctor.uid,
+                                         firstName: firstName,
+                                         lastName: lastName,
+                                         imageUrl: doctor.imageUrl,
+                                         phoneNumber: phoneNumber,
+                                         city: city,
+                                         gender: gender,
+                                         description: description)
+        
         do {
-            try db.collection("patients").document(patient.docID!).setData(from: updatedProfile, merge: true) { error in
+            try db.collection("doctors").document(doctor.docID!).setData(from: updatedProfile, merge: true) { error in
                 if let error = error {
                     fatalError()
                 }
                 print("updated profile")
-                patient = updatedProfile
+                doctor = updatedProfile
                 Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
-                self.navigationController?.popViewController(animated: true)
+                self.navigationController?.dismiss(animated: true, completion: nil)
+                //self.navigationController?.popViewController(animated: true)
             }
         } catch {
             fatalError()
@@ -75,8 +80,8 @@ class InformationOldVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        firstNameField.text = patient.firstName
-        lastNameField.text = patient.lastName
+        firstNameField.text = doctor.firstName
+        lastNameField.text = doctor.lastName
         // fill all fields from patient profile
     }
     

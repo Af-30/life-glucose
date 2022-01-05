@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import UIKit
 
 var user: UserModel!
 var patient: PatientModel!
 var doctor: DoctorModel!
+var profileImage: UIImage!
