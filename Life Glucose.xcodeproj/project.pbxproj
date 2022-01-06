@@ -167,6 +167,8 @@
 		ED2923382745186E00B1D451 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ED52E0442784BF0D00040F89 /* EntriesTableViewCell.swift */,
+				EDC097402786073D009755F8 /* ChatCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -275,7 +277,6 @@
 			children = (
 				EDC0973C2786065B009755F8 /* ChatTableViewController.swift */,
 				EDC0973E2786066E009755F8 /* NewChatViewController.swift */,
-				EDC097402786073D009755F8 /* ChatCell.swift */,
 				EDC0974227860966009755F8 /* ChatViewController.swift */,
 			);
 			path = Chat;
@@ -295,7 +296,6 @@
 			isa = PBXGroup;
 			children = (
 				EDFD796D277C715A0078675C /* CalculatorGlucoseVC.swift */,
-				ED52E0442784BF0D00040F89 /* EntriesTableViewCell.swift */,
 				ED318EDE2780F7500066284C /* EntriesViewController.swift */,
 			);
 			path = Glucose;

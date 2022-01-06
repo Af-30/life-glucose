@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "IMAGE 1443-06-02 12:20:43.jpg",
+      "filename" : "Screen_Shot_1443-06-03_at_1.27.48_PM-removebg-preview-2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Screen_Shot_1443-06-03_at_1.27.48_PM-removebg-preview-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Screen_Shot_1443-06-03_at_1.27.48_PM-removebg-preview.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
