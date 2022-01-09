@@ -14,6 +14,11 @@ class SignUpVC: UIViewController {
     let imagePickerController = UIImagePickerController()
     var activityIndicator = UIActivityIndicatorView()
 //    local
+    @IBOutlet weak var countinueButton: UIButton!{
+        didSet{
+            countinueButton.setTitle("countinue".localized, for: .normal)
+        }
+    }
     @IBOutlet weak var emailLabel: UILabel!{
         didSet {
             emailLabel.text = "Email".localized

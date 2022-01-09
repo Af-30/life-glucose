@@ -23,6 +23,7 @@ class ProfileUserVC: UIViewController {
     let tableItems: [ProfileTableItem] = [
         ProfileTableItem(title: "Account", imageName: "person"),
         ProfileTableItem(title: "Acompany Patient", imageName: "person.fill.badge.plus"),
+        ProfileTableItem(title: "Information App", imageName: "book"),
         ProfileTableItem(title: "Log Out", imageName: "rectangle.portrait.and.arrow.right")
     ]
     
@@ -202,6 +203,8 @@ extension ProfileUserVC: UITableViewDelegate, UITableViewDataSource {
             performSegue(withIdentifier: "profileToAccount", sender: nil)
         case "Acompany Patient":
             performSegue(withIdentifier: "profileToAcompany", sender: nil)
+        case "Information App":
+            performSegue(withIdentifier: "informApp", sender: nil)
         case "Log Out":
             logout()
         default: fatalError()

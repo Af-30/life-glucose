@@ -10,7 +10,25 @@ import UIKit
 import Firebase
 import FirebaseAuth
 class LoginVC: UIViewController {
+//    local
+    @IBOutlet weak var emailLabel: UILabel!{
+        didSet{
+            emailLabel.text = "Email".localized
+        }
+    }
+    @IBOutlet weak var passwordLabel: UILabel!{
+        didSet{
+            passwordLabel.text = "Password".localized
+        }
+    }
+    @IBOutlet weak var loginButton: UIButton!{
+        didSet{
+            loginButton.setTitle("Login".localized, for: .normal)
+        }
+    }
+    
     var activityIndicator = UIActivityIndicatorView()
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     var massige = ""

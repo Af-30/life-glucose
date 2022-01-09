@@ -40,10 +40,22 @@ class CalculatorGlucoseVC: UIViewController {
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var numberGlucoseTextField: UITextField!
-    @IBOutlet weak var calculatorGlucoseButton: UIButton!
+    @IBOutlet weak var calculatorGlucoseButton: UIButton!{
+        didSet {
+            calculatorGlucoseButton.setTitle("calculator Glucose".localized, for: .normal)
+        }
+    }
 //    local
-    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var resultLabel: UILabel!{
+        didSet{
+            resultLabel.text = "Result".localized
+        }
+    }
     
+    @IBOutlet weak var result: UILabel!
+    
+   
+       
     @IBOutlet weak var saveButton: UIButton!
     
     override func viewDidLoad() {
@@ -56,8 +68,10 @@ class CalculatorGlucoseVC: UIViewController {
         
         if editEntry {
             saveButton.setTitle("Update", for: .normal)
+            saveButton.setTitle("Update".localized, for: .normal)
         } else {
             saveButton.setTitle("Save", for: .normal)
+            saveButton.setTitle("Save".localized, for: .normal)
         }
         guard let entry = entry else { return }
         self.fastingPicker.selectedSegmentIndex = entry.fasting ? 0 : 1
@@ -128,25 +142,18 @@ func getResult(_ glucose:Int, fasting: Bool) -> String {
     if fasting {
         switch glucose {
         case 0...50:
-            return "very dangerous low"
             return "very dangerous low".localized
         case 50...80:
-            return "very low"
             return "very low".localized
         case 80...130:
-            return "normal"
             return "normal".localized
         case 130...160:
-            return "high"
             return "high".localized
         case 160...240:
-            return "very high"
             return "very high".localized
         case 240...300:
-            return "dangerous high"
             return "dangerous high".localized
         case 300...500:
-            return "very dangerous high"
             return "very dangerous high".localized
         default:
             return "ERROR"
@@ -154,28 +161,20 @@ func getResult(_ glucose:Int, fasting: Bool) -> String {
     } else {
         switch glucose {
         case 0...50:
-         return "very dangerous low"
             return "very dangerous low".localized
            case 50...80:
-            return "low"
             return "low".localized
         case 80...130:
-            return "normal rate"
             return "normal rate".localized
         case 130...180:
-            return "normal"
             return "normal".localized
         case 180...200:
-            return "very very high"
             return "very very high".localized
         case 200...240:
-            return "very high"
             return "very high".localized
         case 240...300:
-            return "dangerous high"
             return "dangerous high".localized
         case 300...500:
-            return "veryn dangerous high"
             return "veryn dangerous high".localized
         default:
             return "ERROR"

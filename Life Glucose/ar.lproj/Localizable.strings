@@ -17,7 +17,7 @@
 "Phone Number" = "رقم الجوال";
 "Age" = "العمر";
 "City" = "المدينة";
-"Gander" = "الجنس";
+"Gander" = ":الجنس";
 "Password" = "كلمة السر";
 "Comfirm Password" = "اعادة كلمة السر";
 
@@ -37,3 +37,9 @@
 "very very high" = "مرتفع جداً جداً";
 "dangerous high" = "مرتفع خطير";
 "very dangerous high" = "مرتفع خطير جداً";
+"calculator Glucose" = "مجموع السكر";
+"Save" = "حفظ";
+"Update" = "تحديث";
+"countinue" = "استمر";
+"Life Glucose: it is a set of results that are measured by analyzing the blood through the device, and the numnber is entered to detect the state of blood sugar,, it also helps people with diabetes to idenify the rates pf rise and fall, and follow them on their suger lavel." = "هو عبارة عن مجموعه من النتائج يتم قياسها عن طريق تحليل الدم عبر الجهاز ويتم ادخال الرقم للكشف عن حالة السكر بالدم كما يساعد اصحاب المرضى السكري على التعرف على نسبه الارتفاع والانخفاض ، ومتابعتهم على مستوى السكر الخاص بهم";
+"This prpject is a very small part, wait for the application after development" = "هذا المشروع هو جزء مصغر جداً ، انتظروا التطبيق بعد التطوير ❤️🦦";

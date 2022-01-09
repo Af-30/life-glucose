@@ -35,13 +35,17 @@ class ChatTableViewController: UIViewController {
     }
     
     private func fetchData() {
+        
         let db = Firestore.firestore()
         conversations.removeAll()
         db.collection("conversations").whereField("usersIDs", arrayContainsAny: [user.uid]).getDocuments { snapshot, error in
             if let error = error {
                 fatalError()
             }
-            guard let docs = snapshot?.documents else { return }
+            guard let docs = snapshot?.documents else {
+                self.conversations.removeAll()
+
+                return }
             print(docs.count)
             for doc in docs {
                 do {
@@ -58,6 +62,21 @@ class ChatTableViewController: UIViewController {
         performSegue(withIdentifier: "newChat", sender: self)
     }
 
+//    private func deleteItem(index: Int) {
+////        Activity.showIndicator(parentView: view, childView: activityIndicator)
+//        let db = Firestore.firestore()
+//        db.collection("patients/\(patient.docID!)/entries").document(conversations[index].docID!).delete(completion: { error in
+//            if let error = error {
+//                print(error.localizedDescription)
+//                return
+//            }
+////            Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+//            self.fetchData()
+//        })
+//    }
+    
+    
+    
 }
 
 extension ChatTableViewController: UITableViewDelegate, UITableViewDataSource {
@@ -80,5 +99,10 @@ extension ChatTableViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         selectedConversation = conversations[indexPath.row]
         performSegue(withIdentifier: "chatDetails", sender: self)
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+//            deleteItem(index: indexPath.row)
+        }
     }
 }

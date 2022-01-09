@@ -19,7 +19,6 @@ class EntriesViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var glucoseLabel: UILabel!
-    
     @IBOutlet weak var resultLabel: UILabel!
     
     override func viewDidLoad() {
@@ -79,7 +78,7 @@ class EntriesViewController: UIViewController {
             }
         }
     }
-    
+//    this func delete in firebase and file patients in docId 
     private func deleteItem(index: Int) {
         Activity.showIndicator(parentView: view, childView: activityIndicator)
         let db = Firestore.firestore()
@@ -106,7 +105,7 @@ extension EntriesViewController : UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! EntriesTableViewCell
 //        cell.textLabel?.text = "\(resultLabel[indexPath.row])"
         cell.nameLabel.text = patient.firstName
-        cell.glucose.text = "Glu:\(entries[indexPath.row].value)"
+        cell.glucose.text = "\(entries[indexPath.row].value)"
         cell.resultLabel.text = getResult(entries[indexPath.row].value, fasting: entries[indexPath.row].fasting)
         cell.imageViewCell.image = profileImage
         
@@ -121,7 +120,7 @@ extension EntriesViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-
+//use delete in table view 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
             deleteItem(index: indexPath.row)

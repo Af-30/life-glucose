@@ -29,6 +29,7 @@
 		ED52E0432784B3C800040F89 /* DoctorInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52E0422784B3C800040F89 /* DoctorInformationVC.swift */; };
 		ED52E0452784BF0D00040F89 /* EntriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52E0442784BF0D00040F89 /* EntriesTableViewCell.swift */; };
 		ED52E0472784D00700040F89 /* PatientCompanyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52E0462784D00600040F89 /* PatientCompanyVC.swift */; };
+		EDA167A0278B0707007D29A5 /* InformationAppVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA1679F278B0707007D29A5 /* InformationAppVC.swift */; };
 		EDAF3197278362350057C1AC /* InformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF3196278362340057C1AC /* InformationVC.swift */; };
 		EDB09EC0277A42A6007A6196 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = EDB09EBF277A42A6007A6196 /* Readme.md */; };
 		EDB1A6CB2783169C00ACDDDC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDB1A6CD2783169C00ACDDDC /* Localizable.strings */; };
@@ -94,6 +95,7 @@
 		ED52E0422784B3C800040F89 /* DoctorInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorInformationVC.swift; sourceTree = "<group>"; };
 		ED52E0442784BF0D00040F89 /* EntriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewCell.swift; sourceTree = "<group>"; };
 		ED52E0462784D00600040F89 /* PatientCompanyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientCompanyVC.swift; sourceTree = "<group>"; };
+		EDA1679F278B0707007D29A5 /* InformationAppVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationAppVC.swift; sourceTree = "<group>"; };
 		EDAF3196278362340057C1AC /* InformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationVC.swift; sourceTree = "<group>"; };
 		EDB09EBF277A42A6007A6196 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		EDB1A6CC2783169C00ACDDDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				ED24C7D1276F563800583D41 /* ProfileUserVC.swift */,
 				EDAF3196278362340057C1AC /* InformationVC.swift */,
 				ED52E0462784D00600040F89 /* PatientCompanyVC.swift */,
+				EDA1679F278B0707007D29A5 /* InformationAppVC.swift */,
 			);
 			path = ProfilePatient;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				ED52E0412784A98F00040F89 /* MessageModel.swift in Sources */,
 				EDC097412786073D009755F8 /* ChatCell.swift in Sources */,
 				ED3D471E273A743E00194384 /* SceneDelegate.swift in Sources */,
+				EDA167A0278B0707007D29A5 /* InformationAppVC.swift in Sources */,
 				EDC0974327860966009755F8 /* ChatViewController.swift in Sources */,
 				ED318EDF2780F7500066284C /* EntriesViewController.swift in Sources */,
 			);
