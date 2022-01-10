@@ -74,7 +74,6 @@ class ProfileDoctorVC: UIViewController {
             
             //Activity.showIndicator(parentView: self.view, childView: activityIndicator)
             
-            
             let storageRef = Storage.storage().reference(withPath: "users/\(user.uid)")
             let updloadMeta = StorageMetadata.init()
             updloadMeta.contentType = "image/jpeg"

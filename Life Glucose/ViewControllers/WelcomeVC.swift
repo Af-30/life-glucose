@@ -8,7 +8,7 @@
 import UIKit
 
 class WelcomeVC: UIViewController {
-
+    
     let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
@@ -23,7 +23,6 @@ class WelcomeVC: UIViewController {
         } else {
             self.performSegue(withIdentifier: "landingToHome", sender: nil)
         }
-    
     }
     
 }

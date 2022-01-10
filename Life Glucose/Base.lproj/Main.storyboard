@@ -72,7 +72,7 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Login" cornerStyle="large">
                                             <backgroundConfiguration key="background" strokeWidth="3" strokeOutset="-4">
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="strokeColor" name="colorTabBar"/>
                                             </backgroundConfiguration>
                                             <fontDescription key="titleFontDescription" name="Papyrus" family="Papyrus" pointSize="30"/>
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -88,7 +88,7 @@
                                         <buttonConfiguration key="configuration" style="plain" title="register" cornerStyle="large">
                                             <backgroundConfiguration key="background" strokeWidth="3" strokeOutset="-4">
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="strokeColor" name="colorTabBar"/>
                                             </backgroundConfiguration>
                                             <fontDescription key="titleFontDescription" name="Papyrus" family="Papyrus" pointSize="30"/>
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -403,9 +403,10 @@
                                     <constraint firstAttribute="height" constant="165" id="sAa-wf-h3b"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDX-La-Z5Y">
-                                <rect key="frame" x="51" y="514" width="152" height="39"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="49"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDX-La-Z5Y">
+                                <rect key="frame" x="121" y="555" width="152" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="50"/>
                                 <color key="textColor" name="colorTabBar"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -424,12 +425,8 @@
                             <constraint firstItem="hNE-0G-44H" firstAttribute="top" secondItem="a3j-X4-sX2" secondAttribute="top" id="QpG-7u-7QL"/>
                             <constraint firstItem="sNg-0r-YQx" firstAttribute="leading" secondItem="a3j-X4-sX2" secondAttribute="leading" constant="20" id="W93-oF-0To"/>
                             <constraint firstItem="a3j-X4-sX2" firstAttribute="trailing" secondItem="sNg-0r-YQx" secondAttribute="trailing" constant="20" id="WhC-Qr-ewq"/>
-                            <constraint firstItem="NDX-La-Z5Y" firstAttribute="leading" secondItem="a3j-X4-sX2" secondAttribute="leading" constant="51" id="d1V-Gy-SPA"/>
                             <constraint firstItem="QQn-9W-XtN" firstAttribute="top" secondItem="sNg-0r-YQx" secondAttribute="bottom" constant="40" id="h0e-Oj-9vW"/>
-                            <constraint firstItem="NDX-La-Z5Y" firstAttribute="top" secondItem="QQn-9W-XtN" secondAttribute="bottom" constant="19" id="l1e-6t-Mf8"/>
-                            <constraint firstItem="a3j-X4-sX2" firstAttribute="trailing" secondItem="NDX-La-Z5Y" secondAttribute="trailing" constant="172" id="o7A-cU-kaL"/>
                             <constraint firstItem="hNE-0G-44H" firstAttribute="leading" secondItem="a3j-X4-sX2" secondAttribute="leading" constant="89" id="ooW-3k-g5B"/>
-                            <constraint firstItem="a3j-X4-sX2" firstAttribute="bottom" secondItem="NDX-La-Z5Y" secondAttribute="bottom" constant="114" id="xz3-Sg-pYz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YrI-lL-XY6"/>
@@ -1078,7 +1075,7 @@
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFH-hk-WjM">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFH-hk-WjM">
                                                                     <rect key="frame" x="248.5" y="0.0" width="48.5" height="46"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" name="colorTabBar"/>

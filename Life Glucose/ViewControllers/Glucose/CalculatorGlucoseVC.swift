@@ -37,7 +37,6 @@ class CalculatorGlucoseVC: UIViewController {
     var entry: EntryModel?
     
     @IBOutlet weak var fastingPicker: UISegmentedControl!
-    
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var numberGlucoseTextField: UITextField!
     @IBOutlet weak var calculatorGlucoseButton: UIButton!{
@@ -133,12 +132,8 @@ class CalculatorGlucoseVC: UIViewController {
                 fatalError(error.localizedDescription)
             }
         }
-
     }
-    
-    
 }
-
 
 func getResult(_ glucose:Int, fasting: Bool) -> String {
     if fasting {

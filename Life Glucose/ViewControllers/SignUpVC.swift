@@ -167,12 +167,9 @@ class SignUpVC: UIViewController {
                     } catch {
                         print(error.localizedDescription)
                     }
-                    
                 }
-                
             }
         }
-        
     }
     func emptyTexts() {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
@@ -218,4 +215,5 @@ extension SignUpVC: UIImagePickerControllerDelegate, UINavigationControllerDeleg
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
+    
 }

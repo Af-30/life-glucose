@@ -11,7 +11,6 @@ import SwiftUI
 
 class EntriesViewController: UIViewController {
 
- 
     @IBOutlet weak var imageView: UITableView!
     var activityIndicator = UIActivityIndicatorView()
     @IBOutlet weak var tableView: UITableView!
@@ -92,9 +91,6 @@ class EntriesViewController: UIViewController {
             self.fetchData()
         })
     }
-    
-
-
 }
 extension EntriesViewController : UITableViewDelegate, UITableViewDataSource {
     
@@ -127,8 +123,5 @@ extension EntriesViewController : UITableViewDelegate, UITableViewDataSource {
             deleteItem(index: indexPath.row)
         }
     }
-    
-    
-    
     
 }

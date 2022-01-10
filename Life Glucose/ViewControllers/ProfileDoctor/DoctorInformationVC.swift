@@ -12,21 +12,15 @@ import FirebaseFirestoreSwift
 class DoctorInformationVC: UIViewController {
     
     var activityIndicator = UIActivityIndicatorView()
-
+    
     @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
-    
     @IBOutlet weak var phoneNumberField: UITextField!
-    
     @IBOutlet weak var genderField: UITextField!
-    
     @IBOutlet weak var cityField: UITextField!
-    
     @IBOutlet weak var AgeField: UITextField!
-    
     @IBOutlet weak var desciriptionaField: UITextView!
-    
     @IBAction func saveAction(_ sender: Any) {
         guard let firstName = firstNameField.text else { return }
         guard let lastName = lastNameField.text else { return }
@@ -34,7 +28,6 @@ class DoctorInformationVC: UIViewController {
         guard let city = cityField.text else { return }
         guard let gender = genderField.text else { return }
         guard let description = desciriptionaField.text else { return }
-        
         
         Activity.showIndicator(parentView: self.view, childView: self.activityIndicator)
         let db = Firestore.firestore()
@@ -65,15 +58,8 @@ class DoctorInformationVC: UIViewController {
         
     }
     
-    
-    
-    
     override func viewDidLoad() {
-        
-        
-        
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -88,7 +74,5 @@ class DoctorInformationVC: UIViewController {
     func updateProfile() {
         
     }
-    
-
-
+ 
 }

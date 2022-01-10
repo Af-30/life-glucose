@@ -60,6 +60,4 @@ class PatientCompanyVC: UIViewController {
         cityField.text = patient.company.city
     }
     
-    
-    
 }
