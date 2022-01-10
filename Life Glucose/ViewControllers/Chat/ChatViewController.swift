@@ -11,7 +11,17 @@ import FirebaseFirestoreSwift
 
 class ChatViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var imageChat: UIImageView!
+    @IBOutlet weak var imageChat: UIImageView!{
+        didSet{
+            imageChat.layer.borderColor = UIColor.systemYellow.cgColor
+            imageChat.layer.borderWidth = 3.0
+            imageChat.layer.masksToBounds = true
+            imageChat.isUserInteractionEnabled = true
+            imageChat.backgroundColor = .black
+            imageChat.layer.masksToBounds = true
+            imageChat.layer.cornerRadius = imageChat.frame.height / 2
+        }
+    }
     
     @IBOutlet weak var messageField: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -21,7 +31,6 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        imageChat
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,7 +68,6 @@ class ChatViewController: UIViewController {
             } catch {
                 fatalError()
             }
-            
         }
     }
     
@@ -79,7 +87,6 @@ class ChatViewController: UIViewController {
         } catch {
             
         }
-        
     }
 }
 
@@ -97,9 +104,6 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ChatCell
         cell.getMessageDesgin(sender: message.sender == user.uid ? .me : .other)
         cell.messageLabel.text = message.content
-        
-        
-        
         return cell
     }
     

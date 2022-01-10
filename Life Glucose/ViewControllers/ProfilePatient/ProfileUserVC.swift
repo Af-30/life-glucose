@@ -30,7 +30,7 @@ class ProfileUserVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profileImageView: UIImageView!{
         didSet {
-            profileImageView.layer.borderColor = UIColor.systemGreen.cgColor
+            profileImageView.layer.borderColor = UIColor.systemYellow.cgColor
             profileImageView.layer.borderWidth = 3.0
             profileImageView.layer.masksToBounds = true
             profileImageView.isUserInteractionEnabled = true
@@ -56,6 +56,7 @@ class ProfileUserVC: UIViewController {
         super.viewWillAppear(animated)
         nameUser.text = patient.firstName + " " + patient.lastName
         phoneUser.text = patient.phoneNumber
+//        UITabBar.appearance().tintColor = UIColor(named: "colorTabBar")
     }
     
     func logout() {
@@ -213,8 +214,6 @@ extension ProfileUserVC: UITableViewDelegate, UITableViewDataSource {
         case "Log Out":
             logout()
         default: fatalError()
-            
-            
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }

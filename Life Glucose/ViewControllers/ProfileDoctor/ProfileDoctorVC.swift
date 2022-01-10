@@ -24,15 +24,13 @@ class ProfileDoctorVC: UIViewController {
     
     //    this table data dr vc
     @IBOutlet weak var tableView: UITableView!
-    
-
     @IBOutlet weak var profileImageView: UIImageView!{
         didSet{
-            profileImageView.layer.borderColor = UIColor.systemGreen.cgColor
+            profileImageView.layer.borderColor = UIColor.systemYellow.cgColor
             profileImageView.layer.borderWidth = 3.0
             profileImageView.layer.masksToBounds = true
             profileImageView.isUserInteractionEnabled = true
-            profileImageView.backgroundColor = .cyan
+            profileImageView.backgroundColor = .black
             profileImageView.layer.masksToBounds = true
             profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
             
