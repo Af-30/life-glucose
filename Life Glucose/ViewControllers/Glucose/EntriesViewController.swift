@@ -11,6 +11,7 @@ import SwiftUI
 
 class EntriesViewController: UIViewController {
 
+ 
     @IBOutlet weak var imageView: UITableView!
     var activityIndicator = UIActivityIndicatorView()
     @IBOutlet weak var tableView: UITableView!

@@ -42,5 +42,12 @@
 "Save" = "Save";
 "Update" = "Update";
 "countinue" = "countinue";
-"Life Glucose: it is a set of results that are measured by analyzing the blood through the device, and the numnber is entered to detect the state of blood sugar,, it also helps people with diabetes to idenify the rates pf rise and fall, and follow them on their suger lavel." = "Life Glucose: it is a set of results that are measured by analyzing the blood through the device, and the numnber is entered to detect the state of blood sugar,, it also helps people with diabetes to idenify the rates pf rise and fall, and follow them on their suger lavel.";
-"This prpject is a very small part, wait for the application after development" = "This prpject is a very small part, wait for the application after development";
+
+//profile Patient
+"Account" = "Account";
+"Change Language" = "Change Language";
+"Log Out" = "Log Out";
+
+//profile Drs
+"Patients" = "Patients";
+"Add" = "Add";

@@ -49,6 +49,7 @@ class ProfileUserVC: UIViewController {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         profileImageView.image = profileImage
+        UITabBar.appearance().tintColor = UIColor(named: "colorTabBar")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -174,11 +175,14 @@ extension ProfileUserVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        if tableItems[indexPath.row].title == "Log Out" {
+        if tableItems[indexPath.row].title == "Log Out".localized {
             cell.textLabel?.textColor = .systemRed
-            cell.textLabel?.text = tableItems[indexPath.row].title
+            cell.textLabel?.text = tableItems[indexPath.row].title.localized
+            cell.textLabel?.text =
+            NSLocalizedString(tableItems[indexPath.row].title, comment: "")
         }else{
-            cell.textLabel?.text = tableItems[indexPath.row].title
+//            cell.textLabel?.text = tableItems[indexPath.row].title.localized
+            cell.textLabel?.text = NSLocalizedString(tableItems[indexPath.row].title, comment: "")
         }
         
         if tableItems[indexPath.row].imageName == "rectangle.portrait.and.arrow.right" {

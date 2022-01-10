@@ -27,10 +27,10 @@
 "5ob-JQ-DfG.placeholder" = "Please Enter Comfirm Password ";
 
 /* Class = "UISegmentedControl"; 7r8-WI-9Kz.segmentTitles[0] = "Patient"; ObjectID = "7r8-WI-9Kz"; */
-"7r8-WI-9Kz.segmentTitles[0]" = "Patient";
+"7r8-WI-9Kz.segmentTitles[0]" = "المريض";
 
 /* Class = "UISegmentedControl"; 7r8-WI-9Kz.segmentTitles[1] = "Doctor"; ObjectID = "7r8-WI-9Kz"; */
-"7r8-WI-9Kz.segmentTitles[1]" = "Doctor";
+"7r8-WI-9Kz.segmentTitles[1]" = "الدكتور";
 
 /* Class = "UIButton"; configuration.title = "Save"; ObjectID = "8I6-Qf-Ppi"; */
 "8I6-Qf-Ppi.configuration.title" = "Save";
@@ -45,7 +45,7 @@
 "AVe-uy-HG2.normalTitle" = "Button";
 
 /* Class = "UIButton"; configuration.title = "Add "; ObjectID = "CnF-Nz-TV3"; */
-"CnF-Nz-TV3.configuration.title" = "Add ";
+"CnF-Nz-TV3.configuration.title" = "Add";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "CnF-Nz-TV3"; */
 "CnF-Nz-TV3.normalTitle" = "Button";
@@ -216,10 +216,10 @@
 "uzg-KY-5tS.placeholder" = " Please Enter Email or username";
 
 /* Class = "UISegmentedControl"; v5N-Vc-dfe.segmentTitles[0] = "Fasting"; ObjectID = "v5N-Vc-dfe"; */
-"v5N-Vc-dfe.segmentTitles[0]" = "Fasting";
+"v5N-Vc-dfe.segmentTitles[0]" = "صائم";
 
 /* Class = "UISegmentedControl"; v5N-Vc-dfe.segmentTitles[1] = "Eat the Food"; ObjectID = "v5N-Vc-dfe"; */
-"v5N-Vc-dfe.segmentTitles[1]" = "Eat the Food";
+"v5N-Vc-dfe.segmentTitles[1]" = "تناول الأكل";
 
 /* Class = "UINavigationItem"; title = "Chat"; ObjectID = "vhw-zi-251"; */
 "vhw-zi-251.title" = "Chat";
