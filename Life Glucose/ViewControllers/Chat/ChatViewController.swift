@@ -10,7 +10,9 @@ import Firebase
 import FirebaseFirestoreSwift
 
 class ChatViewController: UIViewController {
-
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var imageChat: UIImageView!
+    
     @IBOutlet weak var messageField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     var conversation: ConversationModel?
@@ -19,6 +21,7 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        imageChat
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,18 +31,7 @@ class ChatViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-//        let db = Firestore.firestore()
-//        db.collection("conversations").whereField("users", arrayContains: [user.uid]). { snapshot, error in
-//            if let error = error {
-//                fatalError()
-//            }
-//            do {
-//                try self.conversation = snapshot?.documents.first!.data(as: ConversationModel.self)
-//            } catch {
-//                fatalError()
-//            }
-//
-//        }
+
     }
     
     private func fetchData() {
@@ -53,6 +45,16 @@ class ChatViewController: UIViewController {
             guard let doc = snapshot else { return }
             do {
                 try self.conversation = doc.data(as: ConversationModel.self)
+                guard let conversation = self.conversation else {
+                    return
+                }
+
+                let otherProfile = conversation.users.first(where: { $0.uid != user.uid })!
+                if self.imageChat.image == nil {
+                    let imgURL = otherProfile.imageUrl
+                    self.imageChat.loadImageUsingCache(with: imgURL)
+                    self.nameLabel.text = otherProfile.name
+                }
                 self.tableView.reloadData()
             } catch {
                 fatalError()
@@ -91,12 +93,21 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = conversation?.messages[indexPath.row].content
+        let message = conversation!.messages[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ChatCell
+        cell.getMessageDesgin(sender: message.sender == user.uid ? .me : .other)
+        cell.messageLabel.text = message.content
+        
+        
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
 }

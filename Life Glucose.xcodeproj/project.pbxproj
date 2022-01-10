@@ -29,6 +29,7 @@
 		ED52E0432784B3C800040F89 /* DoctorInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52E0422784B3C800040F89 /* DoctorInformationVC.swift */; };
 		ED52E0452784BF0D00040F89 /* EntriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52E0442784BF0D00040F89 /* EntriesTableViewCell.swift */; };
 		ED52E0472784D00700040F89 /* PatientCompanyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52E0462784D00600040F89 /* PatientCompanyVC.swift */; };
+		ED86BAB9278C11220077EDA9 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED86BAB8278C11220077EDA9 /* UIView+.swift */; };
 		EDA167A0278B0707007D29A5 /* InformationAppVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA1679F278B0707007D29A5 /* InformationAppVC.swift */; };
 		EDAF3197278362350057C1AC /* InformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF3196278362340057C1AC /* InformationVC.swift */; };
 		EDB09EC0277A42A6007A6196 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = EDB09EBF277A42A6007A6196 /* Readme.md */; };
@@ -95,6 +96,7 @@
 		ED52E0422784B3C800040F89 /* DoctorInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorInformationVC.swift; sourceTree = "<group>"; };
 		ED52E0442784BF0D00040F89 /* EntriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewCell.swift; sourceTree = "<group>"; };
 		ED52E0462784D00600040F89 /* PatientCompanyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientCompanyVC.swift; sourceTree = "<group>"; };
+		ED86BAB8278C11220077EDA9 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		EDA1679F278B0707007D29A5 /* InformationAppVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationAppVC.swift; sourceTree = "<group>"; };
 		EDAF3196278362340057C1AC /* InformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationVC.swift; sourceTree = "<group>"; };
 		EDB09EBF277A42A6007A6196 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		ED3D471A273A743E00194384 /* Life Glucose */ = {
 			isa = PBXGroup;
 			children = (
+				ED86BAB7278C110C0077EDA9 /* Extensions */,
 				ED24C7D7276F63E400583D41 /* Uitll */,
 				ED2923372745185C00B1D451 /* Models */,
 				EDAC9F272777AE6F00745567 /* ViewControllers */,
@@ -247,6 +250,14 @@
 				ED52E0402784A98F00040F89 /* MessageModel.swift */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		ED86BAB7278C110C0077EDA9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED86BAB8278C11220077EDA9 /* UIView+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		EDAC9F2627778D3300745567 /* I don't use */ = {
@@ -473,6 +484,7 @@
 				ED24C7D6276F56CC00583D41 /* LoginVC.swift in Sources */,
 				ED52E0412784A98F00040F89 /* MessageModel.swift in Sources */,
 				EDC097412786073D009755F8 /* ChatCell.swift in Sources */,
+				ED86BAB9278C11220077EDA9 /* UIView+.swift in Sources */,
 				ED3D471E273A743E00194384 /* SceneDelegate.swift in Sources */,
 				EDA167A0278B0707007D29A5 /* InformationAppVC.swift in Sources */,
 				EDC0974327860966009755F8 /* ChatViewController.swift in Sources */,

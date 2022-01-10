@@ -16,6 +16,8 @@ class NewChatViewController: UIViewController {
     
     var doctors: [DoctorModel] = []
     var patients: [PatientModel] = []
+    var filteredDoctors: [DoctorModel] = []
+    var filteredPatients: [PatientModel] = []
     var selectedPatient: PatientModel?
     var selectedDoctor: DoctorModel?
     var selectedConversation: ConversationModel?
@@ -26,6 +28,7 @@ class NewChatViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
+        searchBar.searchTextField.autocapitalizationType = .none
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,17 +63,39 @@ class NewChatViewController: UIViewController {
                     fatalError()
                 }
             }
+            self.filteredDoctors = self.doctors
+            self.filteredPatients = self.patients
             self.tableView.reloadData()
         }
     }
     
-    private func search() {
-        //searchBar.
-    }
+ 
 }
 
 extension NewChatViewController: UISearchBarDelegate {
-    //search
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+ 
+        guard let searchText = searchBar.text else {
+            filteredDoctors = doctors
+            filteredPatients = patients
+            tableView.reloadData()
+            return
+        }
+        if searchText == "" {
+            filteredDoctors = doctors
+            filteredPatients = patients
+        } else {
+            if user.isDoctor {
+                filteredPatients = patients.filter { $0.firstName.contains(searchText) }
+            } else {
+                filteredDoctors = doctors.filter { $0.firstName.contains(searchText) }
+            }
+        }
+        
+        tableView.reloadData()
+    }
+
 }
 
 extension NewChatViewController: UITableViewDelegate, UITableViewDataSource {
@@ -79,15 +104,15 @@ extension NewChatViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        user.isDoctor ? patients.count : doctors.count
+        user.isDoctor ? filteredPatients.count : filteredDoctors.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         if user.isDoctor {
-            cell.textLabel?.text = patients[indexPath.row].fullName
+            cell.textLabel?.text = filteredPatients[indexPath.row].fullName
         } else {
-            cell.textLabel?.text = doctors[indexPath.row].fullName
+            cell.textLabel?.text = filteredDoctors[indexPath.row].fullName
         }
         
         return cell
@@ -126,14 +151,18 @@ extension NewChatViewController: UITableViewDelegate, UITableViewDataSource {
                 var users: [ConversationUserModel] = []
                 if user.isDoctor {
                     users.append(ConversationUserModel(uid: self.selectedPatient!.uid,
-                                                       name: self.selectedPatient!.fullName))
+                                                       name: self.selectedPatient!.fullName,
+                                                       imageUrl: self.selectedPatient!.imageUrl))
                     users.append(ConversationUserModel(uid: doctor.uid,
-                                                       name: doctor.fullName))
+                                                       name: doctor.fullName,
+                                                       imageUrl: doctor.imageUrl))
                 } else {
                     users.append(ConversationUserModel(uid: self.selectedDoctor!.uid,
-                                                       name: self.selectedDoctor!.fullName))
+                                                       name: self.selectedDoctor!.fullName,
+                                                       imageUrl: self.selectedDoctor!.imageUrl))
                     users.append(ConversationUserModel(uid: patient.uid,
-                                                       name: patient.fullName))
+                                                       name: patient.fullName,
+                                                       imageUrl: patient.imageUrl))
                 }
                 var conversation = ConversationModel(usersIDs: ids, users: users, messages: [])
                 do {

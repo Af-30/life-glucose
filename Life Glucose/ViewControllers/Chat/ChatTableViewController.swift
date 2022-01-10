@@ -14,16 +14,18 @@ class ChatTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var conversations: [ConversationModel] = []
     var selectedConversation: ConversationModel?
+    var activityIndicator = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        fetchData()
+        //fetchData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        fetchData()
         
     }
     
@@ -62,18 +64,18 @@ class ChatTableViewController: UIViewController {
         performSegue(withIdentifier: "newChat", sender: self)
     }
 
-//    private func deleteItem(index: Int) {
-////        Activity.showIndicator(parentView: view, childView: activityIndicator)
-//        let db = Firestore.firestore()
-//        db.collection("patients/\(patient.docID!)/entries").document(conversations[index].docID!).delete(completion: { error in
-//            if let error = error {
-//                print(error.localizedDescription)
-//                return
-//            }
-////            Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
-//            self.fetchData()
-//        })
-//    }
+    private func deleteItem(index: Int) {
+        Activity.showIndicator(parentView: view, childView: activityIndicator)
+        let db = Firestore.firestore()
+        db.collection("conversations").document(conversations[index].docID!).delete(completion: { error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
+            self.fetchData()
+        })
+    }
     
     
     
@@ -102,7 +104,7 @@ extension ChatTableViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-//            deleteItem(index: indexPath.row)
+            deleteItem(index: indexPath.row)
         }
     }
 }

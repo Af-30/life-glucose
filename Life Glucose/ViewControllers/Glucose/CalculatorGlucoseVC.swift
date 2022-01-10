@@ -52,10 +52,12 @@ class CalculatorGlucoseVC: UIViewController {
         }
     }
     
-    @IBOutlet weak var result: UILabel!
+    @IBOutlet weak var result: UILabel!{
+        didSet{
+            result.text = "Result".localized
+        }
+    }
     
-   
-       
     @IBOutlet weak var saveButton: UIButton!
     
     override func viewDidLoad() {
