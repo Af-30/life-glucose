@@ -16,8 +16,18 @@ class EntriesTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
+        print("+++++++++++++++++++++\(resultLabel.text)")
+        if resultLabel.text == "normal" || resultLabel.text == "طبيعي" {
+            resultLabel.textColor  = UIColor.green
 
+        }
+        if resultLabel.text == "hight" || resultLabel.text == "مرتفع" {
+            resultLabel.textColor  = UIColor.red
+        }
+//        }else{
+//            resultLabel.textColor  = UIColor.yellow
+//        }
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

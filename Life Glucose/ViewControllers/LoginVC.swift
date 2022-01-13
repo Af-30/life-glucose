@@ -16,6 +16,15 @@ class LoginVC: UIViewController {
             emailLabel.text = "Email".localized
         }
     }
+//    @IBOutlet weak var loginView: UIView!{
+//        didSet{
+//            loginView.layer.cornerRadius = 40
+//            loginView.layer.shadowOffset = CGSize(width: 5, height: 5)
+//            loginView.layer.shadowOpacity = 0.7
+//            loginView.layer.shadowRadius = 5
+//            loginView.layer.shadowColor = UIColor(red: 44.0/255.0, green: 62.0/255.0, blue: 80.0/255.0, alpha: 1.0).cgColor
+//        }
+//    }
     @IBOutlet weak var passwordLabel: UILabel!{
         didSet{
             passwordLabel.text = "Password".localized
@@ -23,6 +32,9 @@ class LoginVC: UIViewController {
     }
     @IBOutlet weak var loginButton: UIButton!{
         didSet{
+            loginButton.layer.shadowOpacity = 0.7
+            loginButton.layer.shadowRadius = 30
+
             loginButton.setTitle("Login".localized, for: .normal)
         }
     }
@@ -36,6 +48,7 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
     }
     
     @IBAction func patientLogin(_ sender: Any) {
@@ -65,6 +78,7 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func handleLogin(_ sender: Any) {
+        
         if let email = emailTextField.text,
            let password = passwordTextField.text {
             Activity.showIndicator(parentView: self.view, childView: activityIndicator)

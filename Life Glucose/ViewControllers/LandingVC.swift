@@ -12,7 +12,7 @@ import FirebaseFirestoreSwift
 
 class LandingVC: UIViewController {
     //var user: UserModel!
-    
+
     //    local
     @IBOutlet weak var welcomeLabel: UILabel! {
     didSet {

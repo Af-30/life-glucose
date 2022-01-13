@@ -13,6 +13,7 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageChat: UIImageView!{
         didSet{
+            
             imageChat.layer.borderColor = UIColor.systemYellow.cgColor
             imageChat.layer.borderWidth = 3.0
             imageChat.layer.masksToBounds = true
@@ -31,6 +32,7 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
     }
     
     override func viewWillAppear(_ animated: Bool) {

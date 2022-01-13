@@ -10,12 +10,26 @@ import Firebase
 import FirebaseFirestoreSwift
 
 class SignUpVC: UIViewController {
+    
+//    @IBOutlet weak var signView: UIView!{
+//        didSet{
+//            signView.layer.cornerRadius = 100
+//            signView.layer.shadowOffset = CGSize(width: 5, height: 5)
+//            signView.layer.shadowOpacity = 0.7
+//            signView.layer.shadowRadius = 5
+//            signView.layer.shadowColor = UIColor(red: 44.0/255.0, green: 62.0/255.0, blue: 80.0/255.0, alpha: 1.0).cgColor
+//        }
+//    }
+    
     var message = ""
-    let imagePickerController = UIImagePickerController()
+//    let imagePickerController = UIImagePickerController()
     var activityIndicator = UIActivityIndicatorView()
 //    local
     @IBOutlet weak var countinueButton: UIButton!{
         didSet{
+            countinueButton.layer.shadowOpacity = 0.7
+            countinueButton.layer.shadowRadius = 30
+            
             countinueButton.setTitle("countinue".localized, for: .normal)
         }
     }
@@ -41,17 +55,18 @@ class SignUpVC: UIViewController {
     }
     
     
-    @IBOutlet weak var userImageView: UIImageView! {
-        didSet {
-            userImageView.layer.borderColor = UIColor.systemGray.cgColor
-            userImageView.layer.borderWidth = 3.0
-            userImageView.layer.cornerRadius = userImageView.bounds.height / 2
-            userImageView.layer.masksToBounds = true
-            userImageView.isUserInteractionEnabled = true
-            let tabGesture = UITapGestureRecognizer(target: self, action: #selector(selectImage))
-            userImageView.addGestureRecognizer(tabGesture)
-        }
-    }
+    @IBOutlet weak var userImageView: UIImageView!
+//    {
+//        didSet {
+//            userImageView.layer.borderColor = UIColor.systemGray.cgColor
+//            userImageView.layer.borderWidth = 3.0
+//            userImageView.layer.cornerRadius = userImageView.bounds.height / 2
+//            userImageView.layer.masksToBounds = true
+//            userImageView.isUserInteractionEnabled = true
+////            let tabGesture = UITapGestureRecognizer(target: self, action: #selector(selectImage))
+////            userImageView.addGestureRecognizer(tabGesture)
+//        }
+//    }
     
     @IBOutlet weak var userTypePicker: UISegmentedControl!
     @IBOutlet weak var emailTextField: UITextField!
@@ -60,8 +75,9 @@ class SignUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imagePickerController.delegate = self
+//        imagePickerController.delegate = self
         // Do any additional setup after loading the view.
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
     }
     @IBAction func handleDone(_ sender: Any) {
         if //let image = userImageView.image,
@@ -178,42 +194,42 @@ class SignUpVC: UIViewController {
     }
 }
 
-extension SignUpVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+//extension SignUpVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+//
+//    @objc func selectImage() {
+//        showAlert()
+//    }
     
-    @objc func selectImage() {
-        showAlert()
-    }
+//    func showAlert() {
+//        let alert = UIAlertController(title: "choose Profile Picture", message: "where do you want to pick your image from?", preferredStyle: .actionSheet)
+//        let cameraAction = UIAlertAction(title: "Camera", style: .default) { Action in
+////            self.getImage(from: .camera)
+//        }
+//        let galaryAction = UIAlertAction(title: "Photo Library", style: .default) { Action in
+////            self.getImage(from: .photoLibrary)
+//        }
+//        let dismissAction = UIAlertAction(title: "Cancle", style: .destructive) { Action in
+//            self.dismiss(animated: true, completion: nil)
+//        }
+//        alert.addAction(cameraAction)
+//        alert.addAction(galaryAction)
+//        alert.addAction(dismissAction)
+//        self.present(alert, animated: true, completion: nil)
+//    }
+//    func getImage( from sourceType: UIImagePickerController.SourceType) {
+//
+////        if UIImagePickerController.isSourceTypeAvailable(sourceType) {
+////            imagePickerController.sourceType = sourceType
+////            self.present(imagePickerController, animated: true, completion: nil)
+////        }
+//    }
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//        guard let chosenImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return}
+//        userImageView.image = chosenImage
+//        dismiss(animated: true, completion: nil)
+//    }
+//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//        picker.dismiss(animated: true, completion: nil)
+//    }
     
-    func showAlert() {
-        let alert = UIAlertController(title: "choose Profile Picture", message: "where do you want to pick your image from?", preferredStyle: .actionSheet)
-        let cameraAction = UIAlertAction(title: "Camera", style: .default) { Action in
-            self.getImage(from: .camera)
-        }
-        let galaryAction = UIAlertAction(title: "Photo Library", style: .default) { Action in
-            self.getImage(from: .photoLibrary)
-        }
-        let dismissAction = UIAlertAction(title: "Cancle", style: .destructive) { Action in
-            self.dismiss(animated: true, completion: nil)
-        }
-        alert.addAction(cameraAction)
-        alert.addAction(galaryAction)
-        alert.addAction(dismissAction)
-        self.present(alert, animated: true, completion: nil)
-    }
-    func getImage( from sourceType: UIImagePickerController.SourceType) {
-        
-        if UIImagePickerController.isSourceTypeAvailable(sourceType) {
-            imagePickerController.sourceType = sourceType
-            self.present(imagePickerController, animated: true, completion: nil)
-        }
-    }
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let chosenImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return}
-        userImageView.image = chosenImage
-        dismiss(animated: true, completion: nil)
-    }
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-}
+//}

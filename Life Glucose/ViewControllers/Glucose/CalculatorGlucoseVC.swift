@@ -62,6 +62,7 @@ class CalculatorGlucoseVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
     }
     
     override func viewWillAppear(_ animated: Bool) {

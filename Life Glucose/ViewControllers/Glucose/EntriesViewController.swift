@@ -11,6 +11,13 @@ import SwiftUI
 
 class EntriesViewController: UIViewController {
 
+//    @IBOutlet weak var viewAlt: UIView!{
+//        didSet{
+//            viewAlt.layer.cornerRadius = 100
+//            viewAlt.layer.shadowOpacity = 0.5
+//            viewAlt.layer.shadowRadius = 30
+//        }
+//    }
     @IBOutlet weak var imageView: UITableView!
     var activityIndicator = UIActivityIndicatorView()
     @IBOutlet weak var tableView: UITableView!
@@ -28,7 +35,8 @@ class EntriesViewController: UIViewController {
 //        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         // Do any additional setup after loading the view.
         
-        //fetchData()
+//        fetchData()
+//        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -101,9 +109,27 @@ extension EntriesViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! EntriesTableViewCell
 //        cell.textLabel?.text = "\(resultLabel[indexPath.row])"
+        
+        
+        
+        let result = (getResult(entries[indexPath.row].value, fasting: entries[indexPath.row].fasting))
+        if result == "normal" {
+            cell.resultLabel.textColor = UIColor.green
+        }
+        if result == "very hight" {
+            cell.resultLabel.textColor = UIColor.red
+        }
+        if result == "very low" {
+            cell.resultLabel.textColor = UIColor.purple
+        }
+        
+        
+        
         cell.nameLabel.text = patient.firstName
         cell.glucose.text = "\(entries[indexPath.row].value)"
         cell.resultLabel.text = getResult(entries[indexPath.row].value, fasting: entries[indexPath.row].fasting)
+
+        
         cell.imageViewCell.image = profileImage
         
         return cell
