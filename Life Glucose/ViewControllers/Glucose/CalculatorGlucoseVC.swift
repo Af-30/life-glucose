@@ -151,7 +151,7 @@ func getResult(_ glucose:Int, fasting: Bool) -> String {
             return "very high".localized
         case 240...300:
             return "dangerous high".localized
-        case 300...500:
+        case 300...2000:
             return "very dangerous high".localized
         default:
             return "ERROR"
@@ -172,7 +172,7 @@ func getResult(_ glucose:Int, fasting: Bool) -> String {
             return "very high".localized
         case 240...300:
             return "dangerous high".localized
-        case 300...500:
+        case 300...2000:
             return "veryn dangerous high".localized
         default:
             return "ERROR"

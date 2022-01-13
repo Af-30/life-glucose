@@ -11,13 +11,14 @@ import SwiftUI
 
 class EntriesViewController: UIViewController {
 
-//    @IBOutlet weak var viewAlt: UIView!{
-//        didSet{
-//            viewAlt.layer.cornerRadius = 100
-//            viewAlt.layer.shadowOpacity = 0.5
-//            viewAlt.layer.shadowRadius = 30
-//        }
-//    }
+    @IBOutlet weak var viewChart: UIView!{
+        didSet{
+            viewChart.layer.cornerRadius = 100
+            viewChart.layer.shadowOpacity = 0.5
+            viewChart.layer.shadowRadius = 30
+        }
+    }
+    
     @IBOutlet weak var imageView: UITableView!
     var activityIndicator = UIActivityIndicatorView()
     @IBOutlet weak var tableView: UITableView!
@@ -109,26 +110,43 @@ extension EntriesViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! EntriesTableViewCell
 //        cell.textLabel?.text = "\(resultLabel[indexPath.row])"
-        
-        
-        
+
+       
         let result = (getResult(entries[indexPath.row].value, fasting: entries[indexPath.row].fasting))
-        if result == "normal" {
+        
+        switch result {
+        case "normal".localized :
             cell.resultLabel.textColor = UIColor.green
-        }
-        if result == "very hight" {
+        case "normal rate".localized :
+            cell.resultLabel.textColor = UIColor.green
+            
+        case "high".localized :
             cell.resultLabel.textColor = UIColor.red
-        }
-        if result == "very low" {
-            cell.resultLabel.textColor = UIColor.purple
+        case "very high".localized :
+            cell.resultLabel.textColor = UIColor.red
+        case "very very high".localized :
+            cell.resultLabel.textColor = UIColor.red
+        case "dangerous high".localized :
+            cell.resultLabel.textColor = UIColor.red
+        case "very dangerous high".localized :
+            cell.resultLabel.textColor = UIColor.red
+            
+        case "low" :
+            cell.resultLabel.textColor = UIColor.yellow
+        case "very low".localized :
+            cell.resultLabel.textColor = UIColor.yellow
+        case "very dangerous low".localized :
+            cell.resultLabel.textColor = UIColor.yellow
+            
+            
+        default :
+            cell.resultLabel.textColor = UIColor.white
         }
         
-        
+        cell.resultLabel.text = getResult(entries[indexPath.row].value, fasting: entries[indexPath.row].fasting)
         
         cell.nameLabel.text = patient.firstName
         cell.glucose.text = "\(entries[indexPath.row].value)"
-        cell.resultLabel.text = getResult(entries[indexPath.row].value, fasting: entries[indexPath.row].fasting)
-
         
         cell.imageViewCell.image = profileImage
         

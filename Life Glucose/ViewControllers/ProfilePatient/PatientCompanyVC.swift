@@ -13,6 +13,15 @@ class PatientCompanyVC: UIViewController {
     
     var activityIndicator = UIActivityIndicatorView()
     
+    @IBOutlet weak var changeView: UIView!{
+            didSet{
+                changeView.layer.cornerRadius = 100
+                changeView.layer.shadowOpacity = 0.7
+                changeView.layer.shadowRadius = 30
+   
+            }
+        }
+    
     @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var phoneNumberField: UITextField!

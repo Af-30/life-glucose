@@ -51,3 +51,10 @@
 //profile Drs
 "Patients" = "المرضى";
 "Add" = "إضافة";
+
+//choose camera
+"choose Profile Picture" = "اختر صورة الملف الشخصي";
+"where do you want to pick your image from?" = "من اين تريد انتقاء صورتك؟";
+"Camera" = "كاميرا";
+"Photo Library" = "مكتبة الصور";
+"Cancle" = "إلغاء";

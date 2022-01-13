@@ -134,14 +134,14 @@ extension ProfileUserVC: UIImagePickerControllerDelegate, UINavigationController
         showAlert()
     }
     func showAlert() {
-        let alert = UIAlertController(title: "choose Profile Picture", message: "where do you want to pick your image from?", preferredStyle: .actionSheet)
-        let cameraAction = UIAlertAction(title: "Camera", style: .default) { Action in
+        let alert = UIAlertController(title: "choose Profile Picture".localized, message: "where do you want to pick your image from?".localized, preferredStyle: .actionSheet)
+        let cameraAction = UIAlertAction(title: "Camera".localized, style: .default) { Action in
             self.getImage(from: .camera)
         }
-        let galaryAction = UIAlertAction(title: "Photo Library", style: .default) { Action in
+        let galaryAction = UIAlertAction(title: "Photo Library".localized, style: .default) { Action in
             self.getImage(from: .photoLibrary)
         }
-        let dismissAction = UIAlertAction(title: "Cancle", style: .destructive) { Action in
+        let dismissAction = UIAlertAction(title: "Cancle".localized, style: .destructive) { Action in
             self.dismiss(animated: true, completion: nil)
         }
         alert.addAction(cameraAction)
@@ -179,6 +179,7 @@ extension ProfileUserVC: UITableViewDelegate, UITableViewDataSource {
         if tableItems[indexPath.row].title == "Log Out".localized {
             cell.textLabel?.textColor = .systemRed
             cell.textLabel?.text = tableItems[indexPath.row].title.localized
+            
             cell.textLabel?.text =
             NSLocalizedString(tableItems[indexPath.row].title, comment: "")
         }else{

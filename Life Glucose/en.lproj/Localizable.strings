@@ -46,8 +46,16 @@
 //profile Patient
 "Account" = "Account";
 "Change Language" = "Change Language";
+"Acompany Patient" = "Acompany Patient";
 "Log Out" = "Log Out";
 
 //profile Drs
 "Patients" = "Patients";
 "Add" = "Add";
+
+"choose Profile Picture" = "choose Profile Picture";
+"where do you want to pick your image from?" = "where do you want to pick your image from?";
+"Camera" = "Camera";
+"Photo Library" = "Photo Library";
+"Cancle" = "Cancle";
+
