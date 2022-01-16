@@ -17,20 +17,23 @@ class LoginVC: UIViewController {
         }
     }
     
+    @IBOutlet weak var iconButton: UIButton!
     @IBAction func iconAction(_ sender: AnyObject){
         passwordTextField.isSecureTextEntry.toggle()
         if passwordTextField.isSecureTextEntry {
-            if let image = UIImage(systemName: "") {
+            if let image = UIImage(systemName: "key.fill") {
                 sender.setImage(image, for: .normal)
             }
         }else{
-            if let image = UIImage(systemName: ""){
+            if let image = UIImage(systemName: "key.fill"){
                 sender.setImage(image, for: .normal)
             }
         
             }
         }
         
+    
+    
     @IBOutlet weak var passwordLabel: UILabel!{
         didSet{
             passwordLabel.text = "Password".localized
@@ -53,6 +56,8 @@ class LoginVC: UIViewController {
     //var user: UserModel!
     
     override func viewDidLoad() {
+        passwordTextField.rightView = iconButton
+               passwordTextField.rightViewMode = .whileEditing
         super.viewDidLoad()
         view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
     }

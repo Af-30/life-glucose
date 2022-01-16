@@ -291,17 +291,23 @@
                                     <action selector="handleDone:" destination="4KQ-Pf-h5l" eventType="touchUpInside" id="DER-5a-9p4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ue-u0-Sp1">
-                                <rect key="frame" x="314.5" y="417" width="40.5" height="31"/>
-                                <color key="tintColor" name="colorTabBar"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="key.fill" catalog="system"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbU-o3-szH">
                                 <rect key="frame" x="318.5" y="360" width="36.5" height="31"/>
                                 <color key="tintColor" name="colorTabBar"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="key.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="iconAction:" destination="4KQ-Pf-h5l" eventType="touchUpInside" id="DPF-nb-pV6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ue-u0-Sp1">
+                                <rect key="frame" x="314.5" y="417" width="40.5" height="31"/>
+                                <color key="tintColor" name="colorTabBar"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="key.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="iconActions:" destination="4KQ-Pf-h5l" eventType="touchUpInside" id="H58-Wr-T7c"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zCT-6r-GvL"/>
@@ -337,6 +343,8 @@
                         <outlet property="countinueButton" destination="n5r-Dr-Q4g" id="geq-vL-eYd"/>
                         <outlet property="emailLabel" destination="mVd-W1-sVs" id="KbD-Vp-4La"/>
                         <outlet property="emailTextField" destination="cs8-v8-CUI" id="A6V-5M-oXi"/>
+                        <outlet property="iconButton" destination="SbU-o3-szH" id="QHc-a2-ti0"/>
+                        <outlet property="iconButtons" destination="3ue-u0-Sp1" id="nQz-EM-oLy"/>
                         <outlet property="passwordLabel" destination="RFy-Nz-vN9" id="uFO-AR-mRR"/>
                         <outlet property="passwordTextField" destination="4XZ-RW-jEb" id="ecw-Wk-Yyk"/>
                         <outlet property="phoneLabel" destination="vHR-2X-guO" id="tgC-DX-Ixr"/>
@@ -368,6 +376,9 @@
                                 <color key="tintColor" name="colorTabBar"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="key.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="iconAction:" destination="pi2-X5-9Wr" eventType="touchUpInside" id="bJo-cJ-6Iv"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="MGg-vV-Thp">
                                 <rect key="frame" x="20" y="229" width="335" height="321"/>
@@ -549,6 +560,7 @@
                     <connections>
                         <outlet property="emailLabel" destination="g35-F6-mb1" id="0JY-ZG-Q0g"/>
                         <outlet property="emailTextField" destination="NPw-6f-3aN" id="ZJM-tg-ifc"/>
+                        <outlet property="iconKeyButton" destination="F4Z-Dh-46l" id="Zfs-yf-R3W"/>
                         <outlet property="loginButton" destination="QQn-9W-XtN" id="od4-lt-lxD"/>
                         <outlet property="passwordLabel" destination="4Hi-zS-XXM" id="WFb-ig-EWY"/>
                         <outlet property="passwordTextField" destination="8ge-dA-OU5" id="X8c-vS-WDR"/>
@@ -1796,7 +1808,7 @@
             <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Color">
-            <color red="0.90588235294117647" green="1" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.90600001811981201" green="1" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="chatMe">
             <color red="0.5" green="0.26800000667572021" blue="0.28200000524520874" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1808,13 +1820,13 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="colorProfileUser">
-            <color red="0.73941418329221253" green="0.76565268586298341" blue="0.78062801168422502" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.73900002241134644" green="0.76599997282028198" blue="0.78100001811981201" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="colorTabBar">
             <color red="0.6940000057220459" green="0.36000001430511475" blue="0.37999999523162842" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="colorimage">
-            <color red="0.90588235294117647" green="1" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.90600001811981201" green="1" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

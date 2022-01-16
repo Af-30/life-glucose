@@ -10,16 +10,35 @@ import Firebase
 import FirebaseFirestoreSwift
 
 class SignUpVC: UIViewController {
+    @IBOutlet weak var iconButton: UIButton!
     
-//    @IBOutlet weak var signView: UIView!{
-//        didSet{
-//            signView.layer.cornerRadius = 100
-//            signView.layer.shadowOffset = CGSize(width: 5, height: 5)
-//            signView.layer.shadowOpacity = 0.7
-//            signView.layer.shadowRadius = 5
-//            signView.layer.shadowColor = UIColor(red: 44.0/255.0, green: 62.0/255.0, blue: 80.0/255.0, alpha: 1.0).cgColor
-//        }
-//    }
+    @IBOutlet weak var iconButtons: UIButton!
+    
+    @IBAction func iconAction(_ sender: AnyObject){
+        passwordTextField.isSecureTextEntry.toggle()
+        if passwordTextField.isSecureTextEntry {
+            if let image = UIImage(systemName: "key.fill") {
+                sender.setImage(image, for: .normal)
+            }
+        }else{
+            if let image = UIImage(systemName: "key.fill"){
+                sender.setImage(image, for: .normal)
+            }
+            }
+        }
+    @IBAction func iconActions(_ sender: AnyObject){
+        passwordTextField.isSecureTextEntry.toggle()
+        if passwordTextField.isSecureTextEntry {
+            if let image = UIImage(systemName: "key.fill") {
+                sender.setImage(image, for: .normal)
+            }
+        }else{
+            if let image = UIImage(systemName: "key.fill"){
+                sender.setImage(image, for: .normal)
+            }
+        
+            }
+        }
     
     var message = ""
 //    let imagePickerController = UIImagePickerController()
@@ -77,6 +96,10 @@ class SignUpVC: UIViewController {
         super.viewDidLoad()
 //        imagePickerController.delegate = self
         // Do any additional setup after loading the view.
+        passwordTextField.rightView = iconButton
+               passwordTextField.rightViewMode = .whileEditing
+        comfirmpasswordTextField.rightView = iconButtons
+        comfirmpasswordTextField.rightViewMode = .whileEditing
         view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
     }
     @IBAction func handleDone(_ sender: Any) {
