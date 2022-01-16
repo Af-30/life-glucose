@@ -22,12 +22,19 @@ class ProfileUserVC: UIViewController {
     
     let tableItems: [ProfileTableItem] = [
         ProfileTableItem(title: "Account", imageName: "person"),
-        ProfileTableItem(title: "Change Language", imageName: "person"),
+        ProfileTableItem(title: "Change Language", imageName: "character.book.closed.fill.ko"),
         ProfileTableItem(title: "Acompany Patient", imageName: "person.fill.badge.plus"),
         ProfileTableItem(title: "Log Out", imageName: "rectangle.portrait.and.arrow.right")
     ]
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!{
+        didSet{
+            tableView.layer.cornerRadius = 20
+            tableView.layer.shadowOpacity = 30
+            tableView.layer.shadowRadius = 10
+            tableView.layer.shadowOffset = CGSize(width: 3, height: 3)
+        }
+    }
     @IBOutlet weak var profileImageView: UIImageView!{
         didSet {
             profileImageView.layer.borderColor = UIColor.systemYellow.cgColor
@@ -182,19 +189,28 @@ extension ProfileUserVC: UITableViewDelegate, UITableViewDataSource {
             
             cell.textLabel?.text =
             NSLocalizedString(tableItems[indexPath.row].title, comment: "")
+            cell.textLabel?.text =
+            NSLocalizedString(tableItems[indexPath.row].title, comment: "")
         }else{
 //            cell.textLabel?.text = tableItems[indexPath.row].title.localized
             cell.textLabel?.text = NSLocalizedString(tableItems[indexPath.row].title, comment: "")
+        
         }
         
         if tableItems[indexPath.row].imageName == "rectangle.portrait.and.arrow.right" {
             cell.imageView?.tintColor = .systemRed
             cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
+    
         }else{
             cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
         }
-        //        cell.textLabel?.text = tableItems[indexPath.row].title
+//        cell.textLabel?.text = tableItems[indexPath.row].title
         //        cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
+        cell.backgroundColor = .init(named: "colerProfile")
+        cell.layer.cornerRadius = 20
+        cell.layer.shadowOpacity = 30
+        cell.layer.shadowRadius = 10
+        cell.layer.shadowOffset = CGSize(width: 3, height: 3)
         cell.accessoryType = .disclosureIndicator
         return cell
     }

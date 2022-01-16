@@ -16,15 +16,21 @@ class LoginVC: UIViewController {
             emailLabel.text = "Email".localized
         }
     }
-//    @IBOutlet weak var loginView: UIView!{
-//        didSet{
-//            loginView.layer.cornerRadius = 40
-//            loginView.layer.shadowOffset = CGSize(width: 5, height: 5)
-//            loginView.layer.shadowOpacity = 0.7
-//            loginView.layer.shadowRadius = 5
-//            loginView.layer.shadowColor = UIColor(red: 44.0/255.0, green: 62.0/255.0, blue: 80.0/255.0, alpha: 1.0).cgColor
-//        }
-//    }
+    
+    @IBAction func iconAction(_ sender: AnyObject){
+        passwordTextField.isSecureTextEntry.toggle()
+        if passwordTextField.isSecureTextEntry {
+            if let image = UIImage(systemName: "") {
+                sender.setImage(image, for: .normal)
+            }
+        }else{
+            if let image = UIImage(systemName: ""){
+                sender.setImage(image, for: .normal)
+            }
+        
+            }
+        }
+        
     @IBOutlet weak var passwordLabel: UILabel!{
         didSet{
             passwordLabel.text = "Password".localized

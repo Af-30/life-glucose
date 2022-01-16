@@ -9,6 +9,7 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import FirebaseFirestoreSwift
+import UserNotifications
 
 class LandingVC: UIViewController {
     //var user: UserModel!
@@ -61,7 +62,33 @@ class LandingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let center = UNUserNotificationCenter.current()
+        
+        
+//        content
+        let content = UNMutableNotificationContent()
+        content.title = "Life Glucose"
+        content.body = "Welcome to App Life Glucose"
+        content.sound = UNNotificationSound.default
+        content.threadIdentifier = "local-Notifiction temp"
+        
+//        trigger
+        let date = Date(timeIntervalSinceNow: 10)
+        let dateComponnent = Calendar.current.dateComponents([.year , .month ,.day ,.hour , .minute , .second], from: date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponnent, repeats: false)
+        
+        
+        let requset = UNNotificationRequest(identifier: "content", content: content, trigger: trigger)
+        center.add(requset) { (error) in
+        if error != nil {
+            print(error)
+        
+        }
         //        try! Auth.auth().signOut()
+    }
+        
+        
     }
     
     @IBAction func languageChanged(_ sender: UISegmentedControl) {
@@ -87,7 +114,7 @@ class LandingVC: UIViewController {
             db.collection("users").whereField("uid", isEqualTo: usr.uid).getDocuments { snapshot, error in
                 if let error = error {
                     fatalError(error.localizedDescription)
-                    return
+                    return 
                 }
                 if let doc = snapshot?.documents.first {
                     do {

@@ -106,6 +106,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ChatCell
         cell.getMessageDesgin(sender: message.sender == user.uid ? .me : .other)
         cell.messageLabel.text = message.content
+    
         return cell
     }
     

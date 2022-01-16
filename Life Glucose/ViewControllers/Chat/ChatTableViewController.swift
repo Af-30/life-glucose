@@ -94,6 +94,12 @@ extension ChatTableViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = conversations[indexPath.row].users.first(where: { $0.uid != user.uid})?.name
         cell.detailTextLabel?.text = conversations[indexPath.row].messages.last!.content
+        cell.backgroundColor = .init(named: "colerProfile")
+        cell.layer.cornerRadius = 20
+        cell.layer.shadowOpacity = 30
+        cell.layer.shadowRadius = 10
+        cell.layer.shadowOffset = CGSize(width: 3, height: 3)
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
     
@@ -107,4 +113,5 @@ extension ChatTableViewController: UITableViewDelegate, UITableViewDataSource {
             deleteItem(index: indexPath.row)
         }
     }
+
 }

@@ -11,14 +11,14 @@ import SwiftUI
 
 class EntriesViewController: UIViewController {
 
-    @IBOutlet weak var viewChart: UIView!{
-        didSet{
-            viewChart.layer.cornerRadius = 100
-            viewChart.layer.shadowOpacity = 0.5
-            viewChart.layer.shadowRadius = 30
-        }
-    }
-    
+//    @IBOutlet weak var viewChart: UIView!{
+//        didSet{
+//            viewChart.layer.cornerRadius = 100
+//            viewChart.layer.shadowOpacity = 0.5
+//            viewChart.layer.shadowRadius = 30
+//        }
+//    }
+//
     @IBOutlet weak var imageView: UITableView!
     var activityIndicator = UIActivityIndicatorView()
     @IBOutlet weak var tableView: UITableView!
@@ -109,6 +109,7 @@ extension EntriesViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! EntriesTableViewCell
+    
 //        cell.textLabel?.text = "\(resultLabel[indexPath.row])"
 
        
@@ -116,31 +117,31 @@ extension EntriesViewController : UITableViewDelegate, UITableViewDataSource {
         
         switch result {
         case "normal".localized :
-            cell.resultLabel.textColor = UIColor.green
+            cell.resultLabel.textColor = UIColor.systemGreen
         case "normal rate".localized :
-            cell.resultLabel.textColor = UIColor.green
+            cell.resultLabel.textColor = UIColor.systemGreen
             
         case "high".localized :
-            cell.resultLabel.textColor = UIColor.red
+            cell.resultLabel.textColor = UIColor.systemRed
         case "very high".localized :
-            cell.resultLabel.textColor = UIColor.red
+            cell.resultLabel.textColor = UIColor.systemRed
         case "very very high".localized :
-            cell.resultLabel.textColor = UIColor.red
+            cell.resultLabel.textColor = UIColor.systemRed
         case "dangerous high".localized :
-            cell.resultLabel.textColor = UIColor.red
+            cell.resultLabel.textColor = UIColor.systemRed
         case "very dangerous high".localized :
-            cell.resultLabel.textColor = UIColor.red
+            cell.resultLabel.textColor = UIColor.systemRed
             
         case "low" :
-            cell.resultLabel.textColor = UIColor.yellow
+            cell.resultLabel.textColor = UIColor.systemYellow
         case "very low".localized :
-            cell.resultLabel.textColor = UIColor.yellow
+            cell.resultLabel.textColor = UIColor.systemYellow
         case "very dangerous low".localized :
-            cell.resultLabel.textColor = UIColor.yellow
+            cell.resultLabel.textColor = UIColor.systemYellow
             
             
         default :
-            cell.resultLabel.textColor = UIColor.white
+            cell.resultLabel.textColor = UIColor.systemPurple
         }
         
         cell.resultLabel.text = getResult(entries[indexPath.row].value, fasting: entries[indexPath.row].fasting)
@@ -149,6 +150,7 @@ extension EntriesViewController : UITableViewDelegate, UITableViewDataSource {
         cell.glucose.text = "\(entries[indexPath.row].value)"
         
         cell.imageViewCell.image = profileImage
+       
         
         return cell
     }

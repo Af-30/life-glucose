@@ -7,14 +7,26 @@
 
 import UIKit
 import Firebase
+import UserNotifications
 import IQKeyboardManagerSwift
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenterDelegate{
   
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        
+        let center = UNUserNotificationCenter.current()
+        let option : UNAuthorizationOptions = [.sound , .alert ]
+        center.requestAuthorization(options: option) {
+            (sucess, error) in
+            if error != nil {
+                
+            }
+        }
+        center.delegate = self 
         // Override point for customization after application launch.
         FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
