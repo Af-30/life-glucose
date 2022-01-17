@@ -18,6 +18,7 @@ class LoginVC: UIViewController {
     }
     
     @IBOutlet weak var iconButton: UIButton!
+    
     @IBAction func iconAction(_ sender: AnyObject){
         passwordTextField.isSecureTextEntry.toggle()
         if passwordTextField.isSecureTextEntry {

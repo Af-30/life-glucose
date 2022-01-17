@@ -14,7 +14,7 @@ class ProfileDoctorVC: UIViewController {
     
     let tableItems: [ProfileTableItem] = [
         ProfileTableItem(title: "Account", imageName: "person"),
-        ProfileTableItem(title: "Patients", imageName: "person.fill.badge.plus"),
+        ProfileTableItem(title: "Change Language", imageName: "character.book.closed.fill.ko"),
         ProfileTableItem(title: "Log Out", imageName: "rectangle.portrait.and.arrow.right")
     ]
 
@@ -169,6 +169,7 @@ extension ProfileDoctorVC: UITableViewDelegate, UITableViewDataSource {
             cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
         }
         cell.accessoryType = .disclosureIndicator
+        cell.backgroundColor = .init(named: "colerProfile")
         return cell
     }
 
@@ -198,8 +199,9 @@ extension ProfileDoctorVC: UITableViewDelegate, UITableViewDataSource {
         switch tableItems[indexPath.row].title {
         case "Account":
             performSegue(withIdentifier: "profileToAccount", sender: nil)
-        case "Patients":
-            performSegue(withIdentifier: "profileToPatients", sender: nil)
+        case "Change Language":
+            let url = URL(string: UIApplication.openSettingsURLString)!
+            UIApplication.shared.open(url)
         case "Log Out":
             logout()
         default: fatalError()

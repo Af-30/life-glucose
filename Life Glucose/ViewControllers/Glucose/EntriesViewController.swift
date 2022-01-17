@@ -7,7 +7,6 @@
 
 import UIKit
 import Firebase
-import SwiftUI
 
 class EntriesViewController: UIViewController {
 
@@ -38,7 +37,22 @@ class EntriesViewController: UIViewController {
         
 //        fetchData()
 //        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
+        
     }
+    
+//    private func createChart() {
+//        var chart = BarChartView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+//        var chartEntries = [BarChartDataEntry]()
+//        for entry in entries {
+//            chartEntries.append(BarChartDataEntry(x: 1, y: Double(entry.value)))
+//        }
+//        let set = BarChartDataSet(entries: chartEntries, label: "Glucose")
+//        let data = BarChartData(dataSet: set)
+//        chart.data = data
+//        view.addSubview(chart)
+//
+//    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         fetchData()
@@ -70,7 +84,7 @@ class EntriesViewController: UIViewController {
         
         db.collection("patients/\(patient.docID!)/entries").getDocuments(source: .server) { snapshot, error in
             if let error = error {
-                return
+                fatalError(error.localizedDescription)
             }
             if let docs = snapshot?.documents {
                 self.entries.removeAll()
@@ -83,6 +97,7 @@ class EntriesViewController: UIViewController {
                 }
                 self.entries.sort(by: { $0.created > $1.created })
                 self.tableView.reloadData()
+                //self.createChart()
                 Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
             }
         }

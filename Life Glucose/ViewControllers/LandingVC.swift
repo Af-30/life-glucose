@@ -12,8 +12,8 @@ import FirebaseFirestoreSwift
 import UserNotifications
 
 class LandingVC: UIViewController {
-    //var user: UserModel!
-
+    
+    var activityIndicator = UIActivityIndicatorView()
     //    local
     @IBOutlet weak var welcomeLabel: UILabel! {
     didSet {
@@ -74,7 +74,7 @@ class LandingVC: UIViewController {
         content.threadIdentifier = "local-Notifiction temp"
         
 //        trigger
-        let date = Date(timeIntervalSinceNow: 10)
+        let date = Date(timeIntervalSinceNow: 20)
         let dateComponnent = Calendar.current.dateComponents([.year , .month ,.day ,.hour , .minute , .second], from: date)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponnent, repeats: false)
         
@@ -109,6 +109,8 @@ class LandingVC: UIViewController {
         print("LANDING")
         
         if let usr = Auth.auth().currentUser {
+            // activity
+            Activity.showIndicator(parentView: self.view, childView: activityIndicator)
             print(usr.uid)
             let db = Firestore.firestore()
             db.collection("users").whereField("uid", isEqualTo: usr.uid).getDocuments { snapshot, error in
@@ -207,7 +209,7 @@ class LandingVC: UIViewController {
 }
 extension String {
     var localized: String {
-        return NSLocalizedString(self, tableName: "Localizable", bundle: .main, value: self, comment: self)
+        return NSLocalizedString(self, tableName: "Localizable", bundle: .main, value: self, comment: "")
     }
     
 }

@@ -28,7 +28,6 @@
 		ED52E0412784A98F00040F89 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52E0402784A98F00040F89 /* MessageModel.swift */; };
 		ED52E0432784B3C800040F89 /* DoctorInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52E0422784B3C800040F89 /* DoctorInformationVC.swift */; };
 		ED52E0452784BF0D00040F89 /* EntriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52E0442784BF0D00040F89 /* EntriesTableViewCell.swift */; };
-		ED52E0472784D00700040F89 /* PatientCompanyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52E0462784D00600040F89 /* PatientCompanyVC.swift */; };
 		ED86BAB9278C11220077EDA9 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED86BAB8278C11220077EDA9 /* UIView+.swift */; };
 		ED86BABD278EFCA20077EDA9 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ED86BABC278EFCA20077EDA9 /* IQKeyboardManagerSwift */; };
 		EDAF3197278362350057C1AC /* InformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF3196278362340057C1AC /* InformationVC.swift */; };
@@ -95,7 +94,6 @@
 		ED52E0402784A98F00040F89 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		ED52E0422784B3C800040F89 /* DoctorInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorInformationVC.swift; sourceTree = "<group>"; };
 		ED52E0442784BF0D00040F89 /* EntriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewCell.swift; sourceTree = "<group>"; };
-		ED52E0462784D00600040F89 /* PatientCompanyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientCompanyVC.swift; sourceTree = "<group>"; };
 		ED86BAB8278C11220077EDA9 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		EDAF3196278362340057C1AC /* InformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationVC.swift; sourceTree = "<group>"; };
 		EDB09EBF277A42A6007A6196 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
@@ -300,7 +298,6 @@
 			children = (
 				ED24C7D1276F563800583D41 /* ProfileUserVC.swift */,
 				EDAF3196278362340057C1AC /* InformationVC.swift */,
-				ED52E0462784D00600040F89 /* PatientCompanyVC.swift */,
 			);
 			path = ProfilePatient;
 			sourceTree = "<group>";
@@ -467,7 +464,6 @@
 				ED29233C274518FA00B1D451 /* UserModel.swift in Sources */,
 				ED24C7D9276F644500583D41 /* ImageView.swift in Sources */,
 				EDCEA452277B7BBB00D15264 /* PatientModel.swift in Sources */,
-				ED52E0472784D00700040F89 /* PatientCompanyVC.swift in Sources */,
 				ED24C7D2276F563800583D41 /* ProfileUserVC.swift in Sources */,
 				EDAF3197278362350057C1AC /* InformationVC.swift in Sources */,
 				EDC0973F2786066E009755F8 /* NewChatViewController.swift in Sources */,

@@ -23,7 +23,6 @@ class ProfileUserVC: UIViewController {
     let tableItems: [ProfileTableItem] = [
         ProfileTableItem(title: "Account", imageName: "person"),
         ProfileTableItem(title: "Change Language", imageName: "character.book.closed.fill.ko"),
-        ProfileTableItem(title: "Acompany Patient", imageName: "person.fill.badge.plus"),
         ProfileTableItem(title: "Log Out", imageName: "rectangle.portrait.and.arrow.right")
     ]
     
@@ -185,18 +184,9 @@ extension ProfileUserVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         if tableItems[indexPath.row].title == "Log Out".localized {
             cell.textLabel?.textColor = .systemRed
-            cell.textLabel?.text = tableItems[indexPath.row].title.localized
-            
-            cell.textLabel?.text =
-            NSLocalizedString(tableItems[indexPath.row].title, comment: "")
-            cell.textLabel?.text =
-            NSLocalizedString(tableItems[indexPath.row].title, comment: "")
-        }else{
-//            cell.textLabel?.text = tableItems[indexPath.row].title.localized
-            cell.textLabel?.text = NSLocalizedString(tableItems[indexPath.row].title, comment: "")
-        
         }
-        
+            cell.textLabel?.text = NSLocalizedString(tableItems[indexPath.row].title, comment: "")
+
         if tableItems[indexPath.row].imageName == "rectangle.portrait.and.arrow.right" {
             cell.imageView?.tintColor = .systemRed
             cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
@@ -204,8 +194,6 @@ extension ProfileUserVC: UITableViewDelegate, UITableViewDataSource {
         }else{
             cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
         }
-//        cell.textLabel?.text = tableItems[indexPath.row].title
-        //        cell.imageView?.image = UIImage(systemName: tableItems[indexPath.row].imageName)
         cell.backgroundColor = .init(named: "colerProfile")
         cell.layer.cornerRadius = 20
         cell.layer.shadowOpacity = 30
@@ -226,8 +214,7 @@ extension ProfileUserVC: UITableViewDelegate, UITableViewDataSource {
         case "Change Language":
             let url = URL(string: UIApplication.openSettingsURLString)!
             UIApplication.shared.open(url)
-        case "Acompany Patient":
-            performSegue(withIdentifier: "profileToAcompany", sender: nil)
+
         case "Log Out":
             logout()
         default: fatalError()

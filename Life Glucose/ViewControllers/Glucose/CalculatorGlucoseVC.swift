@@ -90,6 +90,7 @@ class CalculatorGlucoseVC: UIViewController {
     @IBAction func saveAction(_ sender: Any) {
         guard let strValue = numberGlucoseTextField.text else { return }
         guard let intValue = Int(strValue) else { return }
+        if resultLabel.text == "ERROR" { return }
         
         let updatedEntry = EntryModel(uid: user.uid,
                                fasting: fastingPicker.selectedSegmentIndex == 0,

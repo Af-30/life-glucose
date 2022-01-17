@@ -1,8 +1,25 @@
 # lifeGlocuse
 
+## Description
+-
+
+
+
+## Demo
+
+![](lightEN.gif)
+![](darkAR.gif)
 User Story:
 
 ![](userstory.png)
+
+
+## Framework
+- UIKit
+- Firebase
+- IQKeyboardManagerSwift
+- Foundation
+
 
 Wireframe:
 
@@ -14,3 +31,5 @@ Wireframe:
 Entity Relationship Diagram (ERD):
 
 ![](erd.png)
+
+
