@@ -28,6 +28,14 @@
 ![](wireframe3.png)
 ![](wireframe4.png)
 
+## WireframeDark:
+
+![](wireframeDark.png)
+
+## WireframeLight:
+
+![](wireframeLight.png)
+
 ## Entity Relationship Diagram (ERD):
 
 ![](erd.png)
